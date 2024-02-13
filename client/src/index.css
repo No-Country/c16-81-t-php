@@ -3,3 +3,137 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    scroll-behavior: smooth;
+}
+  
+.gradient {
+    background: radial-gradient(
+      64.18% 64.18% at 71.16% 35.69%,
+      #F9F5FF 0.89%,
+      #F1E6FE 17.23%,
+      #E2CEFD 42.04%,
+      #D4B5FD 55.12%,
+      #C69CFC 71.54%,
+      #B985FB 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+  
+ 
+.bg-gray-gradient {
+    background: linear-gradient(
+        180deg, 
+        hsla(240, 12%, 48%, 1) 0%, 
+        hsla(240, 15%, 25%, 1) 100%
+        );
+}
+
+.sidebar {
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  
+@-webkit-keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-top {
+    0% {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+/* Botones del slider personalizados */
+.slick-prev {
+    background: #787AA5;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: 2;
+}
+  
+.slick-next {
+    background: #787AA5;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: 2;
+}
+
+.slick-next {
+    right: -15px;
+}
+
+
+.slick-prev:before{
+    content: url(../src/assets/arrow-left.svg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: 1;
+    color: #343549;
+    -webkit-font-smoothing: antialiased;
+}
+
+.slick-next:before{
+    content: url(../src/assets/arrow-right.svg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'slick';
+    line-height: 1;
+    opacity: 1;
+    color: #343549;
+    -webkit-font-smoothing: antialiased;
+}
+
+.slick-next:hover,
+.slick-prev:hover{
+    outline: none;
+    background: #E0E1EB;
+}
+
+.slider-container {
+    margin: auto;
+    max-width: 1300px;
+
+}
+
+@media (max-width: 480px) {
+    .slick-prev {
+        left: -20px;
+    }
+
+    .slick-next {
+        right: -20px;
+    }
+    
+    .slick-prev,
+    .slick-next {
+        background: #787AA5;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        z-index: 2;
+    }
+}
