@@ -2,6 +2,11 @@ import styles from '../../style';
 import Hero from '../../components/Hero';
 import Partners from '../../components/Partners';
 import Info from '../../components/Info';
+import GamesCarrousel from '../../components/GamesCarrousel';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 
 const Home = () => {
   return (
@@ -11,6 +16,9 @@ const Home = () => {
           <Partners />
         </div>
         <Info />
+        <div className={`${styles.boxWidth}`}>
+          <GamesCarrousel />
+        </div>
     </div>
   )
 }
