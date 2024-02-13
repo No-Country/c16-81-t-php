@@ -1,6 +1,7 @@
 import styles from '../../style';
 import Hero from '../../components/Hero';
 import Partners from '../../components/Partners';
+import Info from '../../components/Info';
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
           <Hero />
           <Partners />
         </div>
+        <Info />
     </div>
   )
 }
