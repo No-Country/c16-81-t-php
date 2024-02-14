@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ConfrontationController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TeamUserController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -33,3 +34,7 @@ Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'sh
 
 /**Route By Teams */
 Route::resource('teams', TeamController::class);
+Route::get('/teams/{id}/integrants', [TeamController::class, 'showIntegrants']);
+
+/**Route By Team Users */
+Route::resource('team_users', TeamUserController::class);
