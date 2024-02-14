@@ -1,13 +1,22 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import styles from './style';
+import Home from "./pages/Home/Home"
+import Navbar from "./components/Navbar.jsx"
 
 export default function App() {
   return (
     <>
-    <div className="bg-primary mx-auto flex flex-1 justify-center items-center flex-col leading-10">
-      <h1 className="text-3xl font-monse font-bold text-secondary">
-        ArenaMobile
-      </h1>
-        <p className='font-monse text-base text-paragraph'>Probando que sirva tailwind y los colores se vean bien</p>
+    <div className="bg-primary w-full overflow-hidden">
+      <BrowserRouter>
+        <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+          <div className={`${styles.boxWidth}`}>
+            <Navbar />
+          </div>
+        </div>
+        <Routes>
+          <Route index element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </div>
     </>
   )
