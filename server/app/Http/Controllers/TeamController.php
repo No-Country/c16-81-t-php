@@ -65,12 +65,18 @@ class TeamController extends Controller
         ], 200);
     }
 
-    // public function showIntegrants($id)
-    // {
-    //     $integrants = DB::table('')
-    //     return response()->json([
-    //         "success" => true,
-    //         "msg" => "Team deleted successfully"
-    //     ], 200);
-    // }
+    public function showIntegrants($id)
+    {
+        $integrants = DB::table('team_users')
+                ->select('team_users.user_id', 'users.nick_name')
+                ->join('teams', 'teams.id', '=', 'team_users.team_id')
+                ->join('users', 'users.id', '=', 'team_users.user_id')
+                ->where('team_id', $id)
+                ->get();
+                
+        return response()->json([
+            "success" => true,
+            "integrants" => $integrants->all()
+        ], 200);
+    }
 }
