@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ConfrontationController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -29,3 +30,6 @@ Route::resource('confrontations', ConfrontationController::class);
 
 /**Route By Tournaments */
 Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'showConfrontations']);
+
+/**Route By Teams */
+Route::resource('teams', TeamController::class);
