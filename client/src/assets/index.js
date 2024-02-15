@@ -22,6 +22,10 @@ import brawlStar from "./brawl.png";
 import coupon from "./coupon.svg";
 import calendar from "./calendar.svg";
 import cover from "./img-torneo.png";
+import Bronze from "./Bronze.svg";
+import Silver from "./Silver.svg";
+import Oro from "./Oro.svg";
+import avatar from "./avatar.jpg";
 
 export {
   logo,
@@ -48,4 +52,8 @@ export {
   coupon,
   calendar,
   cover,
+  Bronze,
+  Silver,
+  Oro,
+  avatar
 };
