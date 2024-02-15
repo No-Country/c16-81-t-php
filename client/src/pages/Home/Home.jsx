@@ -6,6 +6,7 @@ import GamesCarrousel from '../../components/GamesCarrousel';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Torneos from '../../components/Torneos';
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
         <Info />
         <div className={`${styles.boxWidth}`}>
           <GamesCarrousel />
+          <Torneos />
         </div>
     </div>
   )

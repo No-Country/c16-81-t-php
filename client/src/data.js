@@ -1,4 +1,4 @@
-import { activision, logitech, playstation, riotgames, samsung  } from "../src/assets";
+import { activision, logitech, playstation, riotgames, samsung, cover  } from "../src/assets";
 
 export const navLinks = [
   {
@@ -43,5 +43,64 @@ export const partners = [
   {
     id: "samsung",
     icon: samsung,
+  },
+];
+
+export const torneos = [
+  {
+    id: "torneo 1",
+    title: "COD Mobile",
+    cover: cover,
+    price: "Gratis",
+    date: "00/00/2024",
+  },
+  {
+    id: "torneo 2",
+    title: "Axie Infinity",
+    cover: cover,
+    price: "Gratis",
+    date: "00/00/2024",
+  },
+  {
+    id: "torneo 3",
+    title: "Ganera Free Fire",
+    cover: cover,
+    price: "Gratis",
+    date: "00/00/2024",
+  },
+  {
+    id: "torneo 4",
+    title: "Brawl Stars",
+    cover: cover,
+    price: "Gratis",
+    date: "00/00/2024",
+  },
+  {
+    id: "torneo 5",
+    title: "Clash Royale",
+    cover: cover,
+    price: "Gratis",
+    date: "00/00/2024",
+  },
+  {
+    id: "torneo 6",
+    title: "PUBG Mobile",
+    cover: cover,
+    price: "Gratis",
+    date: "00/00/2024",
+  },
+  {
+    id: "torneo 7",
+    title: "League of Legends",
+    cover: cover,
+    price: "Gratis",
+    date: "00/00/2024",
+  },
+  {
+    id: "torneo 8",
+    title: "Clash of Clans",
+    cover: cover,
+    price: "Gratis",
+    date: "00/00/2024",
   },
 ];

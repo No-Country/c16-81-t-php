@@ -19,6 +19,9 @@ import Axie from "./axie.png";
 import mobileLegends from "./lol.png"; 
 import pubg from "./pubg.png"; 
 import brawlStar from "./brawl.png";
+import coupon from "./coupon.svg";
+import calendar from "./calendar.svg";
+import cover from "./img-torneo.png";
 
 export {
   logo,
@@ -41,5 +44,8 @@ export {
   Axie, 
   mobileLegends, 
   pubg, 
-  brawlStar
+  brawlStar,
+  coupon,
+  calendar,
+  cover,
 };
