@@ -26,6 +26,10 @@ import Bronze from "./Bronze.svg";
 import Silver from "./Silver.svg";
 import Oro from "./Oro.svg";
 import avatar from "./avatar.jpg";
+import quotes from "./Quotes.svg";
+import review from "./Review.svg";
+import arrowLeft from "./arrow-left.svg";
+import arrowRight from "./arrow-right.svg";
 
 export {
   logo,
@@ -55,5 +59,9 @@ export {
   Bronze,
   Silver,
   Oro,
-  avatar
+  avatar,
+  quotes,
+  review,
+  arrowLeft,
+  arrowRight
 };
