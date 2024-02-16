@@ -9,5 +9,13 @@ class Confrontation extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['tournament_id','team_one_id','team_two_id','winner_id','status']; 
+    protected $fillable = [
+        'tournament_id',
+        'team_one_id',
+        'team_two_id',
+        'winner_id',
+        'losser_id',
+        'status_id',
+        'position_id',
+    ];
 }
