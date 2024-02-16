@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Torneos from '../../components/Torneos';
 import Ranking from '../../components/Ranking';
 import Testimonials from '../../components/Testimonials';
+import CTA from '../../components/CTA';
 
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
           <Torneos />
           <Ranking />
           <Testimonials />
+          <CTA />
         </div>
     </div>
   )
