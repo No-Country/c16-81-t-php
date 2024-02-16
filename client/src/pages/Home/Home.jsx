@@ -10,6 +10,7 @@ import Torneos from '../../components/Torneos';
 import Ranking from '../../components/Ranking';
 import Testimonials from '../../components/Testimonials';
 import CTA from '../../components/CTA';
+import Footer from '../../components/Footer';
 
 
 const Home = () => {
@@ -27,6 +28,7 @@ const Home = () => {
           <Testimonials />
           <CTA />
         </div>
+        <Footer />
     </div>
   )
 }
