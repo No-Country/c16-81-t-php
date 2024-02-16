@@ -13,10 +13,10 @@ const Hero = () => (
             </p>
         </div>
         <div className="flex flex-col justify-between items-start w-full">
-            <h1 className='flex-1 font-monse font-bold text-balance ss:text-[72px] text-[50px] text-purple ss:leading-[100px] leading-[75px]'>
+            <h1 className='flex-1 font-monse font-bold text-balance ss:text-[72px] text-[40px] text-purple ss:leading-[100px] leading-[75px]'>
                 ArenaMobile<br className='sm:block hidden' /> {" "} 
             </h1>  
-            <h2 className='text-secondary block font-semibold text-[50px] ss:text-[72px] lg:text-[59px] xl:text-[72px] ss:leading-[100px] leading-[75px]'>¡El escenario donde los campeones se coronan!</h2>
+            <h2 className='text-secondary block font-semibold text-[50px] ss:text-[72px] lg:text-[59px] xl:text-[72px] ss:leading-[100px] leading-[55px]'>¡El escenario donde los campeones se coronan!</h2>
         </div>
         <p className={`${styles.paragraph} mt-5 text-pretty`}>
             Demuestra tus habilidades, perfecciona tu estrategia y compite contra los mejores jugadores. 
