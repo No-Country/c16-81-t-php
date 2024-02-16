@@ -30,6 +30,7 @@ import quotes from "./Quotes.svg";
 import review from "./Review.svg";
 import arrowLeft from "./arrow-left.svg";
 import arrowRight from "./arrow-right.svg";
+import icon from "./Icon.svg";
 
 export {
   logo,
@@ -63,5 +64,6 @@ export {
   quotes,
   review,
   arrowLeft,
-  arrowRight
+  arrowRight,
+  icon
 };
