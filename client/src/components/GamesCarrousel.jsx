@@ -1,7 +1,7 @@
 import React from "react";
 import styles from '../style';
 import Slider from "react-slick";
-import { codMobile, clashOfClans, FreeFire, clashRoyale, Axie, mobileLegends, pubg, brawlStar  } from "../assets";
+import { imgGames  } from "../data";
 import { Link } from "react-router-dom"
 
 function PauseOnHover() {
@@ -68,35 +68,20 @@ function PauseOnHover() {
   };
   return (
     <>
-    <section className={`${styles.paddingY} w-full xl:px-0 sm:px-16 lg:pr-0 px-6 `}>
+    <section className={`${styles.paddingY} container mx-auto px-6 md:px-0`}>
         
         <div className="slider-container ">
         <h1 className="flex-1 font-monse font-bold text-balance ss:text-[52px] text-[30px] text-secondary mb-8">Juegos populares</h1>
         <Slider {...settings}>
-            <div>
-                <img src={codMobile} alt="img" className="w-[100px] sm:w-[120px] md:w-[200px] object-contain rounded-2xl" />
+          {imgGames.map((imgGames, index) => (
+            <div key={index} className="relative">
+              <img
+                src={imgGames.src}
+                alt={imgGames.alt}
+                className="w-[108px] sm:w-[140px] md:w-[200px] lg:w-[190px] object-contain rounded-xl"
+              />
             </div>
-            <div>
-                <img src={clashOfClans} alt="img" className="w-[100px] sm:w-[120px] md:w-[200px] object-contain rounded-2xl" />
-            </div>
-            <div>
-                <img src={FreeFire} alt="img" className="w-[100px] sm:w-[120px] md:w-[200px] object-contain rounded-2xl" />
-            </div>
-            <div>
-                <img src={clashRoyale} alt="img" className="w-[100px] sm:w-[120px] md:w-[200px] object-contain rounded-2xl" />
-            </div>
-            <div>
-                <img src={Axie} alt="img" className="w-[100px] sm:w-[120px] md:w-[200px] object-contain rounded-2xl" />
-            </div>
-            <div>
-                <img src={mobileLegends} alt="img" className="w-[100px] sm:w-[120px] md:w-[200px] object-contain rounded-2xl" />
-            </div>
-            <div>
-                <img src={pubg} alt="img" className="w-[100px] sm:w-[120px] md:w-[200px] object-contain rounded-2xl" />
-            </div>
-            <div>
-                <img src={brawlStar} alt="img" className="w-[100px] sm:w-[120px] md:w-[200px] object-contain rounded-2xl" />
-            </div>
+          ))}
         </Slider>
         </div>
         <div className="relative items-center flex justify-center gap-8 my-4 md:my-8">

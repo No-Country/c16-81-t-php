@@ -119,6 +119,14 @@
 
 }
 
+.slick-dots li button:before{
+    color: #787AA5;
+}
+
+.slick-dots li.slick-active button:before{
+    color: #E0E1EB;
+}
+
 @media (max-width: 480px) {
     .slick-prev {
         left: -20px;

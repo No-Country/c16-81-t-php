@@ -1,4 +1,4 @@
-import { activision, logitech, playstation, riotgames, samsung, cover  } from "../src/assets";
+import { activision, logitech, playstation, riotgames, samsung, cover, codMobile, clashOfClans, FreeFire, clashRoyale, Axie, mobileLegends, pubg, brawlStar  } from "../src/assets";
 
 export const navLinks = [
   {
@@ -44,6 +44,41 @@ export const partners = [
     id: "samsung",
     icon: samsung,
   },
+];
+
+export const imgGames = [
+  {
+    src: codMobile,
+    alt: 'COD Mobile'
+  },
+  {
+    src: clashOfClans,
+    alt: 'Clash of Clans'
+  },
+  { 
+    src: FreeFire, 
+    alt: 'Free Fire' 
+  },
+  { 
+    src: clashRoyale, 
+    alt: 'Clash Royale' 
+  },
+  { 
+    src: Axie, 
+    alt: 'Axie' 
+  },
+  { 
+    src: mobileLegends, 
+    alt: 'Mobile Legends' 
+  },
+  { 
+    src: pubg, 
+    alt: 'PUBG' 
+  },
+  { 
+    src: brawlStar, 
+    alt: 'Brawl Star' 
+  }
 ];
 
 export const torneos = [
