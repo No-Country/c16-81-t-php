@@ -22,7 +22,9 @@ class ConfrontationSeeder extends Seeder
                 'team_one_id' => $faker->numberBetween($min = 1,  $max = 10),
                 'team_two_id' => $faker->numberBetween($min = 11, $max = 20),
                 'winner_id'   => $faker->numberBetween($min = 1,  $max = 20),
-                'status' => $faker->randomElement(['to begin', 'in progress', 'finalized']),
+                'losser_id'   => $faker->numberBetween($min = 1,  $max = 20),
+                'status_id'   => $faker->numberBetween($min = 1,  $max = 4),
+                'position_id'   => $faker->numberBetween($min = 1,  $max = 4),
             ]);
         }
     }

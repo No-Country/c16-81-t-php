@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             TeamSeeder::class,
             TeamUserSeeder::class,
+            StatusSeeder::class,
+            PositionSeeder::class,
             ConfrontationSeeder::class,
         ]);
     }

@@ -16,8 +16,10 @@ return new class extends Migration
             $table->foreignId('tournament_id');//->constrained('tournaments')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('team_one_id');//->constrained('teams')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('team_two_id');//->constrained('teams')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignId('winner_id');//->constrained('teams')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->enum('status',['to begin','in progress','finalized']);
+            $table->foreignId('winner_id')->nullable();//->constrained('teams')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('losser_id')->nullable();//->constrained('teams')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('status_id');//->constrained('statuses')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('position_id');//->constrained('positions')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }
