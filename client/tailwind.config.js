@@ -8,7 +8,9 @@ module.exports = {
         primary: "#2E2E3E",
         secondary: "#E0E1EB",
         paragraph: "#E0E0E6",
-        purple: "#B985FB"
+        purple: "#B985FB",
+        card: "#343549",
+        texto: "#787AA5",
       },
       fontFamily: {
         monse: ["Montserrat", "sans-serif"],

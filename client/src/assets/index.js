@@ -19,6 +19,21 @@ import Axie from "./axie.png";
 import mobileLegends from "./lol.png"; 
 import pubg from "./pubg.png"; 
 import brawlStar from "./brawl.png";
+import coupon from "./coupon.svg";
+import calendar from "./calendar.svg";
+import cover from "./img-torneo.png";
+import Bronze from "./Bronze.svg";
+import Silver from "./Silver.svg";
+import Oro from "./Oro.svg";
+import avatar from "./avatar.jpg";
+import quotes from "./Quotes.svg";
+import review from "./Review.svg";
+import arrowLeft from "./arrow-left.svg";
+import arrowRight from "./arrow-right.svg";
+import icon from "./Icon.svg";
+import instagram from "./instagram.svg";
+import discord from "./discord.svg";
+import twitter from "./twitter.svg";
 
 export {
   logo,
@@ -41,5 +56,20 @@ export {
   Axie, 
   mobileLegends, 
   pubg, 
-  brawlStar
+  brawlStar,
+  coupon,
+  calendar,
+  cover,
+  Bronze,
+  Silver,
+  Oro,
+  avatar,
+  quotes,
+  review,
+  arrowLeft,
+  arrowRight,
+  icon,
+  instagram,
+  discord,
+  twitter
 };

@@ -9,7 +9,7 @@ const Partners = () => {
             <h2 className='text-[20px]  text-secondary mt-2'>Orgullosos socios y afiliados</h2>
         </div>
         <div className='h[42px] w-fit'>
-            <ul className="flex flex-wrap justify-center sm:gap-[60px] sm:gap-y-0">
+            <ul className="flex flex-wrap justify-center sm:gap-[60px] lg:gap-[20px] sm:gap-y-0">
                 {partners.map((partners, index) => (
                 <li key={index}>
                     <a

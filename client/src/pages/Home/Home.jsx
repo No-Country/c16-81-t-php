@@ -6,6 +6,11 @@ import GamesCarrousel from '../../components/GamesCarrousel';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Torneos from '../../components/Torneos';
+import Ranking from '../../components/Ranking';
+import Testimonials from '../../components/Testimonials';
+import CTA from '../../components/CTA';
+import Footer from '../../components/Footer';
 
 
 const Home = () => {
@@ -18,7 +23,12 @@ const Home = () => {
         <Info />
         <div className={`${styles.boxWidth}`}>
           <GamesCarrousel />
+          <Torneos />
+          <Ranking />
+          <Testimonials />
+          <CTA />
         </div>
+        <Footer />
     </div>
   )
 }
