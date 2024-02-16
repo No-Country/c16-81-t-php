@@ -31,6 +31,9 @@ import review from "./Review.svg";
 import arrowLeft from "./arrow-left.svg";
 import arrowRight from "./arrow-right.svg";
 import icon from "./Icon.svg";
+import instagram from "./instagram.svg";
+import discord from "./discord.svg";
+import twitter from "./twitter.svg";
 
 export {
   logo,
@@ -65,5 +68,8 @@ export {
   review,
   arrowLeft,
   arrowRight,
-  icon
+  icon,
+  instagram,
+  discord,
+  twitter
 };

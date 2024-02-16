@@ -1,4 +1,4 @@
-import { activision, logitech, playstation, riotgames, samsung, cover, codMobile, clashOfClans, FreeFire, clashRoyale, Axie, mobileLegends, pubg, brawlStar  } from "../src/assets";
+import { activision, logitech, playstation, riotgames, samsung, cover, codMobile, clashOfClans, FreeFire, clashRoyale, Axie, mobileLegends, pubg, brawlStar, instagram, discord, twitter  } from "../src/assets";
 
 export const navLinks = [
   {
@@ -137,5 +137,46 @@ export const torneos = [
     cover: cover,
     price: "Gratis",
     date: "00/00/2024",
+  },
+];
+
+export const footerLinks = [
+  {
+    id: "home",
+    name: "Inicio",
+    path: '/'
+  },
+  {
+    id: "games",
+    name: "Juegos",
+    path: '/games'
+  },
+  {
+    id: "leaderboard",
+    name: "Ranking",
+    path: '/leaderboard'
+  },
+  {
+    id: "dev",
+    name: "Development Team",
+    path: '/devTeam'
+  },
+];
+
+export const socialMedia = [
+  {
+    id: "social-media-1",
+    icon: instagram,
+    link: "https://www.instagram.com/",
+  },
+  {
+    id: "social-media-2",
+    icon: discord,
+    link: "https://discord.com/",
+  },
+  {
+    id: "social-media-3",
+    icon: twitter,
+    link: "https://www.twitter.com/",
   },
 ];
