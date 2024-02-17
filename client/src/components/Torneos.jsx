@@ -19,15 +19,15 @@ const Torneos = () => {
                             <img src={torneo.cover} alt="Cover torneo" className='object-cover max-w-[265px] h-[105px] rounded-md my-4' />
                             <h2 className="font-monse font-extrabold text-[14px] ss:text-[16px] sm:text-[20px] lg:text-[22px] text-texto">{torneo.title}</h2>
                             <div className="flex flex-row items-center gap-2 mb-2">
-                                <img src={coupon}/>
+                                <img src={coupon} alt="Coupon" width="24" height="auto"/>
                                 <span className="font-monse font-semibold text-[14px] xs:text-[16px] text-[#BFC0E0]">{torneo.price}</span>
                             </div>
                             <div className="flex flex-row items-center gap-2 mb-4">
-                                <img src={calendar}/>
+                                <img src={calendar} alt="Calendar" width="24" height="auto"/>
                                 <span className="font-monse font-semibold text-[14px] xs:text-[16px] text-[#BFC0E0]">{torneo.date}</span>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Link to="/tournament{id}">
+                                <Link to="/tournament/{id}">
                                     <button 
                                         type='button'           
                                         className={`w-[140px] max-h-[40px] sm:w-[200px] md:w-[220px] py-2 px-6 bg-gray-gradient font-monse font-medium text-[14px] sm:text-[16px]

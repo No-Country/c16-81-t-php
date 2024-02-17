@@ -34,6 +34,14 @@ import icon from "./Icon.svg";
 import instagram from "./instagram.svg";
 import discord from "./discord.svg";
 import twitter from "./twitter.svg";
+import axieCover from "./axie-cover.webp";
+import brawlCover from "./brawl-cover.webp";
+import royaleCover from "./clash-royale-cover.webp";
+import clansCover from "./clashofclans-cover.webp";
+import codCover from "./cod-cover.webp";
+import freeFireCover from "./free-fire-cover.webp";
+import lolCover from "./lol-cover.webp";
+import pubgCover from "./pubg-cover.webp";
 
 export {
   logo,
@@ -71,5 +79,13 @@ export {
   icon,
   instagram,
   discord,
-  twitter
+  twitter,
+  axieCover,
+  brawlCover,
+  royaleCover,
+  clansCover,
+  codCover,
+  freeFireCover,
+  lolCover,
+  pubgCover
 };

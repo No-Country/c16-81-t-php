@@ -1,4 +1,4 @@
-import { activision, logitech, playstation, riotgames, samsung, cover, codMobile, clashOfClans, FreeFire, clashRoyale, Axie, mobileLegends, pubg, brawlStar, instagram, discord, twitter  } from "../src/assets";
+import { activision, logitech, playstation, riotgames, samsung, codMobile, clashOfClans, FreeFire, clashRoyale, Axie, mobileLegends, pubg, brawlStar, instagram, discord, twitter, axieCover, brawlCover, royaleCover, clansCover, codCover, freeFireCover, lolCover, pubgCover } from "../src/assets";
 
 export const navLinks = [
   {
@@ -85,56 +85,56 @@ export const torneos = [
   {
     id: "torneo 1",
     title: "COD Mobile",
-    cover: cover,
+    cover: codCover,
     price: "Gratis",
     date: "00/00/2024",
   },
   {
     id: "torneo 2",
     title: "Axie Infinity",
-    cover: cover,
+    cover: axieCover,
     price: "Gratis",
     date: "00/00/2024",
   },
   {
     id: "torneo 3",
     title: "Ganera Free Fire",
-    cover: cover,
+    cover: freeFireCover,
     price: "Gratis",
     date: "00/00/2024",
   },
   {
     id: "torneo 4",
     title: "Brawl Stars",
-    cover: cover,
+    cover: brawlCover,
     price: "Gratis",
     date: "00/00/2024",
   },
   {
     id: "torneo 5",
     title: "Clash Royale",
-    cover: cover,
+    cover: royaleCover,
     price: "Gratis",
     date: "00/00/2024",
   },
   {
     id: "torneo 6",
     title: "PUBG Mobile",
-    cover: cover,
+    cover: pubgCover,
     price: "Gratis",
     date: "00/00/2024",
   },
   {
     id: "torneo 7",
     title: "League of Legends",
-    cover: cover,
+    cover: lolCover,
     price: "Gratis",
     date: "00/00/2024",
   },
   {
     id: "torneo 8",
     title: "Clash of Clans",
-    cover: cover,
+    cover: clansCover,
     price: "Gratis",
     date: "00/00/2024",
   },
