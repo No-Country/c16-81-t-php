@@ -87,6 +87,8 @@ function PauseOnHover() {
               <img
                 src={imgGames.src}
                 alt={imgGames.alt}
+                width="108"
+                height="auto"
                 className="w-[108px] sm:w-[140px] md:w-[200px] lg:w-[190px] object-contain rounded-xl"
               />
             </div>
