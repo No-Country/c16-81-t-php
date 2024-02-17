@@ -16,9 +16,6 @@ class VideogameFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'name' => $this->faker->sentence(2),
-            'category' => $this->faker->randomElement(['Aventura', 'Acción', 'Estrategia', 'Deportes', 'RPG', 'Puzzle']),
-        ];
+        return [];
     }
 }

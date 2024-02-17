@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Videogame;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class VideogameSeeder extends Seeder
 {
@@ -13,6 +14,12 @@ class VideogameSeeder extends Seeder
      */
     public function run(): void
     {
-        Videogame::factory(10)->create();
+        $faker = Faker::create();
+        for ($i = 0; $i < 5; $i++) {
+            DB::table('videogames')->insert([
+                'name' => $faker->sentence(2),
+                'category' => $faker->randomElement(['Aventura', 'Acción', 'Estrategia', 'Deportes', 'RPG', 'Puzzle']),
+            ]);
+        }
     }
 }
