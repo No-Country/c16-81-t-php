@@ -5,6 +5,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TeamUserController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VideogameController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +31,11 @@ Route::resource('users', UserController::class);
 Route::resource('confrontations', ConfrontationController::class);
 
 /**Route By Tournaments */
+Route::resource('tournaments', TournamentController::class);
 Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'showConfrontations']);
+
+/**Route By Videogames */
+Route::resource('videogames', VideogameController::class);
 
 /**Route By Teams */
 Route::resource('teams', TeamController::class);

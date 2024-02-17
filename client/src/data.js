@@ -98,7 +98,7 @@ export const torneos = [
   },
   {
     id: "torneo 3",
-    title: "Ganera Free Fire",
+    title: "Free Fire",
     cover: freeFireCover,
     price: "Gratis",
     date: "00/00/2024",

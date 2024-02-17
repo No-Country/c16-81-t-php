@@ -1,6 +1,5 @@
 import React from 'react'
-import styles from '../style';
-import { coupon, calendar, cover } from "../assets";
+import { coupon, calendar } from "../assets";
 import { torneos } from '../data';
 import { Link } from "react-router-dom"
 
@@ -30,7 +29,7 @@ const Torneos = () => {
                                 <Link to="/tournament/{id}">
                                     <button 
                                         type='button'           
-                                        className={`w-[140px] max-h-[40px] sm:w-[200px] md:w-[220px] py-2 px-6 bg-gray-gradient font-monse font-medium text-[14px] sm:text-[16px]
+                                        className={`w-[120px] xxs:w-[140px] max-h-[40px] sm:w-[200px] md:w-[220px] py-2 px-6 bg-gray-gradient font-monse font-medium text-[14px] sm:text-[16px]
                                         text-white hover:text-secondary outline-none rounded-[14px] shadow-md mb-4`}
                                     > 
                                         Unirse
