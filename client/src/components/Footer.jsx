@@ -15,7 +15,7 @@ const Footer = () => {
                         <li 
                         key={link.id}
                         className={`font-monse font-medium cursor-pointer text-[16px] sm:mr-10
-                        text-texto hover:text-white`}
+                        text-paragraph hover:text-texto`}
                         >
                         <NavLink to={link.path}>
                             {link.name}
@@ -39,10 +39,10 @@ const Footer = () => {
             </div>
             <hr className="my-6 border-[#5C5D75] mx-auto w-full lg:my-8 mt-[35px]" />
             <div className="flex flex-col sm:flex-row justify-center sm:justify-between text-center gap-2">
-                <span className="font-monse text-sm text-[#5C5D75]">
+                <span className="font-monse text-sm text-paragraph">
                     Copyright © 2024 - Proyecto No Country
                 </span>
-                <span className="font-monse text-sm text-[#5C5D75]">
+                <span className="font-monse text-sm text-paragraph">
                     Creado por c16-81-t-php
                 </span>
             </div>
