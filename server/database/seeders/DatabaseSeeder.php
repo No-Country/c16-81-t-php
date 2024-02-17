@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +20,9 @@ class DatabaseSeeder extends Seeder
             StatusSeeder::class,
             PositionSeeder::class,
             ConfrontationSeeder::class,
+            VideogameSeeder::class,
+            TournamentSeeder::class,
         ]);
+
     }
 }
