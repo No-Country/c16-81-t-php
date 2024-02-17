@@ -45,7 +45,7 @@ const Ranking = () => {
                     <div className="info">
                         <h2 className='font-monse font-extrabold text-[20px] text-texto'>Mike05</h2>
                         <h3 className='font-monse font-medium text-[18px] text-texto'>Mike Johnson</h3>
-                        <span className='font-monse font-normal text-[16px] text-texto'>Australai</span>
+                        <span className='font-monse font-normal text-[16px] text-texto'>Australia</span>
                     </div>
                 </div>
             </div>
@@ -53,12 +53,12 @@ const Ranking = () => {
 
         <div className="sm:hidden flex flex-col sm:flex-row justify-center items-center gap-4 sm:pt-36">
             
-            <div className="sm:mt-[-138px] bg-card w-[354px] h-[405px] rounded-xl shadow-lg flex-1 flex flex-col items-center  py-4 px-5">
+            <div className="bg-card w-[290px] xs:w-[354px] h-[405px] rounded-xl shadow-lg flex-1 flex flex-col items-center  py-4 px-5">
                 <div className="flex mb-8">
-                    <img src={Oro} alt='Oro' className='object-cover'/>
+                    <img src={Oro} alt='Oro' className='object-cover w-[150px]'/>
                 </div>
                 <div className="flex flex-row items-center justify-center ">
-                    <img src={avatar} alt='Silver' className='object-cover rounded-full w-[80px] h-[80px] mr-6'/>
+                    <img src={avatar} alt='Silver' className='object-cover rounded-full w-[70px] h-[70px] mr-6'/>
                     <div className="info">
                         <h2 className='font-monse font-extrabold text-[20px] text-texto'>Jans</h2>
                         <h3 className='font-monse font-medium text-[18px] text-texto'>Jane Smith</h3>
@@ -67,12 +67,12 @@ const Ranking = () => {
                 </div>
             </div>
 
-            <div className="bg-card w-[354px] h-[405px] rounded-xl shadow-lg flex-1 flex flex-col items-center justify-center py-4 px-5">
+            <div className="bg-card w-[290px] xs:w-[354px] h-[405px] rounded-xl shadow-lg flex-1 flex flex-col items-center justify-center py-4 px-5">
                 <div className="flex mb-8">
-                    <img src={Silver} alt='Silver' className='object-cover'/>
+                    <img src={Silver} alt='Silver' className='object-cover w-[140px]'/>
                 </div>
                 <div className="flex flex-row items-center justify-center">
-                    <img src={avatar} alt='Silver' className='object-cover rounded-full w-[80px] h-[80px] mr-6'/>
+                    <img src={avatar} alt='Silver' className='object-cover rounded-full w-[70px] h-[70px] mr-6'/>
                     <div className="info">
                         <h2 className='font-monse font-extrabold text-[20px] text-texto'>jdoe123</h2>
                         <h3 className='font-monse font-medium text-[18px] text-texto'>John Doe</h3>
@@ -81,16 +81,16 @@ const Ranking = () => {
                 </div>
             </div>
 
-            <div className="bg-card w-[354px] h-[405px] rounded-xl shadow-lg flex-1 flex flex-col items-center justify-center py-4 px-5">
+            <div className="bg-card w-[290px] xs:w-[354px] h-[405px] rounded-xl shadow-lg flex-1 flex flex-col items-center justify-center py-4 px-5">
                 <div className="flex">
-                    <img src={Bronze} alt='Bronze' className='object-cover'/>
+                    <img src={Bronze} alt='Bronze' className='object-cover w-[180px]'/>
                 </div>
                 <div className="flex flex-row items-center justify-center ">
-                    <img src={avatar} alt='Silver' className='object-cover rounded-full w-[80px] h-[80px] mr-6'/>   
+                    <img src={avatar} alt='Silver' className='object-cover rounded-full w-[70px] h-[70px] mr-6'/>   
                     <div className="info">
                         <h2 className='font-monse font-extrabold text-[20px] text-texto'>Mike05</h2>
                         <h3 className='font-monse font-medium text-[18px] text-texto'>Mike Johnson</h3>
-                        <span className='font-monse font-normal text-[16px] text-texto'>Australai</span>
+                        <span className='font-monse font-normal text-[16px] text-texto'>Australia</span>
                     </div>
                 </div>
             </div>
