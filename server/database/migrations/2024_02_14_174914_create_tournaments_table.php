@@ -18,9 +18,9 @@ return new class extends Migration
             $table->timestamp('starts_the');
             $table->string('link_ingame')->nullable();
             $table->string('image');
-            $table->unsignedBigInteger('videogame_id');
-            $table->unsignedBigInteger('winner_id')->nullable();
-            $table->unsignedBigInteger('user_admin_id');
+            $table->foreignId('videogame_id');
+            $table->foreignId('winner_id')->nullable();
+            $table->foreignId('user_admin_id');
             
             // // Claves foráneas
             // $table->foreign('videogame_id')->references('id')->on('videogames');
