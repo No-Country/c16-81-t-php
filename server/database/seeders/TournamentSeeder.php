@@ -25,7 +25,7 @@ class TournamentSeeder extends Seeder
                 'starts_the' => $faker->dateTimeBetween($startDate = 'now', $endDate = '+1 month'),
                 'link_ingame' => $faker->optional()->url,
                 'image' => $faker->imageUrl($width = 640, $height = 480),
-                'videogame_id' => $faker->numberBetween($min = 1, $max = 10),
+                'videogame_id' => $faker->numberBetween($min = 1, $max = 5),
                 'winner_id' => null,
                 'user_admin_id' => $faker->numberBetween($min = 1, $max = 30),
             ]);
