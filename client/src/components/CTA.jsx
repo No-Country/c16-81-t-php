@@ -5,7 +5,7 @@ const CTA = () => {
   return (
     <section className="py-8 mb-16">
         <hr className='container mx-auto border-t-1.2 border-card mb-8' />
-        <div className="container mx-auto bg-[#27283A] relative max-w-[1170px] min-h-[240px] rounded-[24px] flex flex-row justify-center items-center" >
+        <div className="container mx-auto bg-[#27283A] relative max-w-[1170px] min-h-[240px] rounded-[24px] flex flex-row justify-center items-center shadow-2xl" >
             <div className="w-4/5 h-full rounded-s-[24px] absolute left-0 bg-[#343549] clip" />
             <div className="flex flex-wrap gap-2 sm:flex-nowrap mx-auto items-center justify-center py-2.5 sm:px-24 z-[1]">
                 <div className="flex flex-col flex-wrap">
