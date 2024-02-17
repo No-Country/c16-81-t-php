@@ -13,6 +13,7 @@ class Tournament extends Model
         'name',
         'modality',
         'starts_the',
+        'quantity_teams',
         'link_ingame',
         'image',
         'videogame_id',

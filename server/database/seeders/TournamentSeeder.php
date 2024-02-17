@@ -21,6 +21,7 @@ class TournamentSeeder extends Seeder
             DB::table('tournaments')->insert([
                 'name' => $faker->text(10),
                 'modality' => $faker->randomElement(['1v1', '2v2', '3v3', '4v4', '5v5']),
+                'quantity_teams' => $faker->randomElement([4, 8, 16]),
                 'starts_the' => $faker->dateTimeBetween($startDate = 'now', $endDate = '+1 month'),
                 'link_ingame' => $faker->optional()->url,
                 'image' => $faker->imageUrl($width = 640, $height = 480),

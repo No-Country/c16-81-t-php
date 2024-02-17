@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('modality');
+            $table->integer('quantity_teams');
             $table->timestamp('starts_the');
             $table->string('link_ingame')->nullable();
             $table->string('image');
