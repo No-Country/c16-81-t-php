@@ -16,15 +16,15 @@ class ConfrontationSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 10; $i++) {    
+        for ($i = 0; $i < 8; $i++) {    
             DB::table('confrontations')->insert([
                 'tournament_id' => 1,
-                'team_one_id' => $faker->numberBetween($min = 1,  $max = 10),
-                'team_two_id' => $faker->numberBetween($min = 11, $max = 20),
-                'winner_id'   => $faker->numberBetween($min = 1,  $max = 20),
-                'losser_id'   => $faker->numberBetween($min = 1,  $max = 20),
-                'status_id'   => $faker->numberBetween($min = 1,  $max = 4),
-                'position_id'   => $faker->numberBetween($min = 1,  $max = 4),
+                'team_one_id'   => $faker->numberBetween($min = 1,  $max = 10),
+                'team_two_id'   => $faker->numberBetween($min = 11, $max = 20),
+                'winner_id'     => null, //$faker->numberBetween($min = 1,  $max = 20),
+                'losser_id'     => null, //$faker->numberBetween($min = 1,  $max = 20),
+                'status_id'     => 2, //$faker->numberBetween($min = 1,  $max = 4),
+                'position_id'   => 4 //$faker->numberBetween($min = 1,  $max = 4),
             ]);
         }
     }

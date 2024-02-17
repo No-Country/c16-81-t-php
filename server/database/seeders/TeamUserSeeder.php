@@ -17,26 +17,29 @@ class TeamUserSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 20; $i++) {
-            $teamId = $i + 1;
-            $leaderId = Team::where('id', $teamId)->first()->user_leader_id;
+        // All users are a one man team
+        for ($i = 0; $i < 30; $i++) {
+            $team_id = $i + 1;
+            $leaderId = Team::where('id', $team_id)->first()->user_leader_id;
 
             DB::table('team_users')->insert([
-                'team_id' => $teamId,
+                'team_id' => $team_id,
                 'user_id' => $leaderId,
             ]);
         }
 
-        for ($j = 30; $j >= 20; $j--) {
-            $firstMember = $faker->numberBetween($min = 1, $max = 30);
+        // First 10 users will have a team with other user (team of 2 integrants)
+        for ($j = 31; $j <= 40; $j++) {
+            $leader_id = Team::where('id', $j)->first()->user_leader_id;
+            
             DB::table('team_users')->insert([
                 [
                     'team_id' => $j,
-                    'user_id' => $firstMember,
+                    'user_id' => $leader_id,
                 ],
                 [
                     'team_id' => $j,
-                    'user_id' => $faker->randomDigitNotNull($firstMember),
+                    'user_id' => $faker->randomDigitNot($leader_id)+1,
                 ]
             ]);
         }

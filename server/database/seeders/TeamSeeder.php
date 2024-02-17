@@ -18,7 +18,7 @@ class TeamSeeder extends Seeder
         $faker = Faker::create();
 
         // Make a team for each user
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             $nameUserLeader = User::where('id', $i+1)->first()->nick_name;
             DB::table('teams')->insert([
                 'name' => $nameUserLeader."'s team",
@@ -26,7 +26,7 @@ class TeamSeeder extends Seeder
             ]);
         }
 
-        // Make a random team with two integrants
+        // Make 10 random team with two integrants
         for ($i = 0; $i < 10; $i++) {
             DB::table('teams')->insert([
                 'name' => $faker->citySuffix(),
