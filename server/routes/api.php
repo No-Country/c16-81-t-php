@@ -30,6 +30,7 @@ Route::resource('users', UserController::class);
 Route::resource('confrontations', ConfrontationController::class);
 
 /**Route By Tournaments */
+Route::resource('tournaments', TournamentController::class);
 Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'showConfrontations']);
 
 /**Route By Teams */
