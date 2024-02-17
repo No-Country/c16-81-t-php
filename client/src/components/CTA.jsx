@@ -19,8 +19,8 @@ const CTA = () => {
                         Suscribir <img src={icon} alt='Icon' />
                     </button>
                     <button type='button'           
-                            className={`sm:hidden w-[auto] h-[50px] sm:h-[64px] py-1 px-4 bg-gray-gradient gap-2 flex flex-row items-center justify-between font-monse font-normal text-[16px] text-white hover:text-secondary outline-none rounded-[14px] ml-[-60px]`}> 
-                        Suscribir <img src={icon} alt='Icon' />
+                            className={`sm:hidden w-[auto] h-[50px] sm:h-[64px] py-1 px-4 bg-gray-gradient gap-2 flex flex-row items-center justify-between font-monse font-normal text-[12px] text-white hover:text-secondary outline-none rounded-[14px] ml-[-60px]`}> 
+                        Suscribir <img src={icon} alt='Icon' className='w-[35px]' />
                     </button>
                 </div>  
             </div>
