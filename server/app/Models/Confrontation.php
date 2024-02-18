@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Confrontation extends Model
 {
@@ -18,4 +19,38 @@ class Confrontation extends Model
         'status_id',
         'position_id',
     ];
+
+    public function tournament(): BelongsTo
+    {
+        return $this->belongsTo(Tournament::class);
+    }
+
+    public function position(): BelongsTo
+    {
+        return $this->belongsTo(Position::class);
+    }
+    public function status(): BelongsTo
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function team_one(): BelongsTo
+    {
+        return $this->belongsTo(Team::class);
+    }
+
+    public function team_two(): BelongsTo
+    {
+        return $this->belongsTo(Team::class);
+    }
+
+    public function won_by(): BelongsTo
+    {
+        return $this->belongsTo(Team::class, 'winner_id');
+    }
+
+    public function lost_by(): BelongsTo
+    {
+        return $this->belongsTo(Team::class, 'losser_id');
+    }
 }
