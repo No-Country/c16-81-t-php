@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Tournament;
 use App\Http\Requests\StoreTournamentRequest;
 use App\Http\Requests\UpdateTournamentRequest;
-use Illuminate\Support\Facades\DB;
 
 class TournamentController extends Controller
 {
@@ -72,11 +71,11 @@ class TournamentController extends Controller
 
     public function showConfrontations(string $id)
     {
-        $confrontations = DB::table('confrontations')->get(); //retrieve the fake data
+        $tournament = Tournament::where('id', intval($id))->first();
         
         return response()->json([
             "success" => true,
-            "confrontations" => $confrontations->all()
+            "confrontations" => $tournament->confrontations->all()
         ], 201);
     }
 }
