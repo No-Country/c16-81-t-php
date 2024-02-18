@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Team;
 use App\Http\Requests\StoreTeamRequest;
 use App\Http\Requests\UpdateTeamRequest;
-use Illuminate\Support\Facades\DB;
 
 class TeamController extends Controller
 {
@@ -65,18 +64,13 @@ class TeamController extends Controller
         ], 200);
     }
 
-    public function showIntegrants($id)
+    public function showIntegrants(string $id)
     {
-        $integrants = DB::table('team_users')
-                ->select('team_users.user_id', 'users.nick_name')
-                ->join('teams', 'teams.id', '=', 'team_users.team_id')
-                ->join('users', 'users.id', '=', 'team_users.user_id')
-                ->where('team_id', $id)
-                ->get();
-                
+        $team = Team::where('id', intval($id))->first();
+            
         return response()->json([
             "success" => true,
-            "integrants" => $integrants->all()
+            "integrants" => $team->integrants->all()
         ], 200);
     }
 }

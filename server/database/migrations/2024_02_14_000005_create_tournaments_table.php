@@ -19,9 +19,22 @@ return new class extends Migration
             $table->timestamp('starts_the');
             $table->string('link_ingame')->nullable();
             $table->string('image');
-            $table->foreignId('videogame_id');
-            $table->foreignId('winner_id')->nullable();
-            $table->foreignId('user_admin_id');
+
+            $table->foreignId('videogame_id')
+                    ->constrained('videogames')
+                    ->cascadeOnUpdate()
+                    ->cascadeOnDelete();
+
+            $table->foreignId('winner_id')
+                    ->nullable()
+                    ->constrained('teams')
+                    ->cascadeOnUpdate()
+                    ->cascadeOnDelete();
+
+            $table->foreignId('user_admin_id')
+                    ->constrained('users')
+                    ->cascadeOnUpdate()
+                    ->cascadeOnDelete();
             
             // // Claves foráneas
             // $table->foreign('videogame_id')->references('id')->on('videogames');

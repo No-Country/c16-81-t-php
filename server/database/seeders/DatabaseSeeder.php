@@ -17,12 +17,11 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             TeamSeeder::class,
             TeamUserSeeder::class,
+            VideogameSeeder::class,
+            TournamentSeeder::class,
             StatusSeeder::class,
             PositionSeeder::class,
             ConfrontationSeeder::class,
-            VideogameSeeder::class,
-            TournamentSeeder::class,
         ]);
-
     }
 }
