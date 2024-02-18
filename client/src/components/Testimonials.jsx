@@ -14,12 +14,12 @@ const Testimonials = () => {
                 <img src={quotes} alt="Quotes" className="w-[60px] xs:w-[102px]" />
                 <div className="fles flex-col gap-2 justify-center items-center">
                 <img src={review} alt="Review" />
-                <span className="font-monse font-medium text-texto text-[20px]">
+                <span className="font-monse font-medium text-secondary text-[20px]">
                     Robin Ayala Doe
                 </span>
                 </div>
             </div>
-            <p className="font-monse text-[#5C5D75] text-[18px] text-center text-pretty pt-5 xs:py-5 px-2.5">
+            <p className="font-monse text-[#CBCBDB] text-[18px] text-center text-pretty py-5 px-2.5">
                 Pellentesque malesuada auctor nulla, consequat viverra nibh viverra
                 eu. Vivamus scelerisque commodo fringilla. Nunc non venenatis lacus.
                 Sed feugiat nunc et
@@ -31,12 +31,12 @@ const Testimonials = () => {
                 <img src={quotes} alt="Quotes" className="w-[60px] xs:w-[102px]" />
                 <div className="fles flex-col gap-2 justify-center items-center">
                 <img src={review} alt="Review" />
-                <span className="font-monse font-medium text-texto text-[20px]">
+                <span className="font-monse font-medium text-secondary text-[20px]">
                     John De marli
                 </span>
                 </div>
             </div>
-            <p className="font-monse text-[#5C5D75] text-[18px] text-center text-pretty pt-5 xs:py-5 px-2.5">
+            <p className="font-monse text-[#CBCBDB] text-[18px] text-center text-pretty py-5 px-2.5">
                 Duis at nisi a ex aliquet dapibus quis vitae elit. Ut interdum
                 tempus rutrum. Fusce quis vulputate ligula. Duis pulvinar sem quis
                 iaculis tristique Pellentesque
@@ -48,12 +48,12 @@ const Testimonials = () => {
                 <img src={quotes} alt="Quotes" className="w-[60px] xs:w-[102px]" />
                 <div className="fles flex-col gap-2 justify-center items-center">
                 <img src={review} alt="Review" />
-                <span className="font-monse font-medium text-texto text-[20px]">
+                <span className="font-monse font-medium text-secondary text-[20px]">
                     Rowhan Smith
                 </span>
                 </div>
             </div>
-            <p className="font-monse text-[#5C5D75] text-[18px] text-center text-pretty pt-5 xs:py-5 px-2.5">
+            <p className="font-monse text-[#CBCBDB] text-[18px] text-center text-pretty py-5 px-2.5">
                 Proin faucibus sapien vel mauris laoreet facilisis sit amet sed
                 arcu. Vestibulum dapibus, orci eget consequat sodales, ligula arcu
                 ultrices nunc, ut feugiat diam massa eget sem.

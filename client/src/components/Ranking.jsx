@@ -16,9 +16,9 @@ const Ranking = () => {
                 <div className="flex flex-row items-center justify-center">
                     <img src={avatar} alt='Silver' className='object-cover rounded-full w-[80px] h-[80px] mr-6'/>
                     <div className="info">
-                        <h2 className='font-monse font-extrabold text-[20px] text-texto'>jdoe123</h2>
-                        <h3 className='font-monse font-medium text-[18px] text-texto'>John Doe</h3>
-                        <span className='font-monse font-normal text-[16px] text-texto'>USA</span>
+                        <h2 className='font-monse font-extrabold text-[20px] text-secondary'>jdoe123</h2>
+                        <h3 className='font-monse font-medium text-[18px] text-paragraph'>John Doe</h3>
+                        <span className='font-monse font-normal text-[16px] text-paragraph'>USA</span>
                     </div>
                 </div>
             </div>
@@ -29,9 +29,9 @@ const Ranking = () => {
                 <div className="flex flex-row items-center justify-center ">
                     <img src={avatar} alt='Silver' className='object-cover rounded-full w-[80px] h-[80px] mr-6'/>
                     <div className="info">
-                        <h2 className='font-monse font-extrabold text-[20px] text-texto'>Jans</h2>
-                        <h3 className='font-monse font-medium text-[18px] text-texto'>Jane Smith</h3>
-                        <span className='font-monse font-normal text-[16px] text-texto'>Canada</span>
+                        <h2 className='font-monse font-extrabold text-[20px] text-secondary'>Jans</h2>
+                        <h3 className='font-monse font-medium text-[18px] text-paragraph'>Jane Smith</h3>
+                        <span className='font-monse font-normal text-[16px] text-paragraph'>Canada</span>
                     </div>
                 </div>
             </div>
@@ -43,9 +43,9 @@ const Ranking = () => {
                 <div className="flex flex-row items-center justify-center ">
                     <img src={avatar} alt='Silver' className='object-cover rounded-full w-[80px] h-[80px] mr-6'/>   
                     <div className="info">
-                        <h2 className='font-monse font-extrabold text-[20px] text-texto'>Mike05</h2>
-                        <h3 className='font-monse font-medium text-[18px] text-texto'>Mike Johnson</h3>
-                        <span className='font-monse font-normal text-[16px] text-texto'>Australia</span>
+                        <h2 className='font-monse font-extrabold text-[20px] text-secondary'>Mike05</h2>
+                        <h3 className='font-monse font-medium text-[18px] text-paragraph'>Mike Johnson</h3>
+                        <span className='font-monse font-normal text-[16px] text-paragraph'>Australia</span>
                     </div>
                 </div>
             </div>
@@ -60,9 +60,9 @@ const Ranking = () => {
                 <div className="flex flex-row items-center justify-center ">
                     <img src={avatar} alt='Silver' className='object-cover rounded-full w-[70px] h-[70px] mr-6'/>
                     <div className="info">
-                        <h2 className='font-monse font-extrabold text-[20px] text-texto'>Jans</h2>
-                        <h3 className='font-monse font-medium text-[18px] text-texto'>Jane Smith</h3>
-                        <span className='font-monse font-normal text-[16px] text-texto'>Canada</span>
+                        <h2 className='font-monse font-extrabold text-[20px] text-secondary'>Jans</h2>
+                        <h3 className='font-monse font-medium text-[18px] text-paragraph'>Jane Smith</h3>
+                        <span className='font-monse font-normal text-[16px] text-paragraph'>Canada</span>
                     </div>
                 </div>
             </div>
@@ -74,9 +74,9 @@ const Ranking = () => {
                 <div className="flex flex-row items-center justify-center">
                     <img src={avatar} alt='Silver' className='object-cover rounded-full w-[70px] h-[70px] mr-6'/>
                     <div className="info">
-                        <h2 className='font-monse font-extrabold text-[20px] text-texto'>jdoe123</h2>
-                        <h3 className='font-monse font-medium text-[18px] text-texto'>John Doe</h3>
-                        <span className='font-monse font-normal text-[16px] text-texto'>USA</span>
+                        <h2 className='font-monse font-extrabold text-[20px] text-secondary'>jdoe123</h2>
+                        <h3 className='font-monse font-medium text-[18px] text-paragraph'>John Doe</h3>
+                        <span className='font-monse font-normal text-[16px] text-paragraph'>USA</span>
                     </div>
                 </div>
             </div>
@@ -88,9 +88,9 @@ const Ranking = () => {
                 <div className="flex flex-row items-center justify-center ">
                     <img src={avatar} alt='Silver' className='object-cover rounded-full w-[70px] h-[70px] mr-6'/>   
                     <div className="info">
-                        <h2 className='font-monse font-extrabold text-[20px] text-texto'>Mike05</h2>
-                        <h3 className='font-monse font-medium text-[18px] text-texto'>Mike Johnson</h3>
-                        <span className='font-monse font-normal text-[16px] text-texto'>Australia</span>
+                        <h2 className='font-monse font-extrabold text-[20px] text-secondary'>Mike05</h2>
+                        <h3 className='font-monse font-medium text-[18px] text-paragraph'>Mike Johnson</h3>
+                        <span className='font-monse font-normal text-[16px] text-paragraph'>Australia</span>
                     </div>
                 </div>
             </div>

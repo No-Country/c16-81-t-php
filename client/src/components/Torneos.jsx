@@ -16,14 +16,14 @@ const Torneos = () => {
                     <div className="bg-card max-w-[295px] max-h-[300px] rounded-xl shadow-lg" key={torneo.id}>
                         <div className="flex-1 flex flex-col flex-shrink-0 flex-nowrap mx-4">
                             <img src={torneo.cover} alt="Cover torneo" className='object-cover max-w-[265px] h-[105px] rounded-md my-4' />
-                            <h2 className="font-monse font-extrabold text-[14px] ss:text-[16px] sm:text-[20px] lg:text-[22px] text-texto mb-2 xs:mb-0">{torneo.title}</h2>
+                            <h2 className="font-monse font-extrabold text-[14px] ss:text-[16px] sm:text-[20px] lg:text-[22px] text-secondary">{torneo.title}</h2>
                             <div className="flex flex-row items-center gap-2 mb-2">
-                                <img src={coupon} className="w-[20px] ss:w-[24px]" />
-                                <span className="font-monse font-semibold text-[12px] xxs:text-[16px] text-[#BFC0E0]">{torneo.price}</span>
+                                <img src={coupon} alt="Coupon" width="24" height="auto"/>
+                                <span className="font-monse font-semibold text-[14px] xs:text-[16px] text-[#BFC0E0]">{torneo.price}</span>
                             </div>
                             <div className="flex flex-row items-center gap-2 mb-4">
-                                <img src={calendar} className="w-[20px] ss:w-[24px]" />
-                                <span className="font-monse font-semibold text-[12px] xxs:text-[16px] text-[#BFC0E0]">{torneo.date}</span>
+                                <img src={calendar} alt="Calendar" width="24" height="auto"/>
+                                <span className="font-monse font-semibold text-[14px] xs:text-[16px] text-[#BFC0E0]">{torneo.date}</span>
                             </div>
                             <div className="flex items-center justify-center">
                                 <Link to="/tournament/{id}">

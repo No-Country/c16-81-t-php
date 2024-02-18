@@ -5,10 +5,19 @@ import { imgGames  } from "../data";
 import { Link } from "react-router-dom"
 
 function PauseOnHover() {
+
+  const CustomPrevArrow = ({ onClick }) => (
+    <button className="slick-prev" onClick={onClick}>Previous</button>
+  );
+
+  const CustomNextArrow = ({ onClick }) => (
+    <button className="slick-next" onClick={onClick}>Next</button>
+  );
+
   var settings = {
     dots: true,
-    prevArrow: <button className="slick-prev">Previous</button>,
-    nextArrow: <button className="slick-next">Next</button>,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 1,
@@ -78,6 +87,8 @@ function PauseOnHover() {
               <img
                 src={imgGames.src}
                 alt={imgGames.alt}
+                width="108"
+                height="auto"
                 className="w-[108px] sm:w-[140px] md:w-[200px] lg:w-[190px] object-contain rounded-xl"
               />
             </div>
