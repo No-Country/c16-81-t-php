@@ -9,20 +9,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
-class AutenticateController extends Controller
+class AuthenticationController extends Controller
 {
-    public function Register(RegisterRequest $request){
+    public function register(RegisterRequest $request){
         User::create($request->all());
 
-        return response()->json(["msg" => "User Created"],201);
+        return response()->json(["msg" => "User Created"], 201);
     }
 
-    public function Login(LoginRequest $request){
+    public function login(LoginRequest $request){
         $user = User::where('email',$request->email)->first();
         
         if(!$user || !Hash::check($request->password, $user->password)){
             throw ValidationException::withMessages([
-                'Message' => ["Credentials incorrect"],
+                'message' => ["Credentials incorrect"],
             ]);
         }
 
@@ -31,16 +31,16 @@ class AutenticateController extends Controller
         return response()->json([
             "success" => true,
             "token" => $token,
-            "Message" => "Welcome to the Game Center"
+            "message" => "Welcome to the Game Center"
         ]);
     }
 
-    public function Logout(Request $request){
+    public function logout(Request $request){
         $request->user()->currentAccessToken()->delete();
 
         return response()->json([
             "success" => true,
-            "Message" => "Token Deleted Successfully",
+            "message" => "Token Deleted Successfully",
         ]);
     }
 }
