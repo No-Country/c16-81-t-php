@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ConfrontationController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TeamUserController;
@@ -43,3 +44,10 @@ Route::get('/teams/{id}/integrants', [TeamController::class, 'showIntegrants']);
 
 /**Route By Team Users */
 Route::resource('team_users', TeamUserController::class);
+
+/* Authentication routes */
+Route::post('/register', [AuthenticationController::class, 'register']);
+Route::post('/login', [AuthenticationController::class, 'login']);
+Route::group(['middleware' => ['auth:sanctum']], function() {
+    Route::post('/logout', [AuthenticationController::class, 'logout']);
+});
