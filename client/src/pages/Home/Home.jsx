@@ -3,14 +3,13 @@ import Hero from '../../components/Hero';
 import Partners from '../../components/Partners';
 import Info from '../../components/Info';
 import GamesCarrousel from '../../components/GamesCarrousel';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Torneos from '../../components/Torneos';
 import Ranking from '../../components/Ranking';
 import Testimonials from '../../components/Testimonials';
 import CTA from '../../components/CTA';
-import Footer from '../../components/Footer';
+
 
 
 const Home = () => {
@@ -28,7 +27,6 @@ const Home = () => {
           <Testimonials />
           <CTA />
         </div>
-        <Footer />
     </div>
   )
 }
