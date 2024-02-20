@@ -101,6 +101,8 @@ ArenaMobile es una plataforma web innovadora que tiene como objetivo principal c
         </a>
       </p>
     </td>
+  </tr>
+  <tr>
    <td>
      <p align='center'>
        <img src='' width=150 height=150 />
@@ -115,27 +117,6 @@ ArenaMobile es una plataforma web innovadora que tiene como objetivo principal c
       </p>
       <p align='center'>
         <a href='https://github.com/NehuenCuenca' target='_blank'>
-          <img src='https://github.com/YosstinCode/images_readme/blob/main/Button%20Github.svg' height=30/>
-        </a>
-        <a href='https://www.linkedin.com/in//' target='_blank'>
-          <img src='https://github.com/YosstinCode/images_readme/blob/main/Button%20Linkedin.svg' height=30/>
-        </a>
-      </p>
-    </td>
-   <td>
-     <p align='center'>
-       <img src='https://avatars.githubusercontent.com/u/132180010?v=4' width=150 height=150 />
-     </p>
-      <p align='center'>
-        <span >
-          <b>Viglenis Brito</b>
-        </span>
-        <p align='center' color='gray'>
-           Frontend Developer
-        </p> 
-      </p>
-      <p align='center'>
-        <a href='https://github.com/Viglenis08' target='_blank'>
           <img src='https://github.com/YosstinCode/images_readme/blob/main/Button%20Github.svg' height=30/>
         </a>
         <a href='https://www.linkedin.com/in//' target='_blank'>
@@ -170,9 +151,10 @@ ArenaMobile es una plataforma web innovadora que tiene como objetivo principal c
 
 ## Mockups
 <p align='center'>
-  <img src='https://i.postimg.cc/Nfwp7Bw6/939shots-so.png' />
-  <img src='https://i.postimg.cc/NFLDLjhT/laptop-1.png' />
-  <img src='https://i.postimg.cc/hvwrmRgY/laptop-2.png' />
+  <img src='https://i.postimg.cc/3x9CLTCW/811shots-so.png' />
+  <img src='https://i.postimg.cc/vZGtLBnp/986shots-so.png' />
+  <img src='https://i.postimg.cc/HW7zTFHP/219shots-so.png' />
+  <img src='https://i.postimg.cc/rF19rWD1/424shots-so.png' />
 </p>
 
 
