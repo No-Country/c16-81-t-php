@@ -42,7 +42,9 @@ import codCover from "./cod-cover.webp";
 import freeFireCover from "./free-fire-cover.webp";
 import lolCover from "./lol-cover.webp";
 import pubgCover from "./pubg-cover.webp";
-import art from "./Art.png";
+import art from "./Art.png"; 
+import artMobile from "./Art_mobile.webp";
+import artDesktop from "./Art_desktop.webp";
 
 export {
   logo,
@@ -89,5 +91,7 @@ export {
   freeFireCover,
   lolCover,
   pubgCover,
-  art
+  art,
+  artMobile,
+  artDesktop
 };
