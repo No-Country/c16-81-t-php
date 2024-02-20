@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
-import { art } from "../../assets";
+import { artDesktop } from "../../assets";
 import { Link } from "react-router-dom"
 
 function Formulario() {
@@ -272,7 +272,7 @@ function Formulario() {
         </div>
 
         <div className="hidden md:block">
-            <img src={art} alt="art"/>
+            <img src={artDesktop} alt="artDesktop"/>
         </div>
     </form>
   );
