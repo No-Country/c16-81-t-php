@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { artDesktop } from "../../assets";
-import { Link } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 function Formulario() {
   const {
@@ -28,33 +28,35 @@ function Formulario() {
   const password = useRef(null);
   password.current = watch("password", "");
 
-  const enviarDatos = async (datos) => {
-    try {
-      const respuesta = await fetch('http://127.0.0.1:8000/api/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': "application/json",
-            'withCredentials': "true",
-        },
-        body: JSON.stringify(datos)
-      });
+    const enviarDatos = async (datos, navigate) => {
+        try {
+        const respuesta = await fetch('http://127.0.0.1:8000/api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': "application/json",
+                'withCredentials': "true",
+            },
+            body: JSON.stringify(datos)
+        });
+    
+        if (respuesta.ok) {
+            // Los datos se enviaron correctamente
+            console.log('Datos enviados correctamente');
+            navigate("/login"); // Redirect to login page
+        } else {
+            // Hubo un error al enviar los datos
+            console.error('Error al enviar los datos');
+        }
+        } catch (error) {
+        console.error('Error al enviar los datos:', error);
+        }
+    };
+
   
-      if (respuesta.ok) {
-        // Los datos se enviaron correctamente
-        console.log('Datos enviados correctamente');
-      } else {
-        // Hubo un error al enviar los datos
-        console.error('Error al enviar los datos');
-      }
-    } catch (error) {
-      console.error('Error al enviar los datos:', error);
-    }
-  };
-  
+    const navigate = useNavigate();
     const onSubmit = handleSubmit((datos) => {
-        // console.log(datos);
-        enviarDatos(datos);
+        enviarDatos(datos, navigate);
         reset();
     });
   
