@@ -5,12 +5,35 @@ import { Link } from "react-router-dom"
 
 const LoginForm = () => {
     
-  const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
-    // Aquí se envian los datos del formulario al backend
-    console.log(data);
-  };
+    const onSubmit = handleSubmit((datos) => {
+        console.log(datos);
+        enviarDatosLogin(datos);
+        reset();
+    });
+
+    const enviarDatosLogin = async (datos) => {
+        try {
+        const respuesta = await fetch('http://localhost/login', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datos)
+        });
+
+        if (respuesta.ok) {
+            // Los datos se enviaron correctamente
+            console.log('Datos de inicio de sesión enviados correctamente');
+        } else {
+            // Hubo un error al enviar los datos
+            console.error('Error al enviar los datos de inicio de sesión');
+        }
+        } catch (error) {
+        console.error('Error al enviar los datos de inicio de sesión:', error);
+        }
+    };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}

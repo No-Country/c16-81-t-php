@@ -28,14 +28,9 @@ function Formulario() {
   const password = useRef(null);
   password.current = watch("password", "");
 
-//   const onSubmit = handleSubmit((data) => {
-//     console.log(data);
-//     reset();
-//   });
-
   const enviarDatos = async (datos) => {
     try {
-      const respuesta = await fetch('URL_de_la_API', {
+      const respuesta = await fetch('http://localhost/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -55,9 +50,11 @@ function Formulario() {
     }
   };
   
-  const onSubmit = (datos) => {
-    enviarDatos(datos);
-  };
+    const onSubmit = handleSubmit((datos) => {
+        // console.log(datos);
+        enviarDatos(datos);
+        reset();
+    });
   
 
   return (
