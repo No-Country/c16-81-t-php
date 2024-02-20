@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 const LoginForm = () => {
     
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = handleSubmit((datos) => {
         console.log(datos);
@@ -15,10 +15,12 @@ const LoginForm = () => {
 
     const enviarDatosLogin = async (datos) => {
         try {
-        const respuesta = await fetch('http://localhost/login', {
+        const respuesta = await fetch('http://127.0.0.1:8000/api/login', {
             method: 'POST',
             headers: {
-            'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': "application/json",
+                'withCredentials': "true",
             },
             body: JSON.stringify(datos)
         });

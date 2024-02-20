@@ -30,10 +30,12 @@ function Formulario() {
 
   const enviarDatos = async (datos) => {
     try {
-      const respuesta = await fetch('http://localhost/register', {
+      const respuesta = await fetch('http://127.0.0.1:8000/api/register', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': "application/json",
+            'withCredentials': "true",
         },
         body: JSON.stringify(datos)
       });
@@ -143,9 +145,9 @@ function Formulario() {
                         <label className="block mb-1 font-monse font-medium text-paragraph text-[16px]" htmlFor="gender">Género</label>
                         <select name="gender" id="gender" {...register("gender")}
                         className="shadow-sm px-4 py-2 font-monse font-semibold text-primary bg-[#F7FBFF] text-sm rounded-lg outline-none">
-                        <option value="F">Femenino</option>
-                        <option value="M">Masculino</option>
-                        <option value="O">Otro</option>
+                        <option value="female">Femenino</option>
+                        <option value="male">Masculino</option>
+                        <option value="other">Otro</option>
                         </select>
                     </div>
                 </div>
