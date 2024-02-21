@@ -27,22 +27,27 @@ export const partners = [
   {
     id: "activision",
     icon: activision,
+    url: "https://www.activision.com/es"
   },
   {
     id: "logitech",
     icon: logitech,
+    url: "https://www.logitechg.com/"
   },
   {
     id: "playstation",
     icon: playstation,
+    url: "https://www.playstation.com/es-es/"
   },
   {
     id: "riotgames",
     icon: riotgames,
+    url: "https://www.riotgames.com/es"
   },
   {
     id: "samsung",
     icon: samsung,
+    url: "https://www.samsung.com/latin/"
   },
 ];
 
