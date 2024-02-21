@@ -44,6 +44,9 @@ import lolCover from "./lol-cover.webp";
 import pubgCover from "./pubg-cover.webp";
 import artMobile from "./Art_mobile.webp";
 import artDesktop from "./Art_desktop.webp";
+import GooglePlay from "./GooglePlay.svg";
+import Descargar from "./Descargar.svg";
+import appStore from "./appStore.svg";
 
 export {
   logo,
@@ -91,5 +94,8 @@ export {
   lolCover,
   pubgCover,
   artMobile,
-  artDesktop
+  artDesktop,
+  GooglePlay,
+  appStore,
+  Descargar
 };
