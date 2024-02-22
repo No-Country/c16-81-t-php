@@ -1,4 +1,4 @@
-import { activision, logitech, playstation, riotgames, samsung, codMobile, clashOfClans, FreeFire, clashRoyale, Axie, mobileLegends, pubg, brawlStar, instagram, discord, twitter, axieCover, brawlCover, royaleCover, clansCover, codCover, freeFireCover, lolCover, pubgCover } from "../src/assets";
+import { trophyIcon, userIcon, activision, logitech, playstation, riotgames, samsung, codMobile, clashOfClans, FreeFire, clashRoyale, Axie, mobileLegends, pubg, brawlStar, instagram, discord, twitter, axieCover, brawlCover, royaleCover, clansCover, codCover, freeFireCover, lolCover, pubgCover, teamsIcon } from "../src/assets";
 
 export const navLinks = [
   {
@@ -20,6 +20,11 @@ export const navLinks = [
     id: "dev",
     name: "Dev Team",
     path: '/devTeam'
+  },
+  {
+    id: "dashboard",
+    name: "Dashboard",
+    path: '/dashboard'
   },
 ];
 
@@ -178,5 +183,37 @@ export const socialMedia = [
     id: "social-media-3",
     icon: twitter,
     link: "https://www.twitter.com/",
+  },
+];
+
+export const dashboardTabs = [
+  {
+    title: "Mi perfil",
+    route: "mi-perfil",
+    icon: userIcon,
+    childrens: [
+      {
+        title: "Editar perfil",
+        route: "editar-perfil",
+      },
+      {
+        title: "Suspender perfil",
+        route: "suspender-perfil",
+      },
+      {
+        title: "Cambiar contraseña",
+        route: "cambiar-contraseña",
+      }
+    ]
+  },
+  {
+    title: "Torneos",
+    route: "torneos",
+    icon: trophyIcon
+  },
+  {
+    title: "Equipos",
+    route: "equipos",
+    icon: teamsIcon
   },
 ];
