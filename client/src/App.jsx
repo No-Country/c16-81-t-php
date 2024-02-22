@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar.jsx"
 import Footer from "./components/Footer";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
+import Games from "./pages/Games/Games";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/games" element={<Games />} />
         </Routes>
         <Footer/>
       </BrowserRouter>
