@@ -28,9 +28,7 @@ const LayoutPerfil = () => {
         </ul>
       </nav>
       <br />
-      <div>
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 };
