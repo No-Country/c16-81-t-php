@@ -1,18 +1,18 @@
 import styles from "../../style";
 import { dashboardTabs } from "../../data";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet  } from "react-router-dom";
 
 export default function Dashboard() {
-  const { boxWidth, marginY, paddingX, flexStart } = styles;
+  const { boxWidth, paddingX, flexStart } = styles;
 
   return (
-    <div className={`${boxWidth} ${marginY} ${paddingX}`}>
+    <div className={`${boxWidth} py-10 ${paddingX}`}>
       <div
-        className={`h-[80vh] bg-card rounded-xl py-6 px-5 ${flexStart} gap-3`}
+        className={`min-h-[80vh] bg-card rounded-xl py-6 px-5 ${flexStart} gap-3 `}
       >
         <ul
           id="tabs-list"
-          className="bg-greyPurple monse text-card bg-opacity-40 h-full overflow-y-auto w-1/4 px-2 py-10 flex flex-col gap-2 rounded-lg"
+          className="min-h-[80vh] max-h-[80vh] overflow-y-auto w-1/4 bg-greyPurple monse text-card bg-opacity-40 px-2 py-10 flex flex-col gap-2 rounded-lg"
         >
           {dashboardTabs.map((tab, index) => (
             <li key={index}>
@@ -27,11 +27,8 @@ export default function Dashboard() {
             </li>
           ))}
         </ul>
-        <div
-          id="tabs-content"
-          className="p-4 bg-greyPurple bg-opacity-40 h-full w-full rounded-lg"
-        >
-          <Outlet />
+        <div id="tabs-content" className="min-h-[80vh] w-full p-4 bg-greyPurple bg-opacity-40 rounded-lg">
+          <Outlet/>
         </div>
       </div>
     </div>
