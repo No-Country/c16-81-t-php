@@ -15,14 +15,12 @@ const Testimonials = () => {
                 <div className="fles flex-col gap-2 justify-center items-center">
                 <img src={review} alt="Review" />
                 <span className="font-monse font-medium text-secondary text-[20px]">
-                    Robin Ayala Doe
+                    Mathias Gomez
                 </span>
                 </div>
             </div>
             <p className="font-monse text-[#CBCBDB] text-[18px] text-center text-pretty py-5 px-2.5">
-                Pellentesque malesuada auctor nulla, consequat viverra nibh viverra
-                eu. Vivamus scelerisque commodo fringilla. Nunc non venenatis lacus.
-                Sed feugiat nunc et
+            ArenaMobile ha sido un verdadero hallazgo para mí. La plataforma es intuitiva y me ha permitido sumergirme en la emoción de los torneos de videojuegos móviles. 
             </p>
             </div>
 
@@ -32,14 +30,12 @@ const Testimonials = () => {
                 <div className="fles flex-col gap-2 justify-center items-center">
                 <img src={review} alt="Review" />
                 <span className="font-monse font-medium text-secondary text-[20px]">
-                    John De marli
+                    Carlos Morales
                 </span>
                 </div>
             </div>
             <p className="font-monse text-[#CBCBDB] text-[18px] text-center text-pretty py-5 px-2.5">
-                Duis at nisi a ex aliquet dapibus quis vitae elit. Ut interdum
-                tempus rutrum. Fusce quis vulputate ligula. Duis pulvinar sem quis
-                iaculis tristique Pellentesque
+            Desde que descubrí ArenaMobile, mi pasión por los videojuegos móviles ha alcanzado nuevas alturas. La organización de torneos es impecable.
             </p>
             </div>
 
@@ -49,27 +45,15 @@ const Testimonials = () => {
                 <div className="fles flex-col gap-2 justify-center items-center">
                 <img src={review} alt="Review" />
                 <span className="font-monse font-medium text-secondary text-[20px]">
-                    Rowhan Smith
+                    Thiago Rodriguez
                 </span>
                 </div>
             </div>
             <p className="font-monse text-[#CBCBDB] text-[18px] text-center text-pretty py-5 px-2.5">
-                Proin faucibus sapien vel mauris laoreet facilisis sit amet sed
-                arcu. Vestibulum dapibus, orci eget consequat sodales, ligula arcu
-                ultrices nunc, ut feugiat diam massa eget sem.
+             Me he encontrado con jugadores increíbles y he disfrutado de cada competencia. La emoción de ganar un torneo es incomparable!!
             </p>
             </div>
-        </div>
-
-        {/* <div className="flex mt-4 justify-center gap-2">
-            <button className=" bg-gray-gradient w-[40px] h-[40px] rounded-full z-[2] flex items-center justify-center">
-                <img src={arrowLeft} alt="Previous" className='w-[30px]' />
-            </button>
-            <button className="bg-gray-gradient w-[40px] h-[40px] rounded-full z-[2] flex items-center justify-center">
-                <img src={arrowRight} alt="Next"  className='w-[30px]' />
-            </button>
-        </div> */}
-        
+        </div>        
     </section>
   )
 }
