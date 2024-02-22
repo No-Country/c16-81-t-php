@@ -11,6 +11,8 @@ module.exports = {
         purple: "#B985FB",
         card: "#343549",
         texto: "#787AA5",
+        greyPurple: '#6D6D8A',
+        activePurple: '#6767A9',
       },
       fontFamily: {
         monse: ["Montserrat", "sans-serif"],

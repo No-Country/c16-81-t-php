@@ -44,6 +44,9 @@ import lolCover from "./lol-cover.webp";
 import pubgCover from "./pubg-cover.webp";
 import artMobile from "./Art_mobile.webp";
 import artDesktop from "./Art_desktop.webp";
+import userIcon from "./userIcon.svg"
+import trophyIcon from "./trophyIcon.svg"
+import teamsIcon from "./teamsIcon.svg"
 
 export {
   logo,
@@ -91,5 +94,8 @@ export {
   lolCover,
   pubgCover,
   artMobile,
-  artDesktop
+  artDesktop,
+  userIcon,
+  trophyIcon,
+  teamsIcon
 };
