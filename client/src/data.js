@@ -195,6 +195,7 @@ export const dashboardTabs = [
       {
         title: "Editar perfil",
         route: "editar-perfil",
+        backgroundClassStyles: "darkPurple bg-opacity-40"
       },
       {
         title: "Suspender perfil",

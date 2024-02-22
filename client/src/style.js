@@ -13,6 +13,9 @@ const styles = {
   
     marginX: "sm:mx-16 mx-6",
     marginY: "sm:my-16 my-6",
+  
+    labelElement: "block mb-1 font-monse font-medium text-paragraph text-[16px]",
+    inputElement: "shadow-sm px-4 py-2 font-monse font-semibold text-primary bg-[#F7FBFF] text-sm rounded-lg outline-none"
   };
   
   export const layout = {

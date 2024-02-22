@@ -13,6 +13,8 @@ module.exports = {
         texto: "#787AA5",
         greyPurple: '#6D6D8A',
         activePurple: '#6767A9',
+        darkPurple: '#322E67',
+        ligthPurple: '#BFC0E0'
       },
       fontFamily: {
         monse: ["Montserrat", "sans-serif"],
