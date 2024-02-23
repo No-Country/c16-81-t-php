@@ -210,11 +210,39 @@ export const dashboardTabs = [
   {
     title: "Torneos",
     route: "torneos",
-    icon: trophyIcon
+    icon: trophyIcon,
+    childrens: [
+      {
+        title: "Crear torneo",
+        route: "crear-torneo",
+      },
+      {
+        title: "Mis torneos",
+        route: "mis-torneos",
+      },
+      {
+        title: "Participando",
+        route: "participando",
+      }
+    ]
   },
   {
     title: "Equipos",
     route: "equipos",
-    icon: teamsIcon
+    icon: teamsIcon,
+    childrens: [
+      {
+        title: "Crear equipo",
+        route: "crear-equipo",
+      },
+      {
+        title: "Mis Equipos",
+        route: "mis-equipos",
+      },
+      {
+        title: "Integrando",
+        route: "integrando",
+      }
+    ]
   },
 ];
