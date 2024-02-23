@@ -12,15 +12,16 @@ import EditProfile from "./pages/Dashboard/Profile/EditProfile.jsx";
 import SuspendProfile from "./pages/Dashboard/Profile/SuspendProfile.jsx";
 import ChangePassword from "./pages/Dashboard/Profile/ChangePassword.jsx";
 
-import LayoutTournament from "./pages/Dashboard/Tournament/LayoutTournament.jsx"
-import CreateTournament from "./pages/Dashboard/Tournament/CreateTournament.jsx"
-import MyTournaments from "./pages/Dashboard/Tournament/MyTournaments.jsx"
-import Participating from "./pages/Dashboard/Tournament/Participating.jsx"
+import LayoutTournament from "./pages/Dashboard/Tournament/LayoutTournament.jsx";
+import CreateTournament from "./pages/Dashboard/Tournament/CreateTournament.jsx";
+import MyTournaments from "./pages/Dashboard/Tournament/MyTournaments.jsx";
+import Participating from "./pages/Dashboard/Tournament/Participating.jsx";
 
 import LayoutTeam from "./pages/Dashboard/Team/LayoutTeam.jsx";
 import CreateTeam from "./pages/Dashboard/Team/CreateTeam.jsx";
 import MyTeams from "./pages/Dashboard/Team/MyTeams.jsx";
 import Integrating from "./pages/Dashboard/Team/Integrating.jsx";
+import Games from "./pages/Games/Games";
 
 export default function App() {
   return (
@@ -36,25 +37,31 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/games" element={<Games />} />
+
             <Route path="/dashboard" element={<Dashboard />}>
               <Route path="/dashboard/mi-perfil" element={<LayoutProfile />}>
                 <Route path="editar-perfil" element={<EditProfile />} />
                 <Route path="suspender-perfil" element={<SuspendProfile />} />
                 <Route path="cambiar-contraseña" element={<ChangePassword />} />
                 <Route index element={<WatchProfile />} />
-              </Route>    
+              </Route>
 
               <Route path="/dashboard/torneos" element={<LayoutTournament />}>
-                <Route path="crear-torneo" index element={<CreateTournament />} />
+                <Route
+                  path="crear-torneo"
+                  index
+                  element={<CreateTournament />}
+                />
                 <Route path="mis-torneos" element={<MyTournaments />} />
                 <Route path="participando" element={<Participating />} />
-              </Route>  
+              </Route>
 
               <Route path="/dashboard/equipos" element={<LayoutTeam />}>
                 <Route path="crear-equipo" index element={<CreateTeam />} />
                 <Route path="mis-equipos" element={<MyTeams />} />
                 <Route path="integrando" element={<Integrating />} />
-              </Route>              
+              </Route>
             </Route>
           </Routes>
           <Footer />

@@ -47,6 +47,9 @@ import artDesktop from "./Art_desktop.webp";
 import userIcon from "./userIcon.svg"
 import trophyIcon from "./trophyIcon.svg"
 import teamsIcon from "./teamsIcon.svg"
+import GooglePlay from "./GooglePlay.svg";
+import Descargar from "./Descargar.svg";
+import appStore from "./appStore.svg";
 
 export {
   logo,
@@ -97,5 +100,8 @@ export {
   artDesktop,
   userIcon,
   trophyIcon,
-  teamsIcon
+  teamsIcon,
+  GooglePlay,
+  appStore,
+  Descargar,
 };
