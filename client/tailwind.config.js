@@ -14,7 +14,8 @@ module.exports = {
         greyPurple: '#6D6D8A',
         activePurple: '#6767A9',
         darkPurple: '#322E67',
-        ligthPurple: '#BFC0E0'
+        ligthPurple: '#BFC0E0',
+        greyPage: '#D9D9D9'
       },
       fontFamily: {
         monse: ["Montserrat", "sans-serif"],
