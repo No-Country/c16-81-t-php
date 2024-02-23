@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { dashboardTabs } from "../../../data.js";
 
 
-const LayoutPerfil = () => {
+const LayoutProfile = () => {
   return (
     <div>
       <nav className="py-6 px-10 bg-activePurple rounded-lg">
@@ -17,7 +17,7 @@ const LayoutPerfil = () => {
                 className={({ isActive }) =>
                   [
                     isActive ? "underline font-extrabold" : "font-bold", 
-                    "text-card", "text-2xl",
+                    "text-card text-2xl",
                   ].join(" ")
                 }
               >
@@ -33,4 +33,4 @@ const LayoutPerfil = () => {
   );
 };
 
-export default LayoutPerfil;
+export default LayoutProfile;
