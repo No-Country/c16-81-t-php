@@ -1,6 +1,6 @@
 import styles from "../../style";
 import { dashboardTabs } from "../../data";
-import { Link, Outlet  } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 export default function Dashboard() {
   const { boxWidth, paddingX, flexStart } = styles;
@@ -16,14 +16,18 @@ export default function Dashboard() {
         >
           {dashboardTabs.map((tab, index) => (
             <li key={index}>
-              <Link
+              <NavLink
                 to={tab.route}
-                className={`px-1 py-5 rounded-md flex gap-2 items-center justify-center 
-              ${index === 0 ? "bg-activePurple" : "bg-greyPurple"} `}
+                className={({ isActive }) =>
+                  [
+                    isActive ? "bg-activePurple" : "bg-greyPurple", 
+                    "px-1 py-5 rounded-md flex gap-2 items-center justify-center",
+                  ].join(" ")
+                }
               >
                 <object data={tab.icon} width="25" height="25"></object>
                 <span className="text-xl font-bold">{tab.title}</span>
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
