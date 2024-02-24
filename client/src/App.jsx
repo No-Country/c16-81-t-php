@@ -22,6 +22,7 @@ import CreateTeam from "./pages/Dashboard/Team/CreateTeam.jsx";
 import MyTeams from "./pages/Dashboard/Team/MyTeams.jsx";
 import Integrating from "./pages/Dashboard/Team/Integrating.jsx";
 import Games from "./pages/Games/Games";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 export default function App() {
   return (
@@ -38,8 +39,8 @@ export default function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/games" element={<Games />} />
-
-            <Route path="/dashboard" element={<Dashboard />}>
+            
+            <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}>
               <Route path="/dashboard/mi-perfil" element={<LayoutProfile />}>
                 <Route path="editar-perfil" element={<EditProfile />} />
                 <Route path="suspender-perfil" element={<SuspendProfile />} />
@@ -48,11 +49,7 @@ export default function App() {
               </Route>
 
               <Route path="/dashboard/torneos" element={<LayoutTournament />}>
-                <Route
-                  path="crear-torneo"
-                  index
-                  element={<CreateTournament />}
-                />
+                <Route path="crear-torneo" index element={<CreateTournament />} />
                 <Route path="mis-torneos" element={<MyTournaments />} />
                 <Route path="participando" element={<Participating />} />
               </Route>
