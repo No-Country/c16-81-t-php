@@ -44,6 +44,9 @@ import lolCover from "./lol-cover.webp";
 import pubgCover from "./pubg-cover.webp";
 import artMobile from "./Art_mobile.webp";
 import artDesktop from "./Art_desktop.webp";
+import userIcon from "./userIcon.svg"
+import trophyIcon from "./trophyIcon.svg"
+import teamsIcon from "./teamsIcon.svg"
 import GooglePlay from "./GooglePlay.svg";
 import Descargar from "./Descargar.svg";
 import appStore from "./appStore.svg";
@@ -95,7 +98,10 @@ export {
   pubgCover,
   artMobile,
   artDesktop,
+  userIcon,
+  trophyIcon,
+  teamsIcon,
   GooglePlay,
   appStore,
-  Descargar
+  Descargar,
 };

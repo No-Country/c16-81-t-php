@@ -1,11 +1,12 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { artMobile } from "../../assets";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const LoginForm = () => {
-    
+
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const navigate = useNavigate();
 
     const onSubmit = handleSubmit((datos) => {
         console.log(datos);
@@ -28,12 +29,13 @@ const LoginForm = () => {
         if (respuesta.ok) {
             // Los datos se enviaron correctamente
             console.log('Datos de inicio de sesión enviados correctamente');
+            navigate("/dashboard");
         } else {
             // Hubo un error al enviar los datos
             console.error('Error al enviar los datos de inicio de sesión');
         }
         } catch (error) {
-        console.error('Error al enviar los datos de inicio de sesión:', error);
+            console.error('Error al enviar los datos de inicio de sesión:', error);
         }
     };
 
