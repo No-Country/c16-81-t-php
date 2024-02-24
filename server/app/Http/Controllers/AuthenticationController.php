@@ -43,4 +43,11 @@ class AuthenticationController extends Controller
             "message" => "Token Deleted Successfully",
         ]);
     }
+
+    /**
+    * Checks the user owner of the given authorization bearer token
+    */
+    public function verify_token(Request $request){
+        return $request->user();
+    }
 }

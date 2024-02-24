@@ -21,9 +21,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 /**Route By Users */
 Route::resource('users', UserController::class);
@@ -50,4 +47,5 @@ Route::post('/register', [AuthenticationController::class, 'register']);
 Route::post('/login', [AuthenticationController::class, 'login']);
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/logout', [AuthenticationController::class, 'logout']);
+    Route::get('/verify-token', [AuthenticationController::class, 'verify_token']);
 });

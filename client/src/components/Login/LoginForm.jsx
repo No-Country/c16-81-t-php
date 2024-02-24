@@ -25,17 +25,20 @@ const LoginForm = () => {
             },
             body: JSON.stringify(datos)
         });
-
-        if (respuesta.ok) {
-            // Los datos se enviaron correctamente
-            console.log('Datos de inicio de sesión enviados correctamente');
-            navigate("/dashboard");
-        } else {
-            // Hubo un error al enviar los datos
-            console.error('Error al enviar los datos de inicio de sesión');
+        
+        const data = await respuesta.json()
+        if (!respuesta.ok) {
+            throw new Error(`Error al iniciar sesión: ${data.message}`)
         }
+
+        const { token, message } = data 
+        console.log(message)
+        localStorage.setItem('ARENA_MOBILE_USER_TOKEN', token)
+        navigate("/dashboard");
+        
         } catch (error) {
-            console.error('Error al enviar los datos de inicio de sesión:', error);
+            console.error(error.message);
+            alert(error.message)
         }
     };
 
