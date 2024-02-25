@@ -1,10 +1,53 @@
-import { useState } from "react"
-import { Link, NavLink } from "react-router-dom"
-import {logo, menu, close} from '../assets';
+import { useEffect, useState } from "react"
+import { Link, NavLink, useNavigate } from "react-router-dom"
+import { logo, menu, close } from '../assets';
 import { navLinks } from '../data';
 
 const Navbar = () => {
+    const navigate = useNavigate();
+    
     const [toggle, setToggle] = useState(false);
+    const [hasToken, setHasToken] = useState(false)
+
+    useEffect(() => {
+        const handleStorage  = () => { 
+            setHasToken(!!localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME))
+        }
+            
+        window.addEventListener('storage', handleStorage)
+        
+        return () => { window.removeEventListener('storage', handleStorage) }
+    }, [])
+
+    const logout = async() => { 
+        try {
+            const token = localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME)
+            const resp = await fetch('http://127.0.0.1:8000/api/logout', {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    Accept: "application/json",
+                    withCredentials: "true",
+                },
+            });
+            
+            const data = await resp.json()
+            if (!resp.ok) {
+                throw new Error(`Error al iniciar sesión: ${data.message}`)
+            }
+    
+            const { message } = data 
+            console.log(message)
+            localStorage.removeItem(import.meta.env.VITE_USER_TOKEN_NAME)
+            window.dispatchEvent(new Event("storage"));
+                        
+        } catch (error) {
+            console.error(error.message);
+            alert(error.message)
+        }
+
+        navigate("/");
+    }
   
     return (
         <nav className="bg-primary w-full overflow-hidden">
@@ -15,7 +58,7 @@ const Navbar = () => {
                 </Link>
 
                 <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-                    {navLinks.map((nav, index) => (
+                    {navLinks.map((nav) => (
                         <li 
                         key={nav.id}
                         className={`font-monse font-medium cursor-pointer text-[16px] mr-10
@@ -28,17 +71,34 @@ const Navbar = () => {
                         </NavLink>
                         </li>
                     ))}
-                    <li>
-                        <Link to="/login">
-                        <button 
-                            type='button'           
-                            className={`py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
-                            text-white hover:text-secondary outline-none rounded-[14px] shadow-xl`}
-                        > 
-                            Ingresar
-                        </button>
-                        </Link>
-                    </li>
+                    {
+                            !hasToken && 
+                            <li>
+                            <Link to="/login">
+                            <button 
+                                type='button'           
+                                className={`mt-4 py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
+                                text-white hover:text-secondary outline-none rounded-[14px] shadow-xl`}
+                            > 
+                                Ingresar
+                            </button>
+                            </Link>
+                        </li>}
+                        {
+                            hasToken &&
+                            <li>
+                            <Link to="/">
+                            <button 
+                                onClick={logout}
+                                type='button'           
+                                className={`mt-4 py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
+                                text-white hover:text-secondary outline-none rounded-[14px] shadow-xl`}
+                            > 
+                                Cerrar sesion
+                            </button>
+                            </Link>
+                        </li>
+                    }
                 </ul>
 
         
@@ -64,7 +124,9 @@ const Navbar = () => {
                         </NavLink>
                         </li>
                         ))}
-                        <li>
+                        {
+                            !hasToken && 
+                            <li>
                             <Link to="/login">
                             <button 
                                 type='button'           
@@ -74,7 +136,22 @@ const Navbar = () => {
                                 Ingresar
                             </button>
                             </Link>
+                        </li>}
+                        {
+                            hasToken &&
+                            <li>
+                            <Link to="/">
+                            <button 
+                                type='button'           
+                                onClick={logout}
+                                className={`mt-4 py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
+                                text-white hover:text-secondary outline-none rounded-[14px] shadow-xl`}
+                            > 
+                                Cerrar sesion
+                            </button>
+                            </Link>
                         </li>
+                        }
                     </ul>
                     </div>
                 </div>
