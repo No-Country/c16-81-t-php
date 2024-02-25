@@ -1,4 +1,3 @@
-import React from 'react'
 import { useForm } from 'react-hook-form';
 import { artMobile } from "../../assets";
 import { Link, useNavigate } from "react-router-dom"
@@ -33,7 +32,9 @@ const LoginForm = () => {
 
         const { token, message } = data 
         console.log(message)
-        localStorage.setItem('ARENA_MOBILE_USER_TOKEN', token)
+        localStorage.setItem(import.meta.env.VITE_USER_TOKEN_NAME, token)
+        window.dispatchEvent(new Event("storage"));
+
         navigate("/dashboard");
         
         } catch (error) {
@@ -60,7 +61,7 @@ const LoginForm = () => {
                         value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
                         },
                     })} />
-                    {errors.email && <span span className='text-red-500'>Este campo es requerido</span>}
+                    {errors.email && <span className='text-red-500'>Este campo es requerido</span>}
                 </div>
                 <div className='flex flex-col'>
                     <label className="block mb-1 font-monse font-medium text-paragraph text-[16px]">Contraseña</label>
