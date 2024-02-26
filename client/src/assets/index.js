@@ -49,7 +49,10 @@ import trophyIcon from "./trophyIcon.svg"
 import teamsIcon from "./teamsIcon.svg"
 import GooglePlay from "./GooglePlay.svg";
 import Descargar from "./Descargar.svg";
-import appStore from "./appStore.svg";
+import appStore from "./appStore.svg"; 
+import primerLugar from "./primerLugar.png";
+import segundoLugar from "./segundoLugar.png";
+import tercerLugar from "./tercerLugar.png";
 
 export {
   logo,
@@ -104,4 +107,7 @@ export {
   GooglePlay,
   appStore,
   Descargar,
+  primerLugar,
+  segundoLugar,
+  tercerLugar
 };

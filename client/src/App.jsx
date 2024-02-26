@@ -23,6 +23,7 @@ import MyTeams from "./pages/Dashboard/Team/MyTeams.jsx";
 import Integrating from "./pages/Dashboard/Team/Integrating.jsx";
 import Games from "./pages/Games/Games";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import Ranking from "./pages/Ranking/Ranking";
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/games" element={<Games />} />
+            <Route path="/leaderboard" element={<Ranking />} />
             
             <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}>
               <Route path="/dashboard/mi-perfil" element={<LayoutProfile />}>
