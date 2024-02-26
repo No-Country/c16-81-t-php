@@ -30,7 +30,7 @@ export default function App() {
     <>
       <div className="bg-primary w-full overflow-hidden">
         <BrowserRouter>
-          <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+          <div className={`${styles.paddingX} ${styles.flexCenter} relative z-50`}>
             <div className={`${styles.boxWidth}`}>
               <Navbar />
             </div>
