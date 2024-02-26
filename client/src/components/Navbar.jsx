@@ -135,7 +135,7 @@ const Navbar = () => {
                         {
                             !hasToken && 
                             <li>
-                            <Link to="/login">
+                            <Link to="/login" onClick={() => setToggle(false)}>
                             <button 
                                 type='button'           
                                 className={` py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
