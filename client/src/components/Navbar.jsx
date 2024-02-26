@@ -19,7 +19,8 @@ const Navbar = () => {
         return () => { window.removeEventListener('storage', handleStorage) }
     }, [])
 
-    const logout = async() => { 
+    const logout = async() => {
+        setToggle(false); 
         try {
             const token = localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME)
             const resp = await fetch('http://127.0.0.1:8000/api/logout', {
@@ -96,7 +97,7 @@ const Navbar = () => {
                                 className={` py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
                                 text-white hover:text-secondary outline-none rounded-[14px] shadow-xl`}
                             > 
-                                Cerrar sesion
+                                Cerrar sesión
                             </button>
                             </Link>
                         </li>
@@ -120,7 +121,10 @@ const Navbar = () => {
                         key={nav.id}
                         className={`font-monse font-normal cursor-pointer text-[16px] ${index === navLinks.length - 1 ? 'mr-0 mb-4' : 'mb-4'} text-white`}
                         >
-                        <NavLink to={nav.path} className={({ isActive }) =>
+                        <NavLink 
+                        to={nav.path} 
+                        onClick={() => setToggle(false)}
+                        className={({ isActive }) =>
                             isActive ? 'text-white font-semibold' : 'text-secondary font-medium'
                         }>
                             {nav.name}
@@ -151,7 +155,7 @@ const Navbar = () => {
                                 className={` py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
                                 text-white hover:text-secondary outline-none rounded-[14px] shadow-xl`}
                             > 
-                                Cerrar sesion
+                                Cerrar sesión
                             </button>
                             </Link>
                         </li>
