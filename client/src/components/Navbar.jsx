@@ -15,6 +15,7 @@ const Navbar = () => {
         }
             
         window.addEventListener('storage', handleStorage)
+        handleStorage()
         
         return () => { window.removeEventListener('storage', handleStorage) }
     }, [])
