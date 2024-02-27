@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Tournament;
 use App\Http\Requests\StoreTournamentRequest;
 use App\Http\Requests\UpdateTournamentRequest;
+use Illuminate\Http\Request;
 
 class TournamentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $tournaments = Tournament::all();
+        $paginateBy = $request->integer('paginatedBy', 0) ?? 0;
+
+        $tournaments = Tournament::paginate($paginateBy);
+
         return response()->json([
             "success" => true,
             "tournaments" => $tournaments
@@ -25,7 +29,21 @@ class TournamentController extends Controller
      */
     public function store(StoreTournamentRequest $request)
     {
-        $tournament = Tournament::create($request->all());
+        $adminNick_name = $request->user()->nick_name;
+        $fallbackImage = "https://via.placeholder.com/640x480.png/001122?text=$adminNick_name";
+        
+        $tournament = Tournament::create([
+            'name' => $request->input('name', "Torneo de ".$adminNick_name),
+            'modality' => $request->input('modality'), 
+            'quantity_teams' => $request->input('quantity_teams'), 
+            'starts_the' => $request->input('starts_the'), 
+            'link_ingame' => $request->input('link_ingame'), 
+            'image' => $request->input('image', $fallbackImage) ?? $fallbackImage, 
+            'videogame_id' => $request->input('videogame_id'), 
+            'user_admin_id' => $request->user()->id, 
+            'winner_id' => null, 
+        ]);
+
         return response()->json([
             "success" => true,
             "msg" => "Tournament created successfully",
