@@ -64,9 +64,9 @@ const RankTable = () => {
           {playerData.map((player, index) => (
             <tr
               key={index}
-              className={`bg-card border-b border-paragraph hover:backdrop-blur-sm hover:bg-white/30 font-monse text-paragraph text-[16px] md:text-xl ${
+              className={`bg-card border-b border-paragraph hover:backdrop-blur-sm hover:bg-white/30 font-monse font-semibold text-paragraph hover:text-primary text-[16px] md:text-xl ${
                 index === playerData.length - 1 ? 'border-b-0' : ''}`}>
-                <th scope="row" className="px-6 py-4 font-medium">
+                <th scope="row" className="px-6 py-4 font-monse font-semibold">
                     <div className="flex flex-row justify-center">
                         {index < 3 && (
                         <img
@@ -75,7 +75,7 @@ const RankTable = () => {
                             alt={`Lugar ${index + 1}`}
                         />
                         )}
-                        {index >= 3 && <h1 className="font-monse text-secondary text-3xl">{`${index + 1}°`}</h1>}
+                        {index >= 3 && <h1 className="font-monse font-semibold text-secondary hover:text-primary text-3xl">{`${index + 1}°`}</h1>}
                     </div>
                 </th>
                 <td className="px-6 py-4">{player.nombre}</td>
