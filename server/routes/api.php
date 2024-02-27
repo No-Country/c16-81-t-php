@@ -28,9 +28,6 @@ Route::resource('users', UserController::class);
 /**Route By Confrontations */
 Route::resource('confrontations', ConfrontationController::class);
 
-/**Route By Tournaments */
-Route::resource('tournaments', TournamentController::class);
-Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'showConfrontations']);
 
 /**Route By Videogames */
 Route::resource('videogames', VideogameController::class);
@@ -48,4 +45,8 @@ Route::post('/login', [AuthenticationController::class, 'login']);
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/logout', [AuthenticationController::class, 'logout']);
     Route::get('/verify-token', [AuthenticationController::class, 'verify_token']);
+
+    /**Route By Tournaments */
+    Route::resource('tournaments', TournamentController::class);
+    Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'showConfrontations']);
 });
