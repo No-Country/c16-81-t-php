@@ -11,7 +11,7 @@ const LayoutTeam = () => {
             <li key={index}>
               <div className="flex items-center">
                 <svg className="rtl:rotate-180 w-3 h-3 text-secondary mx-1" aria-hidden="true" fill="none" viewBox="0 0 6 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
                 </svg>
                 <NavLink
                   to={childrenTab.route}
