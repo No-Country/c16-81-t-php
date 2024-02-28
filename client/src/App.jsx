@@ -43,22 +43,24 @@ export default function App() {
             <Route path="/leaderboard" element={<Ranking />} />
             
             <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}>
-              <Route path="/dashboard/mi-perfil" element={<LayoutProfile />}>
+              <Route path="mi-perfil" element={<LayoutProfile />}>
+                <Route index element={<WatchProfile />} />
                 <Route path="editar-perfil" element={<EditProfile />} />
                 <Route path="suspender-perfil" element={<SuspendProfile />} />
                 <Route path="cambiar-contraseña" element={<ChangePassword />} />
-                <Route index element={<WatchProfile />} />
               </Route>
 
               <Route path="/dashboard/torneos" element={<LayoutTournament />}>
-                <Route path="crear-torneo" index element={<CreateTournament />} />
+                <Route index element={<CreateTournament />} />
                 <Route path="mis-torneos" element={<MyTournaments />} />
+                <Route path="crear-torneo" element={<CreateTournament />} />
                 <Route path="participando" element={<Participating />} />
               </Route>
 
               <Route path="/dashboard/equipos" element={<LayoutTeam />}>
-                <Route path="crear-equipo" index element={<CreateTeam />} />
+                <Route index element={<CreateTeam />}/>
                 <Route path="mis-equipos" element={<MyTeams />} />
+                <Route path="crear-equipo" element={<CreateTeam />} />
                 <Route path="integrando" element={<Integrating />} />
               </Route>
             </Route>

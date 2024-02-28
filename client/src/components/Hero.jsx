@@ -33,7 +33,7 @@ const Hero = () => (
       </div>
 
       <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative px-2`}>
-        <img src={trophy} alt="Trophy" className='w-[400px] sm:w-[600px] relative z-[1]'/>
+        <img src={trophy} alt="Trophy" className='w-[400px] sm:w-[600px] aspect-auto relative z-[1]'/>
       </div>
     </section>
   )

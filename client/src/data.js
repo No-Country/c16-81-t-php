@@ -218,12 +218,12 @@ export const dashboardTabs = [
     icon: trophyIcon,
     childrens: [
       {
-        title: "Crear torneo",
-        route: "crear-torneo",
-      },
-      {
         title: "Mis torneos",
         route: "mis-torneos",
+      },
+      {
+        title: "Crear torneo",
+        route: "crear-torneo",
       },
       {
         title: "Participando",
@@ -237,12 +237,12 @@ export const dashboardTabs = [
     icon: teamsIcon,
     childrens: [
       {
-        title: "Crear equipo",
-        route: "crear-equipo",
-      },
-      {
         title: "Mis Equipos",
         route: "mis-equipos",
+      },
+      {
+        title: "Crear equipo",
+        route: "crear-equipo",
       },
       {
         title: "Integrando",

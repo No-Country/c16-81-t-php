@@ -1,9 +1,12 @@
 import styles from "../../style";
 import { dashboardTabs } from "../../data";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { dashboardPreview } from "../../assets";
 
 export default function Dashboard() {
   const { boxWidth, paddingX, flexStart } = styles;
+  const location = useLocation();
+  const isChildRoute = location.pathname !== '/dashboard';
 
   return (
     <div className={`${boxWidth} py-10 ${paddingX}`}>
@@ -31,6 +34,14 @@ export default function Dashboard() {
           ))}
         </ul>
         <div id="tabs-content" className="min-h-[80vh] w-full p-4 bg-greyPurple bg-opacity-40 rounded-lg">
+          {!isChildRoute && (
+            <>
+              <h1 className="font-monse font-semibold text-[30px] text-secondary">Dashboard</h1>
+              <div className="sm:px-40">
+                <img src={dashboardPreview} width={500} height={500} className="object-cover"/>
+              </div>
+            </>
+          )}
           <Outlet/>
         </div>
       </div>
