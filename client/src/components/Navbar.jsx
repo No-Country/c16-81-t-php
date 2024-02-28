@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { logo, menu, close } from '../assets';
 import { navLinks } from '../data';
+import RefreshOnNavigate from './RefreshOnNavigate';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -10,14 +11,21 @@ const Navbar = () => {
     const [hasToken, setHasToken] = useState(false)
 
     useEffect(() => {
-        const handleStorage  = () => { 
-            setHasToken(!!localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME))
-        }
-            
-        window.addEventListener('storage', handleStorage)
-        
-        return () => { window.removeEventListener('storage', handleStorage) }
-    }, [])
+        const handleStorage = () => {
+            setHasToken(!!localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME));
+        };
+    
+        const token = localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME);
+        setHasToken(!!token);
+    
+        window.addEventListener('storage', handleStorage);
+    
+        return () => {
+            window.removeEventListener('storage', handleStorage);
+        };
+    }, []);
+    
+    
 
     const logout = async() => {
         setToggle(false); 
@@ -41,17 +49,20 @@ const Navbar = () => {
             console.log(message)
             localStorage.removeItem(import.meta.env.VITE_USER_TOKEN_NAME)
             window.dispatchEvent(new Event("storage"));
+            setHasToken(false);
                         
         } catch (error) {
             console.error(error.message);
             alert(error.message)
         }
 
-        navigate("/");
+        navigate('/');
+        window.location.reload();
     }
   
     return (
         <nav className="bg-primary w-full overflow-hidden">
+            <RefreshOnNavigate />
             <div className="w-full flex py-6 justify-between items-center navbar">  
             
                 <Link to="/">

@@ -9,12 +9,13 @@ import Torneos from '../../components/Torneos';
 import Ranking from '../../components/Ranking';
 import Testimonials from '../../components/Testimonials';
 import CTA from '../../components/CTA';
-
-
+import RefreshOnNavigate from '../../components/RefreshOnNavigate';
 
 const Home = () => {
+
   return (
     <div className={`bg-primary ${styles.flexStart} flex-col`}>
+      <RefreshOnNavigate />
         <div className={`${styles.boxWidth}`}>
           <Hero />
           <Partners />
