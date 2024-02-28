@@ -18,7 +18,7 @@ const UsersSelect = ({ usersList, id, name }) => {
     <select
       id={id}
       name={name}
-      className={`${inputElement}`}
+      className={`${inputElement} w-[211px] sm:w-auto overflow-x-auto`}
       value={selected}
       onChange={handleSelectTeammate}
     >
