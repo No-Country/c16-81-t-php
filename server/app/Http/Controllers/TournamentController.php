@@ -87,7 +87,7 @@ class TournamentController extends Controller
         ], 200);
     }
 
-    public function showConfrontations(string $id)
+    public function show_confrontations(string $id)
     {
         $tournament = Tournament::where('id', intval($id))->first();
         
