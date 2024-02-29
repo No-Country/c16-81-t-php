@@ -2,8 +2,6 @@ import { useEffect, useState } from "react"
 import TournamentsList from "../../../components/Dashboard/TournamentsList"
 import Pagination from "../../../components/Dashboard/Pagination"
 
-// Para controlar el paginado https://v5.reactrouter.com/web/example/query-parameters
-
 const MyTournaments = () => {
   const [tournaments, setTournaments ] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
@@ -52,7 +50,7 @@ const MyTournaments = () => {
         tournaments.length > 0 && 
         <>
           <TournamentsList tournaments={tournaments} className="w-full flex flex-wrap gap-y-6 gap-x-12"/>
-          <Pagination className={"flex gap-x-2 mt-10"} currentPage={currentPage} setPage={setCurrentPage} totalPages={totalPages} />
+          <Pagination currentPage={currentPage} setPage={setCurrentPage} totalPages={totalPages} className={"flex gap-x-2 mt-10"}/>
         </>
       }
     </div>
