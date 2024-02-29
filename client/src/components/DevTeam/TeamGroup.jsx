@@ -67,15 +67,15 @@ const TeamGroup = () => {
             <div className="bg-card w-[300px] xxs:w-[400px] sm:w-[460px] h-auto p-2 rounded-2xl">
                 <div className="flex flex-row items-center gap-x-2">
                     <div className="rounded-lg w-24 h-28 xxs:w-36 xxs:h-36 object-cover">
-                        <img src="https://i.postimg.cc/d0NCC7Nw/Yansel.png" alt='Foto Yansel' className='rounded-lg w-24 h-28 xxs:w-36 xxs:h-36 object-cover'/>
+                        <img src="https://i.postimg.cc/WpdDBPVt/Yansel.png" alt='Foto Yansel' className='rounded-lg w-24 h-28 xxs:w-36 xxs:h-36 object-cover'/>
                     </div>
                     <div className="flex flex-col items-start justify-center gap-2">
                         <h1 className='font-monse font-semibold text-secondary text-[16px] xxs:text-[24px] sm:text-[30px]'>Yansel Hernández</h1>
                         <span className='flex flex-row gap-1 items-center font-monse font-medium text-secondary text-[12px] xxs:text-[16px]'><img src={location} className='w-4'/>..., Cuba.</span>
                     <div className="badges flex gap-1">
-                            <span className="bg-green-100 text-green-800 text-[10px] xxs:text-[14px] font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                Backend
-                            </span>
+                        <span className="bg-blue-100 text-blue-800 text-[10px] xxs:text-[14px] font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
+                            Backend
+                        </span>
                     </div>
                     <div className="flex flex-row gap-2 items-center">
                             <a href="" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={whatsapp} alt='Whatsapp Yansel' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
