@@ -35,6 +35,11 @@ import icon from "./Icon.svg";
 import instagram from "./instagram.svg";
 import discord from "./discord.svg";
 import twitter from "./twitter.svg";
+import linkedin from "./linkedin.svg";
+import github from "./github.svg";
+import whatsapp from "./whatsapp.svg";
+import ig from "./ig.svg";
+import location from "./location.svg";
 import axieCover from "./axie-cover.webp";
 import brawlCover from "./brawl-cover.webp";
 import royaleCover from "./clash-royale-cover.webp";
@@ -55,6 +60,8 @@ import primerLugar from "./primerLugar.png";
 import segundoLugar from "./segundoLugar.png";
 import tercerLugar from "./tercerLugar.png";
 import dashboardPreview from "./dashboardPreview.webp";
+import foto from "./img.png";
+import noCountry from "./noCountry.svg";
 
 export {
   logo,
@@ -113,5 +120,12 @@ export {
   primerLugar,
   segundoLugar,
   tercerLugar,
-  dashboardPreview
+  dashboardPreview,
+  linkedin, 
+  github,
+  whatsapp,
+  ig,
+  location,
+  foto,
+  noCountry
 };
