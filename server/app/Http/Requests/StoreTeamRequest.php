@@ -23,7 +23,7 @@ class StoreTeamRequest extends FormRequest
     {
         return [
             "name"  => "required",
-            "user_leader_id" => "required",
+            // "user_leader_id" => "required",
         ];
     }
 }
