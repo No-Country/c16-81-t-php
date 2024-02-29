@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Team;
+use App\Models\TeamUser;
 use App\Http\Requests\StoreTeamRequest;
 use App\Http\Requests\UpdateTeamRequest;
+use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
@@ -20,12 +22,30 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTeamRequest $request)
+    public function store(Request $request)
     {
-        Team::create($request->all());
+        $leader = $request->user();
+
+        $newTeam = Team::create([
+            "user_leader_id" => $leader->id,
+            "name" => $request->input('name')
+        ]);
+
+
+        $members = array_merge([$leader->id], $request->input('teammates', []));
+        foreach ($members as $member) {
+            TeamUser::create([
+                "team_id" => $newTeam->id,
+                "user_id" => $member,
+            ]);
+        }
+        
+        $newTeam->integrants;
+
         return response()->json([
             "success" => true,
-            "msg" => "Team created successfully"
+            "msg" => "Team created successfully",
+            "newTeam" => $newTeam,
         ], 201);
     }
 
@@ -64,7 +84,7 @@ class TeamController extends Controller
         ], 200);
     }
 
-    public function showIntegrants(string $id)
+    public function show_integrants(string $id)
     {
         $team = Team::where('id', intval($id))->first();
             
