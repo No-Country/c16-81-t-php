@@ -41,7 +41,7 @@ const CreateTeam = () => {
   }, [teammatesList])
 
   return (
-    <form id="editProfileForm" className={`min-h-[58vh] flex flex-col gap-y-12 p-6 border-2 border-black rounded-lg`}>
+    <form id="editProfileForm" className={`min-h-[58vh] flex flex-col gap-y-12 p-6 border-2 border-white/30 rounded-lg`}>
         <div className="flex flex-wrap gap-4">
           <div className="flex flex-col">
             <label htmlFor="name_team" className={`${labelElement}`}>Nombre del equipo</label>

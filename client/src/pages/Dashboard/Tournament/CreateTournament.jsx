@@ -18,7 +18,7 @@ const CreateTournament = () => {
   }
 
   return (
-    <form id="createTournament" className={`min-h-[58vh] w-full flex flex-col gap-y-12 p-6 border-2 border-black rounded-lg`}>
+    <form id="createTournament" className={`min-h-[58vh] w-full flex flex-col gap-y-12 p-6 border-2 border-white/30 rounded-lg`}>
         <div className="flex flex-wrap gap-4">
           <div className="flex flex-col basis-1/3">
             <label htmlFor="tournament_name" className={`${labelElement}`}>Nombre del torneo</label>

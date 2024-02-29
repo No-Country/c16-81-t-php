@@ -53,6 +53,7 @@ import appStore from "./appStore.svg";
 import primerLugar from "./primerLugar.png";
 import segundoLugar from "./segundoLugar.png";
 import tercerLugar from "./tercerLugar.png";
+import dashboardPreview from "./dashboardPreview.webp";
 
 export {
   logo,
@@ -109,5 +110,6 @@ export {
   Descargar,
   primerLugar,
   segundoLugar,
-  tercerLugar
+  tercerLugar,
+  dashboardPreview
 };
