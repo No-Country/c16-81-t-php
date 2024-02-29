@@ -59,7 +59,7 @@ const TeamGroup = () => {
             <div className="bg-card w-[300px] xxs:w-[400px] sm:w-[460px] h-auto p-2 rounded-2xl">
                 <div className="flex flex-row items-center gap-x-2">
                     <div className="rounded-lg w-24 h-28 xxs:w-36 xxs:h-36 object-cover">
-                        <img src="https://i.postimg.cc/4xT6ZXZJ/Nehuen.png" alt='Foto Nehuen' className='rounded-lg w-24 h-28 xxs:w-36 xxs:h-36 object-cover'/>
+                        <img src="https://i.postimg.cc/Jzz1ZyC6/Nehuen.png" alt='Foto Nehuen' className='rounded-lg w-24 h-28 xxs:w-36 xxs:h-36 object-cover'/>
                     </div>
                     <div className="flex flex-col items-start justify-center gap-2">
                         <h1 className='font-monse font-semibold text-secondary text-[16px] xxs:text-[24px] sm:text-[30px]'>Nehuen Cuenca</h1>
