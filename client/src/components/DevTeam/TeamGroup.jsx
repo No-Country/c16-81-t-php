@@ -37,28 +37,6 @@ const TeamGroup = () => {
             <div className="bg-card w-[300px] xxs:w-[400px] sm:w-[460px] h-auto p-2 rounded-2xl">
                 <div className="flex flex-row items-center gap-x-2">
                     <div className="rounded-lg w-24 h-28 xxs:w-36 xxs:h-36 object-cover">
-                        <img src="https://i.postimg.cc/pVhfDZt7/Guido.png" alt='Foto Guido' className='rounded-lg w-24 h-28 xxs:w-36 xxs:h-36 object-cover'/>
-                    </div>
-                    <div className="flex flex-col items-start justify-center gap-2">
-                        <h1 className='font-monse font-semibold text-secondary text-[16px] xxs:text-[24px] sm:text-[30px]'>Guido Sinsaya</h1>
-                        <span className='flex flex-row gap-1 items-center font-monse font-medium text-secondary text-[12px] xxs:text-[16px]'><img src={location} className='w-4'/>..., Perú.</span>
-                    <div className="badges flex gap-1">
-                            <span className="bg-pink-100 text-pink-800 text-[10px] xxs:text-[14px] font-medium px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
-                                Backend
-                            </span>
-                    </div>
-                    <div className="flex flex-row gap-2 items-center">
-                            <a href="https://www.linkedin.com/in//" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={linkedin} alt='LinkedIn Guido' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
-                            <a href="https://github.com/Guidosh" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={github} alt='Github Guido' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
-                            <a href="https://www.instagram.com//" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={ig} alt='Instagram Guido' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
-                    </div>          
-                    </div>
-                </div>
-            </div>
-
-            <div className="bg-card w-[300px] xxs:w-[400px] sm:w-[460px] h-auto p-2 rounded-2xl">
-                <div className="flex flex-row items-center gap-x-2">
-                    <div className="rounded-lg w-24 h-28 xxs:w-36 xxs:h-36 object-cover">
                         <img src="https://i.postimg.cc/Jzz1ZyC6/Nehuen.png" alt='Foto Nehuen' className='rounded-lg w-24 h-28 xxs:w-36 xxs:h-36 object-cover'/>
                     </div>
                     <div className="flex flex-col items-start justify-center gap-2">
