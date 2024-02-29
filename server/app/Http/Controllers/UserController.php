@@ -46,12 +46,28 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateUserRequest $request,User $user)
+    public function update(UpdateUserRequest $request, int $idToEdit)
     {
-        $user->update($request->all());
+        
+        if($request->user()->id != $idToEdit){
+            return response()->json([
+                "success" => false,
+                "message" => "You cannot edit the information of others users profiles."
+            ], 403);
+        }
+
+        if( empty($request->all()) ){
+            return response()->json([
+                "success" => false,
+                "message" => "Cannot update without new information (empty fields)"
+            ], 400);
+        }
+        
+        $request->user()->update($request->all());
+        
         return response()->json([
             "success" => true,
-            "msg" => "User update successfully"
+            "message" => "User update successfully"
         ], 200);
     }
 
