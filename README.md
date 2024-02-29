@@ -80,29 +80,6 @@ ArenaMobile es una plataforma web innovadora que tiene como objetivo principal c
         </a>
       </p>
     </td>
-  <td>
-     <p align='center'>
-       <img src='https://i.postimg.cc/q7MJ5z92/guido.jpg' width=150 height=150 />
-     </p>
-      <p align='center'>
-        <span >
-          <b>Guido Sinsaya</b>
-        </span>
-        <p align='center' color='gray'>
-           Backend Developer
-        </p> 
-      </p>
-      <p align='center'>
-        <a href='https://github.com/Guidosh' target='_blank'>
-          <img src='https://github.com/YosstinCode/images_readme/blob/main/Button%20Github.svg' height=30/>
-        </a>
-        <a href='https://www.linkedin.com/in//' target='_blank'>
-          <img src='https://github.com/YosstinCode/images_readme/blob/main/Button%20Linkedin.svg' height=30/>
-        </a>
-      </p>
-    </td>
-  </tr>
-  <tr>
    <td>
      <p align='center'>
        <img src='' width=150 height=150 />
