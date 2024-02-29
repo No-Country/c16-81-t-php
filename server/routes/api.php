@@ -22,19 +22,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-/**Route By Users */
-Route::resource('users', UserController::class);
 
 /**Route By Confrontations */
 Route::resource('confrontations', ConfrontationController::class);
 
-
 /**Route By Videogames */
 Route::resource('videogames', VideogameController::class);
-
-/**Route By Teams */
-Route::resource('teams', TeamController::class);
-Route::get('/teams/{id}/integrants', [TeamController::class, 'showIntegrants']);
 
 /**Route By Team Users */
 Route::resource('team_users', TeamUserController::class);
@@ -42,11 +35,21 @@ Route::resource('team_users', TeamUserController::class);
 /* Authentication routes */
 Route::post('/register', [AuthenticationController::class, 'register']);
 Route::post('/login', [AuthenticationController::class, 'login']);
+
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/logout', [AuthenticationController::class, 'logout']);
     Route::get('/verify-token', [AuthenticationController::class, 'verify_token']);
 
     /**Route By Tournaments */
     Route::resource('tournaments', TournamentController::class);
-    Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'showConfrontations']);
-});
+    Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'show_confrontations']);
+
+    /**Route By Teams */
+    Route::resource('teams', TeamController::class);
+    Route::get('/teams/{id}/integrants', [TeamController::class, 'show_integrants']);
+    
+    /**Route By Users */
+    Route::get('/users/leading-teams', [UserController::class, 'leading_teams']); //Use the token to return the leaded teams
+    Route::get('/users/participating-teams', [UserController::class, 'participating_teams']); //Use the token to return the participating teams
+    Route::resource('users', UserController::class);  
+});  
