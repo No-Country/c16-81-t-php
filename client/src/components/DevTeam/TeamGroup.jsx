@@ -56,9 +56,9 @@ const TeamGroup = () => {
                             </span>
                     </div>
                     <div className="flex flex-row gap-2 items-center">
-                            <a href="https://www.linkedin.com/in//" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={linkedin} alt='LinkedIn Nehuen' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
+                            <a href="https://www.linkedin.com/in/nehuen-cuenca/" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={linkedin} alt='LinkedIn Nehuen' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
                             <a href="https://github.com/NehuenCuenca" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={github} alt='Github Nehuen' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
-                            <a href="https://www.instagram.com//" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={ig} alt='Instagram Nehuen' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
+                            <a href="https://www.instagram.com/nehuen_cuenca/" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={ig} alt='Instagram Nehuen' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
                     </div>          
                     </div>
                 </div>

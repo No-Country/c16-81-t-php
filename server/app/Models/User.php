@@ -52,7 +52,7 @@ class User extends Authenticatable
 
     public function leader_for(): HasMany
     {
-        return $this->hasMany(Team::class, 'user_leader_id');
+        return $this->hasMany(Team::class, 'user_leader_id')->with('integrants');
     }
 
     public function teams(): BelongsToMany

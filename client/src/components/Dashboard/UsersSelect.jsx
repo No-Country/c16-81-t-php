@@ -1,28 +1,26 @@
-import { useEffect, useState } from "react";
 import UsersSelectOption from "./UsersSelectOption";
 import styles from "../../style";
 
-const UsersSelect = ({ usersList, id, name }) => {
+const UsersSelect = ({ usersList, id, name, teammatesList, setTeammate, teammate_number }) => {
   const { inputElement } = styles;
-  const [selected, setSelected] = useState("1");
 
   const handleSelectTeammate = (e) => {
-    setSelected(e.target.value);
+    const newTeammatesList = [...teammatesList]
+    newTeammatesList[teammate_number-1] = (Number(e.target.value) === -1) 
+                                            ? null 
+                                            : e.target.value
+    setTeammate(newTeammatesList);
   };
 
-  useEffect(() => {
-    console.log(selected);
-  }, [selected])
 
   return (
     <select
-      id={id}
       name={name}
       className={`${inputElement} w-[211px] sm:w-auto overflow-x-auto`}
-      value={selected}
       onChange={handleSelectTeammate}
     >
-      {usersList.map((user, indexUser) => (
+      <option value={-1}>Seleccione un compañero</option>
+      {usersList.map((user) => (
         <UsersSelectOption user={user} key={user.id} />
       ))}
     </select>

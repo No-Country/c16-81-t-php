@@ -72,7 +72,7 @@ const LoginForm = () => {
                         value: true,
                         },
                     })} />
-                    {errors.password && <span span className='text-red-500'>Este campo es requerido</span>}
+                    {errors.password && <span className='text-red-500'>Este campo es requerido</span>}
                 </div>
             </div>
     

@@ -22,13 +22,13 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "nick_name"  => "required",
-            "first_name" => "required",
-            "last_name"  => "required",
-            "gender"     => "required",
-            "password"   => "required",
-            "phone"    => "required",
-            "email"    => "required",
+            // "nick_name"  => "required",
+            // "first_name" => "required",
+            // "last_name"  => "required",
+            // "gender"     => "required",
+            // "password"   => "required",
+            // "phone"    => "required",
+            // "email"    => "required",
         ];
     }
 }

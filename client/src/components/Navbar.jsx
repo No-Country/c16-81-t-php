@@ -11,21 +11,15 @@ const Navbar = () => {
     const [hasToken, setHasToken] = useState(false)
 
     useEffect(() => {
-        const handleStorage = () => {
-            setHasToken(!!localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME));
-        };
-    
-        const token = localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME);
-        setHasToken(!!token);
-    
-        window.addEventListener('storage', handleStorage);
-    
-        return () => {
-            window.removeEventListener('storage', handleStorage);
-        };
-    }, []);
-    
-    
+        const handleStorage  = () => { 
+            setHasToken(!!localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME))
+        }
+            
+        window.addEventListener('storage', handleStorage)
+        handleStorage()
+        
+        return () => { window.removeEventListener('storage', handleStorage) }
+    }, [])
 
     const logout = async() => {
         setToggle(false); 

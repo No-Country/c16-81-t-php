@@ -53,14 +53,14 @@ export default function App() {
               </Route>
 
               <Route path="/dashboard/torneos" element={<LayoutTournament />}>
-                <Route index element={<CreateTournament />} />
+                {/* <Route index element={<CreateTournament />} /> */}
                 <Route path="mis-torneos" element={<MyTournaments />} />
                 <Route path="crear-torneo" element={<CreateTournament />} />
                 <Route path="participando" element={<Participating />} />
               </Route>
 
               <Route path="/dashboard/equipos" element={<LayoutTeam />}>
-                <Route index element={<CreateTeam />}/>
+                {/* <Route index element={<CreateTeam />}/> */}
                 <Route path="mis-equipos" element={<MyTeams />} />
                 <Route path="crear-equipo" element={<CreateTeam />} />
                 <Route path="integrando" element={<Integrating />} />

@@ -27,7 +27,7 @@ class StoreTournamentRequest extends FormRequest
             "quantity_teams" => "required",
             "starts_the" => "required",
             "videogame_id" => "required",
-            "user_admin_id" => "required",
+            // "user_admin_id" => "required",
             // "link_ingame" => "required",
             // "image" => "required",
             // "winner_id" => "required",
