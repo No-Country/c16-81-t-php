@@ -6,6 +6,7 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
@@ -49,5 +50,22 @@ class AuthenticationController extends Controller
     */
     public function verify_token(Request $request){
         return $request->user();
+    }
+
+
+    /**
+     * Suspend an already authenticated user
+     */
+    public function Suspend_user(){
+        $id = Auth::user()->id;
+        
+        $user = User::find($id);
+        $user->is_suspend = true;
+        $user->save();
+
+        return response()->json([
+            "success" => true,
+            "Message" => "User Suspended"
+        ]);
     }
 }

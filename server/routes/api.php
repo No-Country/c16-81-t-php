@@ -39,6 +39,7 @@ Route::post('/login', [AuthenticationController::class, 'login']);
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/logout', [AuthenticationController::class, 'logout']);
     Route::get('/verify-token', [AuthenticationController::class, 'verify_token']);
+    Route::post('/suspend-user',[AuthenticationController::class, 'Suspend_user']);
 
     /**Route By Tournaments */
     Route::resource('tournaments', TournamentController::class);
