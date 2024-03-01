@@ -7,14 +7,14 @@ const styles = {
     flexCenter: "flex justify-center items-center",
     flexStart: "flex justify-center items-start",
   
-    paddingX: "sm:px-16 px-6",
+    paddingX: "sm:px-16 px-2 ",
     paddingY: "sm:py-16 py-6",
     padding: "sm:px-16 px-6 sm:py-12 py-4",
   
     marginX: "sm:mx-16 mx-6",
     marginY: "sm:my-16 my-6",
   
-    labelElement: "block mb-1 font-monse font-medium text-paragraph text-[16px]",
+    labelElement: "block mb-1 font-monse font-medium text-paragraph text-[14px] sm:text-[16px]",
     inputElement: "shadow-sm px-4 py-2 font-monse font-semibold text-primary bg-[#F7FBFF] text-sm rounded-lg outline-none",
     pageItem: "font-bold text-xl border-none py-1 px-4 rounded-lg"
   };

@@ -45,7 +45,7 @@ const Participating = () => {
   }, [currentPage, totalPages])
 
   return (
-    <div className={`min-h-[58vh] w-full flex flex-col justify-between gap-y-30 p-6 border-2 border-black rounded-lg`}>
+    <div className={`min-h-[58vh] w-full flex flex-col justify-between gap-y-30 p-6 border-2 border-white/30 rounded-lg`}>
       { 
         tournaments.length > 0 && 
         <>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { logo, menu, close } from '../assets';
 import { navLinks } from '../data';
+import RefreshOnNavigate from './RefreshOnNavigate';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -20,7 +21,8 @@ const Navbar = () => {
         return () => { window.removeEventListener('storage', handleStorage) }
     }, [])
 
-    const logout = async() => { 
+    const logout = async() => {
+        setToggle(false); 
         try {
             const token = localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME)
             const resp = await fetch('http://127.0.0.1:8000/api/logout', {
@@ -41,17 +43,20 @@ const Navbar = () => {
             console.log(message)
             localStorage.removeItem(import.meta.env.VITE_USER_TOKEN_NAME)
             window.dispatchEvent(new Event("storage"));
+            setHasToken(false);
                         
         } catch (error) {
             console.error(error.message);
             alert(error.message)
         }
 
-        navigate("/");
+        navigate('/');
+        window.location.reload();
     }
   
     return (
         <nav className="bg-primary w-full overflow-hidden">
+            <RefreshOnNavigate />
             <div className="w-full flex py-6 justify-between items-center navbar">  
             
                 <Link to="/">
@@ -60,6 +65,7 @@ const Navbar = () => {
 
                 <ul className="list-none sm:flex hidden justify-end items-center flex-1">
                     {navLinks.map((nav) => (
+                        (nav.id !== "dashboard" || hasToken) && (
                         <li 
                         key={nav.id}
                         className={`font-monse font-medium cursor-pointer text-[16px] mr-10
@@ -71,6 +77,7 @@ const Navbar = () => {
                             {nav.name}
                         </NavLink>
                         </li>
+                        )
                     ))}
                     {
                             !hasToken && 
@@ -78,7 +85,7 @@ const Navbar = () => {
                             <Link to="/login">
                             <button 
                                 type='button'           
-                                className={`mt-4 py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
+                                className={`py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
                                 text-white hover:text-secondary outline-none rounded-[14px] shadow-xl`}
                             > 
                                 Ingresar
@@ -92,10 +99,10 @@ const Navbar = () => {
                             <button 
                                 onClick={logout}
                                 type='button'           
-                                className={`mt-4 py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
+                                className={` py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
                                 text-white hover:text-secondary outline-none rounded-[14px] shadow-xl`}
                             > 
-                                Cerrar sesion
+                                Cerrar sesión
                             </button>
                             </Link>
                         </li>
@@ -114,24 +121,29 @@ const Navbar = () => {
                     <div className={`${toggle ? 'flex' : 'hidden'} p-6 bg-gray-gradient absolute top-14 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}>
                     <ul className="list-none flex flex-col justify-end items-center flex-1">
                         {navLinks.map((nav, index) => (
+                             (nav.id !== "dashboard" || hasToken) && (
                         <li 
                         key={nav.id}
-                        className={`font-monse font-normal cursor-pointer text-[16px] ${index === navLinks.length - 1 ? 'mr-0' : 'mb-4'} text-white`}
+                        className={`font-monse font-normal cursor-pointer text-[16px] ${index === navLinks.length - 1 ? 'mr-0 mb-4' : 'mb-4'} text-white`}
                         >
-                        <NavLink to={nav.path} className={({ isActive }) =>
+                        <NavLink 
+                        to={nav.path} 
+                        onClick={() => setToggle(false)}
+                        className={({ isActive }) =>
                             isActive ? 'text-white font-semibold' : 'text-secondary font-medium'
                         }>
                             {nav.name}
                         </NavLink>
                         </li>
+                             )
                         ))}
                         {
                             !hasToken && 
                             <li>
-                            <Link to="/login">
+                            <Link to="/login" onClick={() => setToggle(false)}>
                             <button 
                                 type='button'           
-                                className={`mt-4 py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
+                                className={` py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
                                 text-white hover:text-secondary outline-none rounded-[14px] shadow-xl`}
                             > 
                                 Ingresar
@@ -145,10 +157,10 @@ const Navbar = () => {
                             <button 
                                 type='button'           
                                 onClick={logout}
-                                className={`mt-4 py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
+                                className={` py-2 px-6 bg-gray-gradient font-monse font-medium text-[16px]
                                 text-white hover:text-secondary outline-none rounded-[14px] shadow-xl`}
                             > 
-                                Cerrar sesion
+                                Cerrar sesión
                             </button>
                             </Link>
                         </li>

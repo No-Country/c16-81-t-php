@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form';
 import styles from '../../../style'
 import UsersSelect from '../../../components/Dashboard/UsersSelect'
 
 const CreateTeam = () => {
   const {labelElement, inputElement} = styles
+  const navigate = useNavigate()
   const [quantity_teammates, setQuantityTeammates] = useState(0)
   const [usersList, setUsersList] = useState([])
   const [teammatesList, setTeammatesList] = useState([])
@@ -58,7 +60,9 @@ const CreateTeam = () => {
       if(!resp.ok){ throw new Error(data.message) }
 
       alert(data.msg)
+      
       reset()
+      navigate('/dashboard/equipos/mis-equipos')
     } catch (error) {
       console.error(error.message);
       alert(error.message)
@@ -118,7 +122,7 @@ const CreateTeam = () => {
   }, [teammatesList])
 
   return (
-    <form id="editProfileForm" onSubmit={handleSubmit(onSubmit)} className={`min-h-[58vh] flex flex-col gap-y-12 p-6 border-2 border-black rounded-lg`}>
+    <form id="editProfileForm" onSubmit={handleSubmit(onSubmit)} className={`min-h-[58vh] flex flex-col gap-y-4 sm:gap-y-12 p-2 sm:p-6 border-2 border-white/30 rounded-lg`}>
       <div className="flex flex-wrap gap-4">
         <div className="flex flex-col">
           <label htmlFor="name_team" className={`${labelElement}`}>Nombre del equipo</label>
@@ -167,13 +171,22 @@ const CreateTeam = () => {
               ))
           }
         </div>
-        
-      </div>
-      <div className="flex justify-between">
-        <button type="submit" className="bg-activePurple px-12 py-2 rounded-lg text-xl font-bold text-card">Guardar</button>
-        <button type="reset" onClick={handleReset} className="bg-ligthPurple px-12 py-2 rounded-lg text-xl font-bold text-card">Limpiar</button>
-      </div>
-    </form>
+          
+        </div>
+        <div className="flex justify-center sm:justify-between gap-2 sm:px-8">
+          <button type='submit'           
+                  className={`py-2 sm:py-4 px-6 mt-4 max-w-48 items-center justify-center bg-gray-gradient flex-1 flex gap-2 flex-row font-monse font-medium text-[14px] sm:text-[16px]
+                  text-[#18C935] hover:text-green-500 outline-none rounded-[14px] shadow-2xl`}> 
+              Guardar
+          </button>
+
+          <button type='reset' onClick={handleReset}          
+                  className={`py-2 sm:py-4 px-6 mt-4 max-w-48 items-center justify-center bg-gray-gradient flex-1 flex gap-2 flex-row font-monse font-medium text-[14px] sm:text-[16px]
+                  text-[#FF5F5F] hover:text-red-500 outline-none rounded-[14px] shadow-2xl`}> 
+              Limpiar
+          </button>
+        </div>
+      </form>
   )
 }
 

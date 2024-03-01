@@ -1,8 +1,40 @@
+import React, { useEffect, useState } from 'react';
 import { userPlus, target } from '../assets';
 
 const Info = () => {
+    const [isLoggedIn, setLoggedIn] = useState(false);
+
+    useEffect(() => {
+      const verifyAuthorization = async () => {
+        const token = localStorage.getItem("ARENA_MOBILE_USER_TOKEN");
+    
+        try {
+          if (!token) {
+            //Waiting for a login...
+          } else {
+            setLoggedIn(true); 
+          }
+        } catch (error) {
+          console.error(`Error al verificar la autenticación del usuario: ${error.message}`);
+          setLoggedIn(false); //User is logged in
+        }
+      };
+    
+      verifyAuthorization();
+    }, []);
+    
+
   return (
     <section className='bg-[#343549] w-full h-auto sm:h-[246px] px-5 xs:px-0 py-5 sm:py-0 gap-10 sm:gap-0 flex items-center justify-center'>
+        {isLoggedIn ? (
+        <div className='container flex flex-col items-center justify-between mx-8'>
+            <h1 className='font-monse font-bold text-xl sm:text-3xl text-secondary text-center sm:leading-[60px] leading-[30px] text-pretty'>
+                ¡Únete a la acción! <br/> 
+                Demuestra tu habilidad en emocionantes torneos. <br/> 
+                ¡La diversión te espera!
+            </h1>
+        </div>
+         ) : (
         <div className='container flex-1 flex flex-col sm:flex-row gap-y-[30px] sm:gap-y-0 items-center justify-between mx-8'>
             <div className='flex items-center '>
                 <h1 className='font-monse font-bold text-[32px] text-secondary max-w-[320px] text-center sm:text-start text-pretty'>
@@ -36,6 +68,7 @@ const Info = () => {
                 </div>
             </div>
         </div>
+         )}
     </section>
   )
 }

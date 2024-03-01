@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from '../../../style' 
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 const CreateTournament = () => {
   const { labelElement, inputElement } = styles
   const imgPreviewElement = useRef(null);
   const [videogames, setVideogames] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     const getVideogames = async() => { 
@@ -59,7 +61,9 @@ const CreateTournament = () => {
       if(!resp.ok){ throw new Error(data.message)}
       
       alert(data.msg)
+      
       reset()
+      navigate('/dashboard/torneos/mis-torneos')
     } catch (error) {
       console.error(error.message)
       alert(error.message)
@@ -68,6 +72,7 @@ const CreateTournament = () => {
 
   const handleChangeImage = (e) => { 
     const [avatar] = e.target.files
+    console.log(avatar);
     if (avatar) {
       imgPreviewElement.current.classList.remove('hidden')
       imgPreviewElement.current.src = URL.createObjectURL(avatar)
@@ -79,7 +84,7 @@ const CreateTournament = () => {
   }
 
   return (
-    <form id="createTournament" onSubmit={handleSubmit(onSubmit)} className={`min-h-[58vh] w-full flex flex-col gap-y-12 p-6 border-2 border-black rounded-lg`}>
+    <form id="createTournament"  onSubmit={handleSubmit(onSubmit)} className={`min-h-[58vh] flex flex-col gap-y-4 sm:gap-y-12 p-2 sm:p-6 border-2 border-white/30 rounded-lg`}>
         <div className="flex flex-wrap gap-4">
           <div className="flex flex-col basis-1/3">
             <label htmlFor="name" className={`${labelElement}`}>Nombre del torneo</label>
@@ -122,9 +127,10 @@ const CreateTournament = () => {
             </select>
             {errors.videogame_id?.type === "required" && <span className='text-red-500'>El juego es requerido</span>}
           </div>
-          <div className="flex flex-col ">
+          
+          <div className="flex flex-col basis-1/4">
             <label htmlFor="starts_the" className={`${labelElement}`}>Comienza el dia...</label>
-            <input type="datetime-local" name="starts_the" id="starts_the" className={`${inputElement}`}
+            <input type="datetime-local" name="starts_the" id="starts_the" className={`${inputElement} w-[211px] sm:w-auto`}
               {...register("starts_the", {
                 required: {
                   value: true,
@@ -134,8 +140,8 @@ const CreateTournament = () => {
             }
             />
             {errors.starts_the?.type === "required" && <span className='text-red-500'>La fecha de comienzo es requerida</span>}
-
           </div>
+
           <div className="flex flex-col basis-1/4">
             <label htmlFor="quantity_teams" className={`${labelElement}`}>Cantidad de equipos</label>
             <input type="number" min={8} max={16} step={8} name="quantity_teams" id="quantity_teams" className={`${inputElement}`}
@@ -144,7 +150,7 @@ const CreateTournament = () => {
             />
           </div>
           
-          <div className="flex flex-col basis-1/5">
+          <div className="flex flex-col basis-1/3">
             <label htmlFor="modality" id="modality" className={`${labelElement}`}>Modalidad</label>
             <select name="modality" className={`${inputElement}`}
               {...register("modality", {
@@ -168,18 +174,25 @@ const CreateTournament = () => {
             <label htmlFor="link_ingame" className={`${labelElement}`}>Link en el juego (opcional)</label>
             <input type="text" name="link_ingame" id="link_ingame" className={`${inputElement}`} {...register("link_ingame")}/>
           </div>
-          <div className="flex flex-col gap-y-2">
-            <label htmlFor="image" className={`${labelElement}`}>Imagen/Preview</label>
-            <input type="file" id="image" name="image" accept="image/png, image/jpeg" onChange={handleChangeImage}
-              {...register("image")}
-            />
-            <img id="blah" src="#" onError={handleEmptyImage} alt="Preview tournament image" ref={imgPreviewElement} className="rounded-xl" width={150} height={150}/>
+          <div className="flex flex-col gap-y-2 overflow-x-auto">
+              <label htmlFor="image" className={`${labelElement}`}>Imagen/Preview</label>
+              <input type="file" /* {...register("image")} */ id="image" name="image" accept="image/png, image/jpeg" onChange={handleChangeImage} />
+              <img id="previewImage" src="#" onError={handleEmptyImage} alt="Preview image" ref={imgPreviewElement} className="rounded-full text-center text-transparent" width={150} height={150}/>
           </div>
-          
+                    
         </div>
-        <div className="flex justify-between ">
-          <button type="submit" className="bg-activePurple px-12 py-2 rounded-lg text-xl font-bold text-card">Guardar</button>
-          <button type="reset" onClick={reset} className="bg-ligthPurple px-12 py-2 rounded-lg text-xl font-bold text-card">Limpiar</button>
+        <div className="flex justify-center sm:justify-between gap-2 sm:px-8">
+          <button type='submit'           
+                  className={`py-2 sm:py-4 px-6 mt-4 max-w-48 items-center justify-center bg-gray-gradient flex-1 flex gap-2 flex-row font-monse font-medium text-[14px] sm:text-[16px]
+                  text-[#18C935] hover:text-green-500 outline-none rounded-[14px] shadow-2xl`}> 
+              Guardar
+          </button>
+
+          <button type='reset' onClick={reset}           
+                  className={`py-2 sm:py-4 px-6 mt-4 max-w-48 items-center justify-center bg-gray-gradient flex-1 flex gap-2 flex-row font-monse font-medium text-[14px] sm:text-[16px]
+                  text-[#FF5F5F] hover:text-red-500 outline-none rounded-[14px] shadow-2xl`}> 
+              Limpiar
+          </button>
         </div>
       </form>
   )

@@ -16,7 +16,7 @@ const UsersSelect = ({ usersList, id, name, teammatesList, setTeammate, teammate
   return (
     <select
       name={name}
-      className={`${inputElement}`}
+      className={`${inputElement} w-[211px] sm:w-auto overflow-x-auto`}
       onChange={handleSelectTeammate}
     >
       <option value={-1}>Seleccione un compañero</option>

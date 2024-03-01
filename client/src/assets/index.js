@@ -2,6 +2,7 @@ import logo from "./logo.webp";
 import menu from "./menu.svg";
 import close from "./close.svg";
 import trophy from "./Trophy-home.webp";
+import trophyUser from "./Trophy-home-user.webp";
 import activision from "./activision.webp";
 import logitech from "./logitech.webp";
 import playstation from "./playstation.webp";
@@ -22,9 +23,9 @@ import brawlStar from "./brawl-stars.webp";
 import coupon from "./coupon.svg";
 import calendar from "./calendar.svg";
 import cover from "./img-torneo.png";
-import Bronze from "./Bronze.svg";
-import Silver from "./Silver.svg";
-import Oro from "./Oro.svg";
+import Bronze from "./bronze.webp";
+import Silver from "./silver.webp";
+import Oro from "./Oro.webp";
 import avatar from "./avatar.jpg";
 import quotes from "./Quotes.svg";
 import review from "./Review.svg";
@@ -34,6 +35,11 @@ import icon from "./Icon.svg";
 import instagram from "./instagram.svg";
 import discord from "./discord.svg";
 import twitter from "./twitter.svg";
+import linkedin from "./linkedin.svg";
+import github from "./github.svg";
+import whatsapp from "./whatsapp.svg";
+import ig from "./ig.svg";
+import location from "./location.svg";
 import axieCover from "./axie-cover.webp";
 import brawlCover from "./brawl-cover.webp";
 import royaleCover from "./clash-royale-cover.webp";
@@ -49,13 +55,20 @@ import trophyIcon from "./trophyIcon.svg"
 import teamsIcon from "./teamsIcon.svg"
 import GooglePlay from "./GooglePlay.svg";
 import Descargar from "./Descargar.svg";
-import appStore from "./appStore.svg";
+import appStore from "./appStore.svg"; 
+import primerLugar from "./primerLugar.png";
+import segundoLugar from "./segundoLugar.png";
+import tercerLugar from "./tercerLugar.png";
+import dashboardPreview from "./dashboardPreview.webp";
+import foto from "./img.png";
+import noCountry from "./noCountry.svg";
 
 export {
   logo,
   menu,
   close,
   trophy,
+  trophyUser,
   activision,
   logitech,
   playstation,
@@ -104,4 +117,15 @@ export {
   GooglePlay,
   appStore,
   Descargar,
+  primerLugar,
+  segundoLugar,
+  tercerLugar,
+  dashboardPreview,
+  linkedin, 
+  github,
+  whatsapp,
+  ig,
+  location,
+  foto,
+  noCountry
 };
