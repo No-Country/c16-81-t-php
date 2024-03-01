@@ -52,11 +52,32 @@ class AuthenticationController extends Controller
         return $request->user();
     }
 
+    /**
+     * Change password by user
+     */
+    public function change_password(Request $request){
+        $id = Auth::user()->id;
+        $user = User::find($id);
+
+        if($user){
+            $user->password = $request->password;
+            $user->save();
+            return response()->json([
+                "message" => "Password Changed successfully"
+            ], 200);
+        }else{
+            return response()->json([
+                "success" => true,
+                "message" => "User not exist",
+            ], 400);
+        }
+    }
+
 
     /**
      * Suspend an already authenticated user
      */
-    public function Suspend_user(){
+    public function suspend_user(){
         $id = Auth::user()->id;
         
         $user = User::find($id);
@@ -65,7 +86,7 @@ class AuthenticationController extends Controller
 
         return response()->json([
             "success" => true,
-            "Message" => "User Suspended"
+            "message" => "User Suspended"
         ]);
     }
 }
