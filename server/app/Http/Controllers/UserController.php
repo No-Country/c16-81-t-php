@@ -14,9 +14,10 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $user = User::All();
+        $paginateBy = $request->integer('paginatedBy', 0) ?? 0;
+        $user = User::paginate($paginateBy);
         return UserResource::collection($user);
     }
 

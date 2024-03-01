@@ -13,9 +13,10 @@ class TeamController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $team =  Team::all();
+        $paginateBy = $request->integer('paginatedBy', 0) ?? 0;
+        $team =  Team::paginate($paginateBy);
         return $team;
     }
 

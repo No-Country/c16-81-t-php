@@ -5,15 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Videogame;
 use App\Http\Requests\StoreVideogameRequest;
 use App\Http\Requests\UpdateVideogameRequest;
+use Illuminate\Http\Request;
 
 class VideogameController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $videogames = Videogame::all();
+        $paginateBy = $request->integer('paginatedBy', 0) ?? 0;
+
+        $videogames = Videogame::paginate($paginateBy);
         return response()->json([
             "success" => true,
             "videogames" => $videogames
