@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\TeamUser;
 use App\Http\Requests\StoreTeamUserRequest;
 use App\Http\Requests\UpdateTeamUserRequest;
+use Illuminate\Http\Request;
 
 class TeamUserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $teamUser = TeamUser::all();
+        $paginateBy = $request->integer('paginatedBy', 0) ?? 0;
+        $teamUser = TeamUser::paginate($paginateBy);
         return response()->json([
             "success" => true,
             "teamUser" => $teamUser

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('gender',['male','female','other']);
             $table->string('phone')->unique();
             $table->string('email')->unique();
+            $table->boolean('is_suspend')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

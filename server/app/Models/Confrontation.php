@@ -12,6 +12,7 @@ class Confrontation extends Model
 
     protected $fillable = [
         'tournament_id',
+        'round_name',
         'team_one_id',
         'team_two_id',
         'winner_id',
