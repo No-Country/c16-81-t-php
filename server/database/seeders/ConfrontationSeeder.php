@@ -19,6 +19,7 @@ class ConfrontationSeeder extends Seeder
         for ($i = 0; $i < 8; $i++) {    
             DB::table('confrontations')->insert([
                 'tournament_id' => 1,
+                'round_name'    => $faker->name,
                 'team_one_id'   => $faker->numberBetween($min = 1,  $max = 10),
                 'team_two_id'   => $faker->numberBetween($min = 11, $max = 20),
                 'winner_id'     => null, //$faker->numberBetween($min = 1,  $max = 20),

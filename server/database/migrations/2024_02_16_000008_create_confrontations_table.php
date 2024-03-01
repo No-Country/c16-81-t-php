@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('confrontations', function (Blueprint $table) {
             $table->id();
             
+            $table->string('round_name');
             $table->foreignId('tournament_id')->constrained('tournaments')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('team_one_id')->constrained('teams')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('team_two_id')->constrained('teams')->cascadeOnUpdate()->cascadeOnDelete();
