@@ -24,6 +24,8 @@ export const verifyAuthorization = async () => {
       return resp.ok
     } catch (error) {
       console.error(`Error al verificar la autenticacion del usuario: ${error.message}`)
+      localStorage.removeItem(import.meta.env.VITE_USER_TOKEN_NAME)
+      window.dispatchEvent(new Event("storage"));
       return false
     }
 };
