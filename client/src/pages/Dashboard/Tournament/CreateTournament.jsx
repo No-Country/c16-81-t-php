@@ -16,7 +16,7 @@ const CreateTournament = () => {
         const data = await resp.json()
         if(!resp.ok){ throw new Error(data.message) }
 
-        return data.videogames
+        return data.videogames.data
       } catch (error) {
         console.error(`Error al verificar la autenticacion del usuario: ${error.message}`)
         return []
@@ -119,7 +119,7 @@ const CreateTournament = () => {
             >
               <option value="">Seleccione un juego</option>
               {
-                videogames &&
+                videogames.length > 0 &&
                 videogames.map((videogame, index) => (
                   <option key={index} value={videogame.id}>{videogame.name}</option>
                 ))

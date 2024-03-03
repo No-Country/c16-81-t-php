@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <div className={`bg-primary ${styles.flexStart} flex-col`}>
-      <RefreshOnNavigate />
+      {/* <RefreshOnNavigate /> */}
         <div className={`${styles.boxWidth}`}>
           <Hero />
           <Partners />

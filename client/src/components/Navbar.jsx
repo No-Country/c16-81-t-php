@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { logo, menu, close } from '../assets';
 import { navLinks } from '../data';
-import RefreshOnNavigate from './RefreshOnNavigate';
+// import RefreshOnNavigate from './RefreshOnNavigate';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ const Navbar = () => {
     const [hasToken, setHasToken] = useState(false)
 
     useEffect(() => {
-        const handleStorage  = () => { 
+        const handleStorage = () => { 
             setHasToken(!!localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME))
         }
             
@@ -43,8 +43,6 @@ const Navbar = () => {
             console.log(message)
             localStorage.removeItem(import.meta.env.VITE_USER_TOKEN_NAME)
             window.dispatchEvent(new Event("storage"));
-            setHasToken(false);
-                        
         } catch (error) {
             console.error(error.message);
             alert(error.message)
@@ -56,7 +54,7 @@ const Navbar = () => {
   
     return (
         <nav className="bg-primary w-full overflow-hidden">
-            <RefreshOnNavigate />
+            {/* <RefreshOnNavigate /> */}
             <div className="w-full flex py-6 justify-between items-center navbar">  
             
                 <Link to="/">
