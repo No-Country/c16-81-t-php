@@ -21,6 +21,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**Route By Tournaments */
+Route::resource('tournaments', TournamentController::class)->only([
+    'index', 'show'
+]);
+Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'show_confrontations']);
 
 
 /**Route By Confrontations */
@@ -42,11 +47,11 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/suspend-user',[AuthenticationController::class, 'suspend_user']);
     Route::post('/change-password',[AuthenticationController::class,'change_password']);
 
-
     /**Route By Tournaments */
-    Route::resource('tournaments', TournamentController::class);
-    Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'show_confrontations']);
-
+    Route::post('/tournaments', [TournamentController::class, 'store']);
+    Route::put('/tournaments/{id}', [TournamentController::class, 'update']);
+    Route::delete('/tournaments/{id}', [TournamentController::class, 'destroy']);
+    
     /**Route By Teams */
     Route::resource('teams', TeamController::class);
     Route::get('/teams/{id}/integrants', [TeamController::class, 'show_integrants']);
