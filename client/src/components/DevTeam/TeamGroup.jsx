@@ -41,7 +41,7 @@ const TeamGroup = () => {
                     </div>
                     <div className="flex flex-col items-start justify-center gap-2">
                         <h1 className='font-monse font-semibold text-secondary text-[16px] xxs:text-[24px] sm:text-[30px]'>Nehuen Cuenca</h1>
-                        <span className='flex flex-row gap-1 items-center font-monse font-medium text-secondary text-[12px] xxs:text-[16px]'><img src={location} className='w-4'/>..., Argentina.</span>
+                        <span className='flex flex-row gap-1 items-center font-monse font-medium text-secondary text-[12px] xxs:text-[16px]'><img src={location} className='w-4'/>Entre Rios, Argentina.</span>
                     <div className="badges flex gap-1">
                             <span className="bg-green-100 text-green-800 text-[9px] xxs:text-[14px] font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                                 Backend
@@ -71,16 +71,16 @@ const TeamGroup = () => {
                     </div>
                     <div className="flex flex-col items-start justify-center gap-2">
                         <h1 className='font-monse font-semibold text-secondary text-[16px] xxs:text-[24px] sm:text-[30px]'>Yansel Hernández</h1>
-                        <span className='flex flex-row gap-1 items-center font-monse font-medium text-secondary text-[12px] xxs:text-[16px]'><img src={location} className='w-4'/>..., Cuba.</span>
+                        <span className='flex flex-row gap-1 items-center font-monse font-medium text-secondary text-[12px] xxs:text-[16px]'><img src={location} className='w-4'/>Isla de la Juventud, Cuba.</span>
                     <div className="badges flex gap-1">
                         <span className="bg-blue-100 text-blue-800 text-[10px] xxs:text-[14px] font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
                             Backend
                         </span>
                     </div>
                     <div className="flex flex-row gap-2 items-center">
-                            <a href="" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={whatsapp} alt='Whatsapp Yansel' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
+                            <a href="https://wa.me/5356568218?text=Hola+Yansel" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={whatsapp} alt='Whatsapp Yansel' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
                             <a href="https://github.com/Yansel93" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={github} alt='Github Yansel' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
-                            <a href="https://www.instagram.com//" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={ig} alt='Instagram Yansel' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
+                            <a href="https://www.instagram.com/yanselherndez/" target="_blank" rel="noopener noreferrer" className='cursor-pointer scale-on-hover'><img src={ig} alt='Instagram Yansel' className='w-6 h-6 xxs:w-7 xxs:h-7 sm:w-8 sm:h-8' /></a>
                     </div>          
                     </div>
                 </div>
