@@ -46,7 +46,7 @@ class TournamentController extends Controller
 
         return response()->json([
             "success" => true,
-            "msg" => "Tournament created successfully",
+            "msg" => "El torneo creado exitosamente",
             "tournament" => $tournament
         ], 201);
     }
@@ -65,31 +65,58 @@ class TournamentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTournamentRequest $request, Tournament $tournament)
+    public function update(UpdateTournamentRequest $request, int $idToEdit)
     {
-        $tournament->update($request->all());
+        $tournamentCorrespondToUser = $request->user()->manage->firstWhere('id', $idToEdit);
+
+        if( !isset($tournamentCorrespondToUser) ){
+            return response()->json([
+                "success" => false,
+                "message" => "No puedes editar la informacion del torneo de otro usuario."
+            ], 403);
+        }
+
+        if( empty($request->all()) ){
+            return response()->json([
+                "success" => false,
+                "message" => "Para actualizar el torneo debes mandar nueva informacion..."
+            ], 400);
+        }
+        
+        $tournamentCorrespondToUser->update($request->all());
+
         return response()->json([
             "success" => true,
-            "msg" => "Tournament upated successfully",
-            "tournament" => $tournament
+            "msg" => "El torneo actualizado exitosamente",
+            "tournament" => $tournamentCorrespondToUser
         ], 200);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tournament $tournament)
+    public function destroy(Request $request, int $idToDelete)
     {
-        $tournament->delete();
+        $tournamentCorrespondToUser = $request->user()->manage->firstWhere('id', $idToDelete);
+
+        if( !isset($tournamentCorrespondToUser) ){
+            return response()->json([
+                "success" => false,
+                "message" => "No puedes eliminar el torneo de otro usuario."
+            ], 403);
+        } 
+
+        $tournamentCorrespondToUser->delete();
+
         return response()->json([
             "success" => true,
-            "msg" => "Tournament deleted successfully"
+            "msg" => "El torneo fue borrado exitosamente"
         ], 200);
     }
 
-    public function show_confrontations(string $id)
+    public function show_confrontations(int $id)
     {
-        $tournament = Tournament::where('id', intval($id))->first();
+        $tournament = Tournament::where('id', $id)->first();
         
         return response()->json([
             "success" => true,
