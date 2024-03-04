@@ -85,7 +85,7 @@ const CreateTournament = () => {
 
   return (
     <form id="createTournament"  onSubmit={handleSubmit(onSubmit)} className={`min-h-[58vh] flex flex-col gap-y-4 sm:gap-y-12 p-2 sm:p-6 border-2 border-white/30 rounded-lg`}>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 justify-start items-center sm:justify-normal">
           <div className="flex flex-col basis-1/3">
             <label htmlFor="name" className={`${labelElement}`}>Nombre del torneo</label>
             <input type="text" name="name" id="name" className={`${inputElement}`}
@@ -108,7 +108,7 @@ const CreateTournament = () => {
           </div>
           <div className="flex flex-col basis-1/3">
             <label htmlFor="videogame_id" id="videogame_id" className={`${labelElement}`}>Juego</label>
-            <select name="videogame_id" className={`${inputElement}`}
+            <select name="videogame_id" className={`${inputElement} w-[211px] sm:w-auto`}
               {...register("videogame_id", { 
                   required: {
                     value: true,
@@ -142,17 +142,17 @@ const CreateTournament = () => {
             {errors.starts_the?.type === "required" && <span className='text-red-500'>La fecha de comienzo es requerida</span>}
           </div>
 
-          <div className="flex flex-col basis-1/4">
+          <div className="flex flex-col ">
             <label htmlFor="quantity_teams" className={`${labelElement}`}>Cantidad de equipos</label>
-            <input type="number" min={8} max={16} step={8} name="quantity_teams" id="quantity_teams" className={`${inputElement}`}
+            <input type="number" min={8} max={16} step={8} name="quantity_teams" id="quantity_teams" className={`${inputElement} w-[150px]`}
               {...register("quantity_teams")
             }
             />
           </div>
           
-          <div className="flex flex-col basis-1/3">
+          <div className="flex flex-col basis-1/6">
             <label htmlFor="modality" id="modality" className={`${labelElement}`}>Modalidad</label>
-            <select name="modality" className={`${inputElement}`}
+            <select name="modality" className={`${inputElement} w-[211px] sm:w-auto`}
               {...register("modality", {
                   required: {
                     value: true,
@@ -170,13 +170,13 @@ const CreateTournament = () => {
             </select>
             {errors.modality?.type === "required" && <span className='text-red-500'>La modalidad es requerida</span>}
           </div>
-          <div className="flex flex-col basis-1/3">
+          <div className="flex flex-col basis-2/4">
             <label htmlFor="link_ingame" className={`${labelElement}`}>Link en el juego (opcional)</label>
             <input type="text" name="link_ingame" id="link_ingame" className={`${inputElement}`} {...register("link_ingame")}/>
           </div>
           <div className="flex flex-col gap-y-2 overflow-x-auto">
-              <label htmlFor="image" className={`${labelElement}`}>Imagen/Preview</label>
-              <input type="file" /* {...register("image")} */ id="image" name="image" accept="image/png, image/jpeg" onChange={handleChangeImage} />
+              <label htmlFor="image" className={`${labelElement} mb-0`}>Imagen/Preview</label>
+              <input type="file" /* {...register("image")} */ id="image" name="image" accept="image/png, image/jpeg" onChange={handleChangeImage} className='rounded-lg bg-secondary' />
               <img id="previewImage" src="#" onError={handleEmptyImage} alt="Preview image" ref={imgPreviewElement} className="rounded-full text-center text-transparent" width={150} height={150}/>
           </div>
                     

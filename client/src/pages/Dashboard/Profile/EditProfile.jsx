@@ -185,7 +185,7 @@ const EditProfile = () => {
 
             <div className="flex flex-col gap-y-2 overflow-x-auto">
               <label htmlFor="avatar" className={`${labelElement}`}>Avatar</label>
-              <input type="file" {...register("avatar")} id="avatar" name="avatar" accept="image/png, image/jpeg" onChange={handleChangeAvatar} />
+              <input type="file" {...register("avatar")} id="avatar" name="avatar" accept="image/png, image/jpeg" onChange={handleChangeAvatar} className='rounded-lg bg-secondary' />
               <img id="blah" src="#" onError={handleEmptyAvatar} alt="Preview avatar" ref={imgPreviewElement} className="rounded-full text-center text-transparent" width={150} height={150}/>
             </div>
           </div>
