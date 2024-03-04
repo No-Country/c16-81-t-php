@@ -17,7 +17,8 @@ class TeamUserFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'team_id' => fake()->randomNumber($min = 1, $max = 30),
+            'user_id' => fake()->randomNumber($min = 1, $max = 30),
         ];
     }
 }

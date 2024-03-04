@@ -17,7 +17,14 @@ class ConfrontationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "tournament_id" => fake()->numberBetween($min = 1,  $max = 3),
+            "round_name"  => fake()->randomElement(['final', 'semifinal', 'cuartos']),
+            "team_one_id" => fake()->numberBetween($min = 1,  $max = 10),
+            "team_two_id" => fake()->numberBetween($min = 11,  $max = 20),
+            "winner_id" => null,
+            "losser_id" => null,
+            "status_id" => 2,
+            "position_id" => 4,
         ];
     }
 }
