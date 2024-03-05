@@ -30,7 +30,7 @@ class Tournament extends Model
 
     public function managed_by(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class, 'user_admin_id');
     }
 
     public function confrontations(): HasMany

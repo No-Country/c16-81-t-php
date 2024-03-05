@@ -105,7 +105,7 @@ const Tournaments = () => {
                     </div>  
                     <div className="flex flex-col items-start sm:items-end">
                       <h1 className="font-monse font-bold text-balance ss:text-[30px] text-[22px] text-secondary mb-2">Torneo realizado por</h1>
-                      <span className="font-monse font-semibold text-[#BFC0E0] text-[20px] sm:text-3xl">{torneoInfo.tournament.user_admin_id}</span>
+                      <span className="font-monse font-semibold text-[#BFC0E0] text-[20px] sm:text-3xl">{torneoInfo.tournament.managed_by.nick_name}</span>
                     </div>  
                     {torneoInfo.tournament.link_ingame && (
                       <div className="flex flex-col items-start">
