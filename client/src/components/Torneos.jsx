@@ -75,7 +75,9 @@ const Torneos = () => {
                     <div className="bg-card max-w-[295px] max-h-[340px] rounded-xl shadow-lg" key={torneo.id}>
                         <div className="flex-1 flex flex-col flex-shrink-0 flex-nowrap mx-4">
                             <img src={torneo.cover} alt="Cover torneo" className='object-cover max-w-[265px] h-[105px] rounded-md my-4' />
-                            <h2 className="font-monse font-extrabold text-[14px] ss:text-[16px] sm:text-[20px] lg:text-[22px] text-secondary">{torneo.title}</h2>
+                            <h2 className="font-monse font-extrabold text-[14px] ss:text-[16px] sm:text-[20px] lg:text-[22px] text-secondary">
+                                <Link to={`/tournament/${torneo.id}`}>{torneo.title}</Link>
+                            </h2>
                             <div className="flex flex-row items-center gap-2 my-2">
                                 <img src={coupon} alt="Coupon" width="24" height="auto"/>
                                 <span className="font-monse font-semibold text-[14px] xs:text-[16px] text-[#BFC0E0]">{torneo.price}</span>

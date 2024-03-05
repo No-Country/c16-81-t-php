@@ -12,14 +12,14 @@ export const navLinks = [
     path: '/games'
   },
   {
+    id: "tournaments",
+    name: "Torneos",
+    path: '/tournaments'
+  },
+  {
     id: "leaderboard",
     name: "Ranking",
     path: '/leaderboard'
-  },
-  {
-    id: "dev",
-    name: "Dev Team",
-    path: '/devTeam'
   },
   {
     id: "dashboard",
@@ -160,6 +160,11 @@ export const footerLinks = [
     id: "games",
     name: "Juegos",
     path: '/games'
+  },
+  {
+    id: "tournaments",
+    name: "Torneos",
+    path: '/tournaments'
   },
   {
     id: "leaderboard",
