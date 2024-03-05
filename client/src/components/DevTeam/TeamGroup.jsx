@@ -22,7 +22,7 @@ const TeamGroup = () => {
                         </span>
 
                         <span className="bg-pink-100 text-pink-800 text-[9px] xxs:text-[14px] font-medium px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
-                            Desing
+                            Design
                         </span>
                     </div>
                     <div className="flex flex-row gap-2 items-center">
@@ -48,7 +48,7 @@ const TeamGroup = () => {
                             </span>
 
                             <span className="bg-indigo-100 text-indigo-800 text-[9px] xxs:text-[14px] font-medium px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300">
-                                Desing
+                                Design
                             </span> 
 
                             <span className="bg-pink-100 text-pink-800 text-[9px] xxs:text-[14px] font-medium px-2.5 py-0.5 rounded-full dark:bg-pink-900 dark:text-pink-300">
