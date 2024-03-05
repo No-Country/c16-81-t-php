@@ -45,11 +45,10 @@ const Participating = () => {
   }, [currentPage, totalPages])
 
   return (
-    <div className={`min-h-[58vh] w-full flex flex-col justify-between gap-y-30 p-6 border-2 border-white/30 rounded-lg`}>
-      { 
+    <div className={`min-h-[58vh] w-full flex flex-col justify-between gap-y-30 p-6 border-2 border-white/30 rounded-lg`}>      { 
         tournaments.length > 0 && 
         <>
-          <TournamentsList tournaments={tournaments} className="w-full flex flex-wrap gap-y-6 gap-x-12"/>
+          <TournamentsList tournaments={tournaments} className="w-full flex flex-wrap justify-center md:justify-start gap-y-6 gap-x-12"/>
           <Pagination className={"flex gap-x-2 mt-10"} currentPage={currentPage} setPage={setCurrentPage} totalPages={totalPages} />
         </>
       }

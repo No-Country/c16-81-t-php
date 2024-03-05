@@ -49,7 +49,7 @@ const MyTournaments = () => {
       { 
         tournaments.length > 0 && 
         <>
-          <TournamentsList tournaments={tournaments} className="w-full flex flex-wrap gap-y-6 gap-x-12"/>
+          <TournamentsList tournaments={tournaments}  className="w-full flex flex-wrap justify-center md:justify-start gap-y-6 gap-x-12"/>
           <Pagination currentPage={currentPage} setPage={setCurrentPage} totalPages={totalPages} className={"flex gap-x-2 mt-10"}/>
         </>
       }

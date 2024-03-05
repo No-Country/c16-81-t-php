@@ -7,11 +7,13 @@ const TournamentCardItem = ({ tournament }) => {
         : name
     }
   return (
-    <li className="flex flex-col bg-ligthPurple px-3 pt-4 pb-2 rounded-lg h-auto basis-1/5">
-        <img src={tournament.image} alt={tournament.title} width={150} height={100} className="rounded-md" />
-        <Link to="#" className="font-semibold block">{parsedName(tournament.name)}</Link>
-        <span className="font-light text-[12px] mt-5">{tournament.modality}</span>
+    <li className="flex flex-col gap-2 bg-ligthPurple px-3 pt-4 pb-2 rounded-lg h-auto">
+      <img src={tournament.image} alt={tournament.title} width={150} height={100} className="rounded-md" />
+      <Link to="#" className="font-semibold block">{parsedName(tournament.name)}</Link>
+      <span className="font-light text-[12px]">{tournament.modality}</span>
     </li>
+
+
   )
 }
 
