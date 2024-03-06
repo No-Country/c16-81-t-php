@@ -28,9 +28,7 @@ Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'sh
 
 
 /**Route By Confrontations */
-Route::resource('confrontations', ConfrontationController::class)->only([
-    'index', 'show'
-]);
+Route::resource('confrontations', ConfrontationController::class)->only(['show']);
 
 /**Route By Videogames */
 Route::resource('videogames', VideogameController::class);
