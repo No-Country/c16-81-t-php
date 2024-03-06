@@ -7,7 +7,6 @@ use App\Http\Controllers\TeamUserController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideogameController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +28,7 @@ Route::get('/tournaments/{id}/confrontations', [TournamentController::class, 'sh
 
 
 /**Route By Confrontations */
-Route::resource('confrontations', ConfrontationController::class);
+Route::resource('confrontations', ConfrontationController::class)->only(['show']);
 
 /**Route By Videogames */
 Route::resource('videogames', VideogameController::class);
@@ -51,6 +50,11 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/tournaments', [TournamentController::class, 'store']);
     Route::put('/tournaments/{id}', [TournamentController::class, 'update']);
     Route::delete('/tournaments/{id}', [TournamentController::class, 'destroy']);
+    
+    /**Route By Confrontations */
+    Route::post('/confrontations', [ConfrontationController::class, 'store']);
+    Route::put('/confrontations/{id}', [ConfrontationController::class, 'update']);
+    Route::delete('/confrontations/{id}', [ConfrontationController::class, 'destroy']);
     
     /**Route By Teams */
     Route::resource('teams', TeamController::class);

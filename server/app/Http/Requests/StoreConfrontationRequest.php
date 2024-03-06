@@ -11,7 +11,7 @@ class StoreConfrontationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class StoreConfrontationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'tournament_id' => "required",
+            'round_name'  => "required",
+            'team_one_id' => "required",
+            'team_two_id' => "required",
+            'status_id' => "required",
+            'position_id' => "required",
         ];
     }
 }
