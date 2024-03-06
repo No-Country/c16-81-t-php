@@ -25,6 +25,8 @@ import Games from "./pages/Games/Games";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Ranking from "./pages/Ranking/Ranking";
 import DevTeam from "./pages/DevTeam/DevTeam";
+import Tournaments from "./pages/Tournaments/Tournaments";
+import InfoTournament from "./pages/Tournaments/Tournament/InfoTournament";
 
 export default function App() {
   return (
@@ -43,6 +45,8 @@ export default function App() {
             <Route path="/games" element={<Games />} />
             <Route path="/leaderboard" element={<Ranking />} />
             <Route path="/devTeam" element={<DevTeam />} />
+            <Route path="/tournaments" element={<Tournaments />} />
+            <Route path="/tournament/:tournamentId" element={<InfoTournament />} />
             
             <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}>
               <Route path="mi-perfil" element={<LayoutProfile />}>

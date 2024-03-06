@@ -56,6 +56,7 @@ class TournamentController extends Controller
      */
     public function show(Tournament $tournament)
     {
+        
         $tournament->videogame;
         $tournament->managed_by;
         $tournament->won_by;
