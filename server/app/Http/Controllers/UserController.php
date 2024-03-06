@@ -53,14 +53,14 @@ class UserController extends Controller
         if($request->user()->id != $idToEdit){
             return response()->json([
                 "success" => false,
-                "message" => "You cannot edit the information of others users profiles."
+                "message" => "No puedes editar la informacion del perfil de otro usuario.."
             ], 403);
         }
 
         if( empty($request->all()) ){
             return response()->json([
                 "success" => false,
-                "message" => "Cannot update without new information (empty fields)"
+                "message" => "Debes enviar al menos un campo para actualizar el perfil"
             ], 400);
         }
         
@@ -68,7 +68,7 @@ class UserController extends Controller
         
         return response()->json([
             "success" => true,
-            "message" => "User update successfully"
+            "message" => "El usuario fue actualizado exitosamente"
         ], 200);
     }
 
