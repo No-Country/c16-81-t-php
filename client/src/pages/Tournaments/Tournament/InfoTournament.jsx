@@ -191,70 +191,69 @@ const Tournaments = () => {
                       </div> 
                     </div>
                   }{isAdmin && 
-                    <form id="createTournament"  onSubmit={handleSubmit(onSubmit)} className={`min-h-[58vh] flex flex-col gap-y-4 sm:gap-y-12 p-2 sm:p-6 border-2 border-white/30 rounded-lg`}>
+                    <form id="createTournament"  onSubmit={handleSubmit(onSubmit)} >
+                      <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-3 gap-y-4">
+                        <div className="flex flex-col items-start">
+                          <h1 className="font-monse font-bold text-balance ss:text-[30px] text-[22px] text-secondary mb-2">Fecha y hora de comienzo</h1>
+                        
+                          <input type="datetime-local" name="starts_the" id="starts_the" className={`${inputElement} w-[211px] sm:w-auto`}
+                            {...register("starts_the", {
+                              required: {
+                                value: true,
+                                message: "La fecha de comienzo es requerida",
+                              }
+                            })
+                          }
+                          />
+                        </div>  
+                        <div className="flex flex-col items-start sm:items-end">
+                          <h1 className="font-monse font-bold text-balance ss:text-[30px] text-[22px] text-secondary mb-2">Participantes</h1>
+                          <input type="number" min={8} max={16} step={8} name="quantity_teams" id="quantity_teams" className={`${inputElement} w-[150px]`}
+                            {...register("quantity_teams")
+                          }
+                          />
+                        </div>
+                        <div className="flex flex-col items-start">
+                          <h1 className="font-monse font-bold text-balance ss:text-[30px] text-[22px] text-secondary mb-2">Modalidad</h1>
+                          <select name="modality" className={`${inputElement} w-[211px] sm:w-auto`}
+                            {...register("modality", {
+                                required: {
+                                  value: true,
+                                  message: "La modalidad es requerida",
+                                } 
+                              })
+                            }
+                          >
+                            <option value="">Seleccione una modalidad</option>
+                            <option value="1v1">1v1</option>
+                            <option value="2v2">2v2</option>
+                            <option value="3v3">3v3</option>
+                            <option value="4v4">4v4</option>
+                            <option value="5v5">5v5</option>
+                          </select>
+                        </div>
+                        <div className="flex flex-col items-start sm:items-end">
+                          <h1 className="font-monse font-bold text-balance ss:text-[30px] text-[22px] text-secondary mb-2">Torneo realizado por</h1>
+                          <span className="font-monse font-semibold text-[#BFC0E0] text-[20px] sm:text-[26px]">{torneoInfo.tournament.managed_by.nick_name}</span>
+                        </div>  
+                        <div className="flex flex-col basis-2/4">
+                          <h1 className="font-monse font-bold text-balance ss:text-[30px] text-[22px] text-secondary mb-2">Link del torneo (opcional)</h1>
+                          <input type="text" name="link_ingame" id="link_ingame" className={`${inputElement}`} {...register("link_ingame")}/>
+                        </div>
 
-<div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-3 gap-y-4">
-<div className="flex flex-col items-start">
-  <h1 className="font-monse font-bold text-balance ss:text-[30px] text-[22px] text-secondary mb-2">Fecha y hora de comienzo</h1>
- 
-            <input type="datetime-local" name="starts_the" id="starts_the" className={`${inputElement} w-[211px] sm:w-auto`}
-              {...register("starts_the", {
-                required: {
-                  value: true,
-                  message: "La fecha de comienzo es requerida",
-                }
-              })
-            }
-            />
-</div>  
-<div className="flex flex-col ">
-            <label htmlFor="quantity_teams" className={`${labelElement}`}>Cantidad de equipos</label>
-            <input type="number" min={8} max={16} step={8} name="quantity_teams" id="quantity_teams" className={`${inputElement} w-[150px]`}
-              {...register("quantity_teams")
-            }
-            />
-          </div>
-          <div className="flex flex-col basis-1/6">
-            <label htmlFor="modality" id="modality" className={`${labelElement}`}>Modalidad</label>
-            <select name="modality" className={`${inputElement} w-[211px] sm:w-auto`}
-              {...register("modality", {
-                  required: {
-                    value: true,
-                    message: "La modalidad es requerida",
-                  } 
-                })
-              }
-            >
-              <option value="">Seleccione una modalidad</option>
-              <option value="1v1">1v1</option>
-              <option value="2v2">2v2</option>
-              <option value="3v3">3v3</option>
-              <option value="4v4">4v4</option>
-              <option value="5v5">5v5</option>
-            </select>
-          </div>
-<div className="flex flex-col items-start sm:items-end">
-  <h1 className="font-monse font-bold text-balance ss:text-[30px] text-[22px] text-secondary mb-2">Torneo realizado por</h1>
-  <span className="font-monse font-semibold text-[#BFC0E0] text-[20px] sm:text-[26px]">{torneoInfo.tournament.managed_by.nick_name}</span>
-</div>  
-<div className="flex flex-col basis-2/4">
-            <label htmlFor="link_ingame" className={`${labelElement}`}>Link en el juego (opcional)</label>
-            <input type="text" name="link_ingame" id="link_ingame" className={`${inputElement}`} {...register("link_ingame")}/>
-          </div>
-
-<div className="flex justify-center sm:justify-start ">
-  <div className="flex justify-center sm:justify-start">
-    <button
-      type='submit'
-      className={`w-[200px] max-h-[40px] sm:w-[220px]  py-2 px-6 bg-gray-gradient font-monse font-medium text-[14px] sm:text-[16px]
-      text-white hover:text-secondary outline-none rounded-[14px] shadow-md`}
-    >
-      Actualizar Torneo
-    </button>
-  </div>
-</div> 
-</div>
-</form>
+                        <div className="flex flex-col items-center sm:items-end justify-end">
+                          <div className="flex justify-center sm:items-end">
+                            <button
+                              type='submit'
+                              className={`w-[200px] max-h-[40px] sm:w-[220px]  py-2 px-6 bg-gray-gradient font-monse font-medium text-[14px] sm:text-[16px]
+                              text-white hover:text-secondary outline-none rounded-[14px] shadow-md`}
+                            >
+                              Actualizar Torneo
+                            </button>
+                          </div>
+                        </div> 
+                      </div>
+                    </form>
 
                   }
                 </div>
