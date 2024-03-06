@@ -21,6 +21,9 @@ export const verifyAuthorization = async () => {
       const data = await resp.json()
       if(!resp.ok){ throw new Error(data.message) }
 
+       // Guardar el ID del usuario actual en el localStorage
+      localStorage.setItem('currentUserId', data.id);
+
       return resp.ok
     } catch (error) {
       console.error(`Error al verificar la autenticacion del usuario: ${error.message}`)
