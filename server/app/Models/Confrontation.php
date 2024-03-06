@@ -23,7 +23,7 @@ class Confrontation extends Model
 
     public function tournament(): BelongsTo
     {
-        return $this->belongsTo(Tournament::class);
+        return $this->belongsTo(Tournament::class)->with(['videogame', 'managed_by']);
     }
 
     public function position(): BelongsTo

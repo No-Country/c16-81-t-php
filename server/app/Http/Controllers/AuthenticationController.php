@@ -23,7 +23,7 @@ class AuthenticationController extends Controller
         
         if(!$user || !Hash::check($request->password, $user->password)){
             throw ValidationException::withMessages([
-                'message' => ["Credentials incorrect"],
+                "message" => ["Credenciales incorrectas"],
             ]);
         }
 
@@ -32,7 +32,7 @@ class AuthenticationController extends Controller
         return response()->json([
             "success" => true,
             "token" => $token,
-            "message" => "Welcome to the Game Center"
+            "message" => "Bienvenido al Game Center"
         ]);
     }
 
@@ -41,7 +41,7 @@ class AuthenticationController extends Controller
 
         return response()->json([
             "success" => true,
-            "message" => "Token Deleted Successfully",
+            "message" => "El token de usuario fue eliminado exitosamente",
         ]);
     }
 
@@ -63,12 +63,12 @@ class AuthenticationController extends Controller
             $user->password = $request->password;
             $user->save();
             return response()->json([
-                "message" => "Password Changed successfully"
+                "message" => "La contraseña ha sido cambiada satisfactoriamente"
             ], 200);
         }else{
             return response()->json([
                 "success" => true,
-                "message" => "User not exist",
+                "message" => "El usuario especificado no existe",
             ], 400);
         }
     }
@@ -86,7 +86,7 @@ class AuthenticationController extends Controller
 
         return response()->json([
             "success" => true,
-            "message" => "User Suspended"
+            "message" => "El usuario fue suspendido exitosamente"
         ]);
     }
 }

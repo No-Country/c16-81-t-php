@@ -84,7 +84,7 @@ class TournamentController extends Controller
         if( empty($request->all()) ){
             return response()->json([
                 "success" => false,
-                "message" => "Para actualizar el torneo debes mandar nueva informacion..."
+                "message" => "Debes enviar al menos un campo para actualizar el torneo"
             ], 400);
         }
         
