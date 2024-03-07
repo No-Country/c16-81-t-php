@@ -12,9 +12,10 @@ const MyTournaments = () => {
   useEffect(() => {
     const getTournaments = async() => { 
       const token = localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME)
-
+      const currentUserId = localStorage.getItem('currentUserId') 
+    
       try {
-        const resp = await fetch(`http://127.0.0.1:8000/api/tournaments?page=${currentPage}&paginatedBy=${paginatedBy}`, {
+        const resp = await fetch(`http://127.0.0.1:8000/api/users/${currentUserId}/managed-tournaments?page=${currentPage}&paginatedBy=${paginatedBy}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -23,26 +24,25 @@ const MyTournaments = () => {
             withCredentials: "true",
           }, 
         })
-
+  
         const data = await resp.json()
         if(!resp.ok){
-          throw new Error(`Ocurrio un error mientras se cargaban 'mis torneos': ${data.message}`)
+          throw new Error(`Ocurrió un error mientras se cargaban 'mis torneos': ${data.message}`)
         }
-
-        setTotalPages(data.tournaments.last_page)
-
-        return data.tournaments.data
+  
+       
+        setTournaments(data.managed_tournaments)  // Establecer los torneos en el estado
+        
       } catch (error) {
         console.error(error)
         alert(error)
-        return []
+        setTournaments([])  // Establecer los torneos como un array vacío en caso de error
       }
     }
-
+  
     getTournaments()
-        .then(setTournaments)
-        .catch(setTournaments)
-  }, [currentPage, totalPages])
+  }, [currentPage, paginatedBy])
+  
 
   return (
     <div className={`min-h-[58vh] w-full flex flex-col justify-between gap-y-30 p-6 border-2 border-white/30 rounded-lg`}>
