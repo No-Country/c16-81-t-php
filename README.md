@@ -6,6 +6,13 @@
 ArenaMobile es una plataforma web innovadora que tiene como objetivo principal conectar a los apasionados de los videojuegos móviles a través de emocionantes torneos.<br/><br/>
   Ya seas un jugador ávido en busca de nuevos desafíos o un organizador estusiasta que desea crear su propio torneo, te invitamos a unirte a Arenamobile y formar parte de esta emocionante comunidad de juegos móviles.
 </p>
+<p align='left'>
+<a href='#' target='_blank'>
+  <img src='https://img.shields.io/badge/Ver%20Demo-2E2E3E?style=for-the-badge&logo=Vercel&logoColor=white' />
+</a>
+</p>
+
+
 
 
 ## Carasteristicas
@@ -23,7 +30,6 @@ ArenaMobile es una plataforma web innovadora que tiene como objetivo principal c
   <img src='https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB' />
   <img src='https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white' />
   <img src='https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white' />
-  <img src='https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white' />
 </p>
 
 <h3 align='left'>
@@ -73,10 +79,10 @@ ArenaMobile es una plataforma web innovadora que tiene como objetivo principal c
       </p>
       <p align='center'>
         <a href='https://github.com/Gabyp05' target='_blank'>
-          <img src='https://github.com/YosstinCode/images_readme/blob/main/Button%20Github.svg' height=30/>
+          <img src='https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white' height=30 />
         </a>
         <a href='https://www.linkedin.com/in/gabyp05/' target='_blank'>
-          <img src='https://github.com/YosstinCode/images_readme/blob/main/Button%20Linkedin.svg' height=30/>
+          <img src='https://img.shields.io/badge/LinkedIn-0A66C2.svg?style=for-the-badge&logo=LinkedIn&logoColor=white' height=30/>
         </a>
       </p>
     </td>
@@ -94,10 +100,10 @@ ArenaMobile es una plataforma web innovadora que tiene como objetivo principal c
       </p>
       <p align='center'>
         <a href='https://github.com/NehuenCuenca' target='_blank'>
-          <img src='https://github.com/YosstinCode/images_readme/blob/main/Button%20Github.svg' height=30/>
+          <img src='https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white' height=30 />
         </a>
-        <a href='https://www.linkedin.com/in//' target='_blank'>
-          <img src='https://github.com/YosstinCode/images_readme/blob/main/Button%20Linkedin.svg' height=30/>
+        <a href='https://www.linkedin.com/in/nehuen-cuenca/' target='_blank'>
+          <img src='https://img.shields.io/badge/LinkedIn-0A66C2.svg?style=for-the-badge&logo=LinkedIn&logoColor=white' height=30/>
         </a>
       </p>
     </td>
@@ -115,10 +121,10 @@ ArenaMobile es una plataforma web innovadora que tiene como objetivo principal c
       </p>
       <p align='center'>
         <a href='https://github.com/Yansel93' target='_blank'>
-          <img src='https://github.com/YosstinCode/images_readme/blob/main/Button%20Github.svg' height=30/>
+          <img src='https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white' height=30 />
         </a>
-        <a href='https://www.linkedin.com/in//' target='_blank'>
-          <img src='https://github.com/YosstinCode/images_readme/blob/main/Button%20Linkedin.svg' height=30/>
+        <a href='https://wa.me/5356568218?text=Hola+Yansel' target='_blank'>
+          <img src='https://img.shields.io/badge/WhatsApp-25D366.svg?style=for-the-badge&logo=WhatsApp&logoColor=white' height=30 />
         </a>
       </p>
     </td>
