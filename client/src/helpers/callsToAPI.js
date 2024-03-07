@@ -35,7 +35,7 @@ export const verifyAuthorization = async () => {
 export const getTournamentById = async (tournamentId) => {
   try {
 
-    const resp = await fetch(`${URL_ENVIROMENT}apitournaments${tournamentId}`, {
+    const resp = await fetch(`${URL_ENVIROMENT}/api/tournaments/${tournamentId}`, {
       method: 'GET',
       headers: {
         "Accept": "application/json",
