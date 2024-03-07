@@ -12,9 +12,10 @@ const Participating = () => {
   useEffect(() => {
     const getTournaments = async() => { 
       const token = localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME)
-      
+      const currentUserId = localStorage.getItem('currentUserId') 
+    
       try {
-        const resp = await fetch(`http://127.0.0.1:8000/api/tournaments?page=${currentPage}&paginatedBy=${paginatedBy}`,{
+        const resp = await fetch(`http://127.0.0.1:8000/api/users/${currentUserId}/participating-tournaments?page=${currentPage}&paginatedBy=${paginatedBy}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -23,35 +24,37 @@ const Participating = () => {
             withCredentials: "true",
           }, 
         })
-
+  
         const data = await resp.json()
         if(!resp.ok){
-          throw new Error(`Ocurrio un error mientras se cargaban los torneos de 'participando': ${data.message}`)
+          throw new Error(`Ocurrió un error mientras se cargaban los torneos en los que participas: ${data.message}`)
         }
-
-        setTotalPages(data.tournaments.last_page)
-
-        return data.tournaments.data
+  
+       
+        setTournaments(data.managed_tournaments) 
+        
       } catch (error) {
         console.error(error)
         alert(error)
-        return []
+        setTournaments([])  
       }
     }
-
+  
     getTournaments()
-        .then(setTournaments)
-        .catch(setTournaments)
-  }, [currentPage, totalPages])
+  }, [currentPage, paginatedBy])
 
   return (
-    <div className={`min-h-[58vh] w-full flex flex-col justify-between gap-y-30 p-6 border-2 border-white/30 rounded-lg`}>      { 
-        tournaments.length > 0 && 
+    <div className={`min-h-[58vh] w-full flex flex-col justify-between gap-y-30 p-6 border-2 border-white/30 rounded-lg`}>
+      {tournaments && tournaments.length > 0 ? (
         <>
           <TournamentsList tournaments={tournaments} className="w-full flex flex-wrap justify-center md:justify-start gap-y-6 gap-x-12"/>
           <Pagination className={"flex gap-x-2 mt-10"} currentPage={currentPage} setPage={setCurrentPage} totalPages={totalPages} />
         </>
-      }
+      ) : (
+          <h1 className="text-secondary text-2xl sm:text-3xl text-center font-monse font-semibold">
+            No estás participando en ningún torneo en este momento
+          </h1>
+      )}
     </div>
   )
 }

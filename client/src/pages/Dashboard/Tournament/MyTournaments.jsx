@@ -31,12 +31,12 @@ const MyTournaments = () => {
         }
   
        
-        setTournaments(data.managed_tournaments)  // Establecer los torneos en el estado
+        setTournaments(data.managed_tournaments) 
         
       } catch (error) {
         console.error(error)
         alert(error)
-        setTournaments([])  // Establecer los torneos como un array vacío en caso de error
+        setTournaments([])  
       }
     }
   
