@@ -24,11 +24,11 @@ export const verifyAuthorization = async () => {
        // Guardar el ID del usuario actual en el localStorage
       localStorage.setItem('currentUserId', data.id);
 
-      return resp.ok
+      return data
     } catch (error) {
       console.error(`Error al verificar la autenticacion del usuario: ${error.message}`)
       localStorage.removeItem(import.meta.env.VITE_USER_TOKEN_NAME)
       window.dispatchEvent(new Event("storage"));
-      return false
+      return null
     }
 };
