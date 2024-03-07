@@ -91,7 +91,7 @@ const Torneos = () => {
                                 <span className="font-monse font-semibold text-[14px] xs:text-[16px] text-[#BFC0E0]">{torneo.formattedTime}</span>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Link to="/tournament/{id}">
+                                <Link to={`/tournament/${torneo.id}`}>
                                     <button 
                                         type='button'           
                                         className={`w-[120px] xxs:w-[140px] max-h-[40px] sm:w-[200px] md:w-[220px] py-2 px-6 bg-gray-gradient font-monse font-medium text-[14px] sm:text-[16px]
