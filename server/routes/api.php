@@ -36,6 +36,10 @@ Route::resource('videogames', VideogameController::class);
 /**Route By Team Users */
 Route::resource('team_users', TeamUserController::class);
 
+/**Route By Users */
+Route::get('/users/{user}/managed-tournaments', [UserController::class, 'managed_tournaments']);
+Route::get('/users/{user}/participating-tournaments', [UserController::class, 'participating_tournaments']);
+
 /* Authentication routes */
 Route::post('/register', [AuthenticationController::class, 'register']);
 Route::post('/login', [AuthenticationController::class, 'login']);
