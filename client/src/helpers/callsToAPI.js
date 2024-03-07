@@ -21,7 +21,7 @@ export const verifyAuthorization = async () => {
       if(!resp.ok){ throw new Error(data.message) }
 
       // Guardar el ID del usuario actual en el localStorage
-      // localStorage.setItem('currentUserId', data.id);
+      localStorage.setItem('currentUserId', data.id);
 
       return data
     } catch (error) {
@@ -35,7 +35,7 @@ export const verifyAuthorization = async () => {
 export const getTournamentById = async (tournamentId) => {
   try {
 
-    const resp = await fetch(`${URL_ENVIROMENT}apitournaments${tournamentId}`, {
+    const resp = await fetch(`${URL_ENVIROMENT}/api/tournaments/${tournamentId}`, {
       method: 'GET',
       headers: {
         "Accept": "application/json",
