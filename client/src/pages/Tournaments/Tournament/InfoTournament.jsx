@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { coupon, calendar, time} from "../../../assets";
+import { calendar, time} from "../../../assets";
 import { useParams, useNavigate } from 'react-router-dom';
 import Results from './Results';
 import { getTournamentById } from "../../../helpers/callsToAPI"
@@ -8,7 +8,7 @@ import styles from '../../../style';
 import { cleanFormDataValues } from '../../../helpers/forms';
 
 const Tournaments = () => {
-  const { labelElement, inputElement } = styles
+  const { inputElement } = styles
 
   const navigate = useNavigate();
 
@@ -167,7 +167,10 @@ const Tournaments = () => {
                         <div className="flex flex-col items-start">
                           <h1 className="font-monse font-bold text-balance ss:text-[30px] text-[22px] text-secondary mb-2">Fecha y hora de comienzo</h1>
                         
-                          <input type="datetime-local" name="starts_the" id="starts_the" className={`${inputElement} w-[211px] sm:w-auto`}
+                          <input type="datetime-local"
+                          name="starts_the"  
+                          value={tournamentInfo.starts_the.replace(/:\d{2}$/, '')}   
+                          id="starts_the" className={`${inputElement} w-[211px] sm:w-auto`}
                             {...register("starts_the")
                           }
                           />
@@ -181,7 +184,7 @@ const Tournaments = () => {
                         </div>
                         <div className="flex flex-col items-start">
                           <h1 className="font-monse font-bold text-balance ss:text-[30px] text-[22px] text-secondary mb-2">Modalidad</h1>
-                          <select name="modality" className={`${inputElement} w-[211px] sm:w-auto`}
+                          <select name="modality" value={tournamentInfo.modality} className={`${inputElement} w-[211px] sm:w-auto`}
                             {...register("modality")}
                           >
                             <option value="1v1">1v1</option>
