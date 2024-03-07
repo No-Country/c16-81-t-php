@@ -22,6 +22,7 @@ import pubg from "./pubg-mobile.webp";
 import brawlStar from "./brawl-stars.webp";
 import coupon from "./coupon.svg";
 import calendar from "./calendar.svg";
+import time from "./time.svg";
 import cover from "./img-torneo.png";
 import Bronze from "./bronze.webp";
 import Silver from "./silver.webp";
@@ -88,6 +89,7 @@ export {
   brawlStar,
   coupon,
   calendar,
+  time,
   cover,
   Bronze,
   Silver,

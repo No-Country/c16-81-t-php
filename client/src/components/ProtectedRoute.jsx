@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
 
   const fetchAuthorization = useCallback(async () => {
     const verification = await verifyAuthorization();
-    setAuthorized(verification);
+    setAuthorized(!!verification);
   }, [])
 
   useEffect(() => {

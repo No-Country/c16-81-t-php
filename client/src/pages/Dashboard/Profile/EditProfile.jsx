@@ -2,6 +2,7 @@ import styles from "../../../style";
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {useNavigate} from 'react-router-dom'
+import { cleanFormDataValues } from "../../../helpers/forms";
 
 const EditProfile = () => {
   const { labelElement, inputElement } = styles
@@ -61,15 +62,6 @@ const EditProfile = () => {
   
   const handleReset = () => { reset( undefined, {keepDirtyValues: true}) }
 
-  const cleanFormDataValues = (formDataValues) => Object.keys(formDataValues).reduce( (acum, currentKey) => {
-    const value = formDataValues[currentKey]
-    
-    if( value ){
-      return { ...acum, [currentKey]:value }
-    }
-
-    return acum
-  }, {})
 
   const onSubmit = async(formDataValues) => {
     

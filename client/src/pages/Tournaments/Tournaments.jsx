@@ -1,5 +1,5 @@
 import React from 'react'
-import { coupon, calendar, time} from "../assets";
+import { coupon, calendar, time} from "../../assets";
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
 
@@ -18,35 +18,33 @@ function formatDate(date) {
       time: `${hours}:${minutes}`
     };
 }
-  
 
-const Torneos = () => {
+const Tournaments = () => {
 
     const [torneos, setTorneos] = useState([]);
 
     useEffect(() => {
-        const fetchTorneos = async () => {
+    const fetchTorneos = async () => {
         try {
-            const resp = await fetch("http://127.0.0.1:8000/api/tournaments");
-            const data = await resp.json();
+        const resp = await fetch("http://127.0.0.1:8000/api/tournaments");
+        const data = await resp.json();
 
-            const transformedData = transformTorneosData(data);
-            const formattedTorneos = transformedData.map(torneo => ({
-                ...torneo,
-                formattedDate: formatDate(torneo.date).date,
-                formattedTime: formatDate(torneo.date).time
-            }));
-            const filteredTorneos = formattedTorneos.slice(0, 8);
-            setTorneos(filteredTorneos);
-
-            
+        const transformedData = transformTorneosData(data);
+        const formattedTorneos = transformedData.map(torneo => ({
+            ...torneo,
+            formattedDate: formatDate(torneo.date).date,
+            formattedTime: formatDate(torneo.date).time
+        }));
+        setTorneos(formattedTorneos);
+        
         } catch (error) {
-            console.error(`Error al obtener los torneos: ${error.message}`);
+        console.error(`Error al obtener los torneos: ${error.message}`);
         }
-        };
+    };
 
-        fetchTorneos();
+    fetchTorneos();
     }, []);
+
 
     const transformTorneosData = (data) => {
         if (!data || !data.tournaments || !data.tournaments.data) {
@@ -62,7 +60,6 @@ const Torneos = () => {
         }));
     };
 
-      
   return (
     <section id="torneos">
         <div className='px-4 sm:px-6 md:px-[64px]'>
@@ -70,7 +67,7 @@ const Torneos = () => {
                 Torneos
             </h1>
 
-            <div className="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
+            <div className="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 mb-24">
                 {torneos.map((torneo) => (
                     <div className="bg-card max-w-[295px] max-h-[340px] rounded-xl shadow-lg" key={torneo.id}>
                         <div className="flex-1 flex flex-col flex-shrink-0 flex-nowrap mx-4">
@@ -105,18 +102,9 @@ const Torneos = () => {
                     </div>
                 ))}
             </div>
-            <div className="relative items-center flex justify-center gap-8 my-4 md:my-8">
-            <Link to="/tournaments">
-                <button type='button'           
-                        className={`py-4 px-6 mt-4 bg-gray-gradient flex-1 flex gap-2 flex-row font-monse font-medium text-[16px]
-                        text-white hover:text-secondary outline-none rounded-[14px] shadow-2xl`}> 
-                    Descubrir más
-                </button>
-            </Link>
-        </div>
         </div>
     </section>
   )
 }
 
-export default Torneos
+export default Tournaments
