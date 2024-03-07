@@ -170,7 +170,7 @@ const Tournaments = () => {
                           <input type="datetime-local"
                           name="starts_the"  
                           value={tournamentInfo.starts_the.replace(/:\d{2}$/, '')}   
-                          id="starts_the" className={`${inputElement} w-[211px] sm:w-auto`}
+                          id="starts_the" className={`${inputElement} w-[240px] sm:w-auto`}
                             {...register("starts_the")
                           }
                           />
@@ -184,7 +184,7 @@ const Tournaments = () => {
                         </div>
                         <div className="flex flex-col items-start">
                           <h1 className="font-monse font-bold text-balance ss:text-[30px] text-[22px] text-secondary mb-2">Modalidad</h1>
-                          <select name="modality" value={tournamentInfo.modality} className={`${inputElement} w-[211px] sm:w-auto`}
+                          <select name="modality" value={tournamentInfo.modality} className={`${inputElement} w-[150px] sm:w-auto`}
                             {...register("modality")}
                           >
                             <option value="1v1">1v1</option>
@@ -220,10 +220,10 @@ const Tournaments = () => {
                   }
                 </div>
             ) : (
-                <p>Los datos del torneo no están disponibles.</p>
+                <h1 className="text-secondary text-4xl font-monse font-semibold">Los datos del torneo no están disponibles.</h1>
             )}
         </div>
-        <div className="results mt-6">
+        <div className="results mt-16">
           <h1 className="font-monse font-bold text-balance ss:text-[24px] text-[22px] text-secondary mb-1">¿Cómo va el torneo?</h1>
 
           <Results />

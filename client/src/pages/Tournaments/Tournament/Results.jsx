@@ -2,7 +2,7 @@ import React from 'react'
 
 const Results = () => {
   return (
-    <section className='container mx-auto py-16 flex flex-row gap-x-12 relative overflow-x-auto'>
+    <section className='container mx-auto pb-16 pt-6 flex flex-row gap-x-12 relative overflow-x-auto'>
         <div className="round-one flex flex-col gap-6">
             <h1 className='font-monse font-semibold text-2xl texte center text-paragraph'>Ronda 1</h1>
             <div className="font-monse font-semibold text-paragraph flex flex-col gap-2">
