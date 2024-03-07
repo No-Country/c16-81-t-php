@@ -28,6 +28,10 @@ import Bronze from "./bronze.webp";
 import Silver from "./silver.webp";
 import Oro from "./Oro.webp";
 import avatar from "./avatar.jpg";
+import avatar1 from "./avatar1.jpg";
+import avatar2 from "./avatar2.jpg";
+import avatar3 from "./avatar3.jpg";
+import avatar4 from "./avatar4.jpg";
 import quotes from "./Quotes.svg";
 import review from "./Review.svg";
 import arrowLeft from "./arrow-left.svg";
@@ -95,6 +99,10 @@ export {
   Silver,
   Oro,
   avatar,
+  avatar1,
+  avatar2,
+  avatar3,
+  avatar4,
   quotes,
   review,
   arrowLeft,
