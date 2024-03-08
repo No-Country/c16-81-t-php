@@ -77,16 +77,21 @@ class AuthenticationController extends Controller
     /**
      * Suspend an already authenticated user
      */
-    public function suspend_user(){
+    public function suspend_user(Request $request){
+        $suspend = $request->input('suspend');
         $id = Auth::user()->id;
         
         $user = User::find($id);
-        $user->is_suspend = true;
+        $user->is_suspend = $suspend;
         $user->save();
+
+        $message = ($suspend) 
+                    ? "El usuario fue suspendido exitosamente"
+                    : "El usuario no fue suspendido";
 
         return response()->json([
             "success" => true,
-            "message" => "El usuario fue suspendido exitosamente"
+            "message" => $message
         ]);
     }
 }

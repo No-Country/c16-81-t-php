@@ -55,3 +55,31 @@ export const getTournamentById = async (tournamentId) => {
     return null
   }
 };
+
+export const suspendUserProfile = async(bool) => { 
+  const token = localStorage.getItem(import.meta.env.VITE_USER_TOKEN_NAME);
+
+  try {
+    const resp = await fetch(`${URL_ENVIROMENT}/api/suspend-user`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        Accept: "application/json",
+      },
+      body: JSON.stringify({'suspend': bool})
+    })
+
+    if (!resp.ok) {
+      throw new Error('Error al tratar de suspender el perfil del usuario');  
+    }
+    
+    const data = await resp.json();
+    return data.message
+  } catch (error) {
+    console.error(`${error.message}`);
+
+    return error.message
+  }
+
+ }
