@@ -147,19 +147,33 @@ const Tournaments = () => {
                           <span className="font-monse font-semibold text-[#BFC0E0] text-[20px] sm:text-[26px]">{tournamentInfo.link_ingame}</span>
                         </div>
                       )}
-                      <div className="flex justify-center sm:justify-start ">
-              
-                      <div className="flex justify-center sm:justify-start">
-                        <button
-                          type='button'
-                          disabled={true}
-                          className={`w-[200px] max-h-[40px] sm:w-[220px]  py-2 px-6 bg-gray-gradient font-monse font-medium text-[14px] sm:text-[16px]
-                          text-white hover:text-secondary outline-none rounded-[14px] shadow-md`}
-                        >
-                          Solicitar unirse
-                        </button>
-                      </div>
-                      </div> 
+                      {tournamentInfo.link_ingame ? (
+                        <div className="flex justify-center sm:justify-end">
+                          <div className="flex justify-center sm:justify-start">
+                            <button
+                              type='button'
+                              disabled={true}
+                              className={`w-[200px] max-h-[40px] sm:w-[220px]  py-2 px-6 bg-gray-gradient font-monse font-medium text-[14px] sm:text-[16px]
+                              text-white hover:text-secondary outline-none rounded-[14px] shadow-md`}
+                            >
+                              Solicitar unirse
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="flex justify-start sm:justify-start">
+                          <div className="flex justify-center sm:justify-start">
+                            <button
+                              type='button'
+                              disabled={true}
+                              className={`w-[200px] max-h-[40px] sm:w-[220px]  py-2 px-6 bg-gray-gradient font-monse font-medium text-[14px] sm:text-[16px]
+                              text-white hover:text-secondary outline-none rounded-[14px] shadow-md`}
+                            >
+                              Solicitar unirse
+                            </button>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   }{isAdmin && 
                     <form id="updateTournament"  onSubmit={handleSubmit(onSubmit)} >
