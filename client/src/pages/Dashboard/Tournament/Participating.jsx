@@ -30,17 +30,18 @@ const Participating = () => {
           throw new Error(`Ocurrió un error mientras se cargaban los torneos en los que participas: ${data.message}`)
         }
   
-       
-        setTournaments(data.managed_tournaments) 
-        
+        setTotalPages(data.participating_tournaments.last_page)
+        return data.participating_tournaments.data
       } catch (error) {
         console.error(error)
         alert(error)
-        setTournaments([])  
+        return []
       }
     }
   
     getTournaments()
+      .then(setTournaments)
+      .catch(setTournaments)
   }, [currentPage, paginatedBy])
 
   return (

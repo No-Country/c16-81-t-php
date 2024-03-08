@@ -45,11 +45,14 @@ const Integrating = () => {
 
   return (
     <div className={`min-h-[58vh] w-full flex flex-col justify-between gap-y-30 p-6 border-2 border-white/30 rounded-lg`}>
-      { teams.length > 0 &&
-        <>
+      { teams.length > 0 ? 
+        (<>
           <TeamsList teams={teams} className="w-full flex flex-wrap gap-y-6 gap-x-12"/>
-          <Pagination currentPage={currentPage} setPage={setCurrentPage} totalPages={totalPages}  className={"flex gap-x-2"} />
-        </>
+          <Pagination currentPage={currentPage} setPage={setCurrentPage} totalPages={totalPages} className={"flex gap-x-2 mt-10"} />
+        </>)
+        : (<h1 className="text-secondary text-2xl sm:text-3xl text-center font-monse font-semibold">
+            No formas parte de ningun equipo...
+          </h1>)
       }
     </div>
   )

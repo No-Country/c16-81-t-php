@@ -115,7 +115,7 @@ class UserController extends Controller
     public function managed_tournaments(User $user){
         return response()->json([ 
             "message" => "success",
-            "managed_tournaments" => $user->manage->all()
+            "managed_tournaments" => $user->manage()->paginate(8)
         ], 200);
     }
 
@@ -135,8 +135,7 @@ class UserController extends Controller
                 ->select('tournaments.*')
                 ->union($participating_as_team_one)
                 ->distinct()
-                ->get();
-
+                ->paginate(8);
         
         return response()->json([ 
             "message" => "success",

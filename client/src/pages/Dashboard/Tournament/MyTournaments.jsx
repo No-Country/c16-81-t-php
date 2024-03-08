@@ -30,29 +30,33 @@ const MyTournaments = () => {
           throw new Error(`Ocurrió un error mientras se cargaban 'mis torneos': ${data.message}`)
         }
   
-       
-        setTournaments(data.managed_tournaments) 
-        
+        setTotalPages(data.managed_tournaments.last_page)
+        return data.managed_tournaments.data
       } catch (error) {
         console.error(error)
         alert(error)
-        setTournaments([])  
+        return [] 
       }
     }
   
     getTournaments()
+      .then(setTournaments)
+      .catch(setTournaments)
   }, [currentPage, paginatedBy])
   
 
   return (
     <div className={`min-h-[58vh] w-full flex flex-col justify-between gap-y-30 p-6 border-2 border-white/30 rounded-lg`}>
-      { 
-        tournaments.length > 0 && 
+      {tournaments && tournaments.length > 0 ? (
         <>
-          <TournamentsList tournaments={tournaments}  className="w-full flex flex-wrap justify-center md:justify-start gap-y-6 gap-x-12"/>
-          <Pagination currentPage={currentPage} setPage={setCurrentPage} totalPages={totalPages} className={"flex gap-x-2 mt-10"}/>
+          <TournamentsList tournaments={tournaments} className="w-full flex flex-wrap justify-center md:justify-start gap-y-6 gap-x-12"/>
+          <Pagination className={"flex gap-x-2 mt-10"} currentPage={currentPage} setPage={setCurrentPage} totalPages={totalPages} />
         </>
-      }
+      ) : (
+          <h1 className="text-secondary text-2xl sm:text-3xl text-center font-monse font-semibold">
+            No tienes ningun torneo para administrar...
+          </h1>
+      )}
     </div>
   )
 }
